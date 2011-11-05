@@ -18,12 +18,17 @@ html {
 	color: #333;
 	background: #fff;
 	overflow-y: scroll; /* provides scrollbars to avoid jumping centered layouts */
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 }
 html * {
 	font-size: 100.01%; /* resets all font-sizes to 16px (browser default) */
 }
 body {
+	margin: 0 auto;
 	padding: 1em;
+	max-width: 80em;
 	font: .75em/1.5 FreeSans, Arial, sans-serif;
 	color: #333;
 	background: transparent;
@@ -81,11 +86,15 @@ nav a {
 /* @end */
 /* @end */
 
-/* @group Images */
+/* @group Media */
 img {
 	vertical-align: bottom;
 	color: #333;
 	background: transparent;
+	-ms-interpolation-mode: bicubic;
+}
+audio , video {
+	display: inline-block;
 }
 /* @end */
 
@@ -94,12 +103,8 @@ a:link , a:visited , a:hover , a:focus , a:active {
 	text-rendering: auto;
 	text-decoration: underline;
 }
-a:link {
+a:link , a:visited {
 	color: #00c;
-	background: transparent;
-}
-a:visited {
-	color: #c0c;
 	background: transparent;
 }
 a:hover , a:focus , a:active {
@@ -197,6 +202,11 @@ table {
 	border-spacing: 0;
 	width: 100%;
 }
+table th {
+	text-align: left;
+	color: #333;
+	background: #ccc;
+}
 /* @end */
 
 /* @group Forms */
@@ -223,6 +233,10 @@ form em {
 }
 /* @group Buttons */
 /* @group Browser-specific fixes */
+*:first-child+html button {
+	/* button size fix for IE7 */
+	overflow: visible;
+}
 button::-moz-focus-inner ,
 .button::-moz-focus-inner ,
 input[type='submit']::-moz-focus-inner,
