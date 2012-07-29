@@ -1,0 +1,57 @@
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//                    Version 2, December 2004
+//
+// Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+//
+// Everyone is permitted to copy and distribute verbatim or modified
+// copies of this license document, and changing it is allowed as long
+// as the name is changed.
+//
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+//
+//  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+// Forms module
+
+// @section form-defaults
+form
+
+	legend
+		color color-text
+		background transparent
+
+	input , textarea , select
+		font base-size text-copy
+
+	label
+		display block
+		font-weight bold
+
+	input[type='checkbox'] + label , input[type='radio'] + label
+		display inline // for labels next to checkboxes or radio boxes
+
+	// to highlight form errors or required form fields
+	[role='alert']
+		font-weight bold
+		color #c00
+		background transparent
+
+// @section buttons
+.button , button
+
+	// basic look and default state
+	& , &:link , &:visited , &:hover , &:focus , &:active
+		position relative
+		display inline-block
+		padding 0 1em
+		border 0 none
+		text-decoration none
+		text-align center
+		border-radius 5px
+
+	// focused state
+	//&:hover , &:focus
+
+	// active state
+	//&:active

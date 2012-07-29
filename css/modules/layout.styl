@@ -1,0 +1,107 @@
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//                    Version 2, December 2004
+//
+// Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+//
+// Everyone is permitted to copy and distribute verbatim or modified
+// copies of this license document, and changing it is allowed as long
+// as the name is changed.
+//
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+//
+//  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+// Layout module
+
+// @section main-tags
+html
+	color color-text
+	background color-background
+	overflow-y scroll // provides scrollbars to avoid jumping centered layouts
+
+body
+	position relative
+	margin 0 auto
+	padding 0
+	width 60em
+	color color-text
+	background transparent
+
+// @section logo
+[role="banner"]
+
+	a
+
+		&:active
+			outline 0 none // logo and navigation links don’t need active highlighting
+
+// @section navigation-links
+nav
+	overflow hidden
+	line-height 1
+
+	ul
+		margin 0
+
+		li
+			float left
+			margin 0
+			padding 0
+
+			a
+
+				&:link , &:visited , &:hover , &:focus , &:active
+					float left
+					margin 0 0 0 1em
+
+				&:link , &:visited
+					color color-link
+					background transparent
+
+				&:hover , &:focus , &:active
+					color color-link-hover
+					background transparent
+
+			&:first-child
+
+				a
+
+					&:link , &:visited , &:hover , &:focus , &:active
+						margin 0
+
+// @section content
+[role="main"]
+	color color-text
+	background color-background
+	overflow hidden
+
+// @section footer
+footer
+	display block
+	clear both // footers should clear all content floats
+
+// @section media
+img
+	color #333
+	background transparent
+	vertical-align bottom
+
+// @section browser-update
+.browser-update
+	font bold .75em/30px text-copy
+	text-align center
+	color darken(color-text, 100%)
+	background darken(color-background, 25%)
+
+	a
+
+		&:link , &:visited , &:hover , &:focus , &:active
+			color darken(color-text, 100%)
+			background transparent
+
+		&:link , &:visited
+			text-decoration underline
+
+		&:hover , &:focus , &:active
+			text-decoration none
