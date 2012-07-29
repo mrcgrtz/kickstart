@@ -1,0 +1,40 @@
+{
+  "name": "kickstart",
+  "version": "2.0.0",
+  "description": "This is my Kickstart library.",
+  "engine": ["node"],
+  "dependencies": {
+    "grunt": "",
+    "grunt-contrib": "",
+    "stylus": "",
+    "nib": "",
+    "ender": ""
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/Dreamseer/Kickstart.git"
+    }
+  ],
+  "author": {
+    "name": "Marc Görtz",
+    "email": "git@marcgoertz.de"
+  },
+  "maintainers": [
+    {
+      "name": "Marc Görtz",
+      "email": "git@marcgoertz.de",
+      "web": "http://marcgoertz.de/"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "WTFPL",
+      "url": "http://sam.zoy.org/wtfpl/COPYING"
+    },
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.html"
+    }
+  ]
+}

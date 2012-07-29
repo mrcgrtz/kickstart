@@ -1,0 +1,115 @@
+##############################################################################
+# Drupal
+# @see https://github.com/github/gitignore/blob/master/Drupal.gitignore
+##############################################################################
+
+# Core files
+.htaccess
+robots.txt
+cron.php
+index.php
+install.php
+update.php
+xmlrpc.php
+CHANGELOG.txt
+COPYRIGHT.txt
+INSTALL*.txt
+LICENSE.txt
+MAINTAINERS.txt
+README.txt
+UPGRADE.txt
+includes
+misc
+modules
+profiles
+scripts
+themes
+cache
+files
+sites/all/README.txt
+sites/all/modules/README.txt
+sites/all/themes/README.txt
+sites/default/files
+sites/default/private
+sites/default/settings.php
+
+
+##############################################################################
+# WordPress
+# @see https://github.com/github/gitignore/blob/master/Wordpress.gitignore
+##############################################################################
+
+# Core files
+.htaccess
+wp-*.php
+xmlrpc.php
+wp-admin/
+wp-includes/
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/*
+wp-content/backup-db/*
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/*
+wp-content/cache/supercache/*
+sitemap.xml
+sitemap.xml.gz
+readme.html
+license.txt
+
+
+##############################################################################
+# Mac OS X and Windows system files
+# @see https://github.com/github/gitignore/blob/master/Global/
+##############################################################################
+
+# Directory settings
+.DS_Store
+Desktop.ini
+
+# Thumbnails
+._*
+Thumbs.db
+
+# Drive-specific directories
+.Spotlight-V100
+.Trashes
+
+
+##############################################################################
+# Editor project files
+# @see https://github.com/github/gitignore/blob/master/Global/
+##############################################################################
+
+# TextMate
+*.tmproj
+*.tmproject
+tmtags
+
+# Espresso
+*.esproj
+
+# SublimeText
+*.sublime-project
+*.sublime-workspace
+
+
+##############################################################################
+# Subversion (you never know…)
+# @see https://github.com/github/gitignore/blob/master/Global/SVN.gitignore
+##############################################################################
+
+.svn/
+
+
+##############################################################################
+# Generated files (via Grunt or Make)
+##############################################################################
+
+node_modules
+npm-debug.log
+css/*.css
+css/modules/*.css
+js/*.js
+js/modules/*.js
