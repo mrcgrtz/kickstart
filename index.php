@@ -4,10 +4,10 @@ $settings = array(
 	'title'       => 'Titel',
 	'description' => 'Beschreibung',
 );
-include('inc/header.inc.php');
+include_once('inc/header.inc.php');
 ?>
 
 <h1>Startseite</h1>
 <p>Inhalt</p>
 
-<?php include('inc/footer.inc.php'); ?>
+<?php include_once('inc/footer.inc.php'); ?>
