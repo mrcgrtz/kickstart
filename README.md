@@ -21,7 +21,7 @@ Default task which does the following sub-tasks:
  - minify generated CSS files
  - create JS files from [Coffeescript](http://coffeescript.org/) sources
  - lint generated JS files
- - concatenate generated JS files
+ - concatenate built-in jQuery and generated JS files
  - minify generated JS files
 
 ## Cleanup generated stuff
@@ -36,8 +36,6 @@ modules, run the following command:
  - get rid of the Makefile, just use `npm install` and `grunt`
  - create an image optimization task using [grunt-imagine](https://github.com/asciidisco/grunt-imagine)
  - create proper `watch` and `clean` tasks for Grunt
- - create a default build for Ender.js
-    - or switch to jQuery like all the cool kids do
 
 ## License
 

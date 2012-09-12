@@ -6,19 +6,39 @@
 		<meta charset="utf-8">
 
 		<!-- Page title and description -->
-		<title>Site-Name | <?php print $settings['title']; ?></title>
+		<title><?php print $settings['title']; ?> | Site-Name</title>
 		<meta name="description" content="<?php print $settings['description']; ?>">
 
 		<!-- Mobile viewport optimized: h5bp.com/viewport -->
 		<meta name="viewport" content="width=device-width">
 
 		<!-- Open Graph meta tags: http://ogp.me/ -->
-		<meta property="og:title" content="<?php print $settings['title']; ?>">
+		<link rel="schema.og" href="//opengraphprotocol.org/schema/">
 		<meta property="og:site_name" content="Site-Name">
-		<meta property="og:type" content="website">
-		<meta property="og:image" content="http://example.com/assets/img/facebook.png">
+		<meta property="og:title" content="<?php print (isset($settings['ogp']['title'])) ? $settings['ogp']['title'] : $settings['title']; ?>">
+		<meta property="og:type" content="<?php print (isset($settings['ogp']['type'])) ? $settings['ogp']['type'] : 'website'; ?>">
+		<meta property="og:url" content="<?php print (isset($settings['ogp']['url'])) ? $settings['ogp']['url'] : 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
+		<meta property="og:image" content="<?php print (isset($settings['ogp']['image'])) ? $settings['ogp']['image'] : 'http://example.com/assets/img/facebook.png'; ?>">
 		<meta property="fb:admins" content="708162426">
 		<meta property="twitter:site:id" content="@Dreamseer">
+
+		<!-- Geo meta tags -->
+		<meta name="geo.position" content="51.016667;5.916667">
+		<meta name="icbm" content="51.016667,5.916667">
+
+		<?php if (isset($settings['alternate']) and is_array($settings['alternate'])): ?>
+			<!-- Alternate versions -->
+			<?php foreach ($settings['alternate'] as $format => $url): ?>
+				<link rel="alternate" href="<?= $url ?>" type="<?= $format ?>">
+			<? endforeach; ?>
+		<?php endif; ?>
+
+		<?php if (isset($settings['microformats']) and is_array($settings['microformats'])): ?>
+			<!-- Microformats profiles -->
+			<?php foreach ($settings['microformats'] as $format): ?>
+				<link rel="profile" href="//microformats.org/profile/<?= strtolower($format) ?>">
+			<? endforeach; ?>
+		<?php endif; ?>
 
 		<!-- Minified stylesheet -->
 		<link rel="stylesheet" href="/css/default.min.css">
@@ -36,7 +56,7 @@
 		<!-- Logo -->
 		<div role="banner"><a href="/" rel="start">Logo</a></div>
 
-		<!-- main navigation -->
+		<!-- Main navigation -->
 		<nav role="navigation">
 			<ul>
 				<li><a href="/">Home</a></li>
@@ -46,5 +66,5 @@
 			</ul>
 		</nav>
 
-		<!-- content -->
+		<!-- Content -->
 		<div role="main" itemprop="mainContentOfPage">
