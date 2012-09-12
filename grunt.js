@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
 	// Add additional, non-builtin tasks
 	grunt.loadNpmTasks('grunt-contrib');
+	//grunt.loadNpmTasks('grunt-modernizr');
 
 	// Project configuration
 	grunt.initConfig({
@@ -82,7 +83,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// Concatenate and minify jQuery and the main JS file
+		// Minify the main JS file
 		min: {
 			dist: {
 				src: ['<banner:meta.banner>', './js/default.js'],
@@ -94,11 +95,40 @@ module.exports = function(grunt) {
 		watch: {
 			files: '<config:lint.files>',
 			tasks: 'lint'
+		},
+
+		// Create custom Modernizr file
+		modernizr: {
+			'devFile': './js/vendor/modernizr.js',
+			'outputFile': './js/modernizr.min.js',
+			'extra': {
+				'shiv': true,
+				'printshiv': false,
+				'load': false,
+				'mq': false,
+				'cssclasses': true
+			},
+			'extensibility': {
+				'addtest': false,
+				'prefixed': false,
+				'teststyles': false,
+				'testprops': false,
+				'testallprops': false,
+				'hasevents': false,
+				'prefixes': false,
+				'domprefixes': false
+			},
+			'uglify': true,
+			'tests': [],
+			'parseFiles': true,
+			'matchCommunityTests': false,
+			'customTests': [],
+			'excludeFiles': []
 		}
 
 	});
 
 	// Default task
-	grunt.registerTask('default', 'stylus coffee lint min mincss');
+	grunt.registerTask('default', 'stylus coffee lint modernizr min mincss');
 
 };

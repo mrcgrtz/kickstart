@@ -6,8 +6,10 @@
   "dependencies": {
     "grunt": "",
     "grunt-contrib": "",
+    "grunt-modernizr": "",
     "stylus": "",
-    "nib": ""
+    "nib": "",
+    "csso": ""
   },
   "repositories": [
     {
