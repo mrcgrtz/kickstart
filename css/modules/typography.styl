@@ -39,18 +39,42 @@ h2
 	font normal 1.5em/1 text-headline
 	text-transform uppercase
 
+h3
+	margin 1.5em 0 1em
+	color color-text
+	background transparent
+	font bold 1em/1 text-copy
+
+h4
+	@extend h3
+	color lighten(color-text, 33%)
+	background transparent
+
+h5
+	margin 1.33333333333em 0
+	color lighten(color-text, 33%)
+	background transparent
+	font bold .75em/1 text-copy
+	text-transform uppercase
+
+h6
+	@extend h5
+
 h1 , h2 , h3 , h4 , h5 , h6
 
 	abbr[title]
 		border-bottom 0 none
 
 // @section paragraphs
-p , address
+p
 	margin 0 0 1em
+
+address
+	@extend p
 
 // @section quotations
 blockquote
-	margin 0 0 1em
+	@extend p
 	padding 0 1em
 	font-style italic
 
@@ -78,7 +102,7 @@ abbr[title]
 	cursor help
 
 // @section code
-code , pre
+code
 	color darken(color-text, 100%)
 	background darken(color-background, 50%)
 	padding 2px 3px
@@ -86,6 +110,7 @@ code , pre
 	text-shadow 0 1px 1px rgba(255, 255, 255, .75)
 
 pre
+	@extend code
 	font-size 1em
 	margin 0 0 2em
 	padding 1em

@@ -21,12 +21,16 @@
 // @section unordered-lists
 ul
 	margin 0 0 1em
-	padding 0
-	list-style none
+	padding 0 0 0 2.5em
+	list-style bull
 
 	li
-		margin 0 0 1em
+		margin 0
 		padding 0
+
+ol
+	@extend ul
+	list-style decimal
 
 // @section definition-lists
 dl
@@ -39,4 +43,4 @@ dl
 		font-weight bold
 
 	dd
-		margin: 0 0 0 13em
+		margin 0 0 0 13em
