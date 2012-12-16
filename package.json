@@ -1,14 +1,12 @@
 {
   "name": "kickstart",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "This is my Kickstart library.",
   "engine": ["node"],
   "dependencies": {
     "grunt": "",
     "grunt-contrib": "",
-    "grunt-modernizr": "",
-    "stylus": "",
-    "nib": "",
+    "grunt-imagine": "",
     "csso": ""
   },
   "repositories": [

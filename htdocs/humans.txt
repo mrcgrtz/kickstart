@@ -1,9 +1,10 @@
 # humanstxt.org
 
 # The Team.
+Designer: Marc Görtz (@Dreamseer)
 Developer: Marc Görtz (@Dreamseer)
 
 # Technology Colophon.
 Standards: HTML5, CSS3
-Components: Ender.js, Modernizr, Stylus, Coffeescript
-Software: Sublime Text 2
+Components: jQuery, Grunt, Stylus, Nib
+Software: Sublime Text 2, Pixelmator

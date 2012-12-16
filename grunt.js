@@ -1,17 +1,17 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-	// Add additional, non-builtin tasks
+	// add additional, non-builtin tasks
 	grunt.loadNpmTasks('grunt-contrib');
-	//grunt.loadNpmTasks('grunt-modernizr');
+	grunt.loadNpmTasks('grunt-imagine');
 
-	// Project configuration
+	// project configuration
 	grunt.initConfig({
 
-		// Package file containing meta data
+		// package file containing meta data
 		pkg: '<json:package.json>',
 
-		// Create meta data
+		// create meta data
 		meta: {
 			banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
 				'<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -20,37 +20,25 @@ module.exports = function(grunt) {
 				' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
 		},
 
-		// Compile Stylus module files to CSS
+		// compile Stylus module files to CSS
 		stylus: {
-			compile: {
+			app: {
 				option: {
 					compress: false,
 					force: true
 				},
 				files: {
-					'./css/default.css' : './css/default.styl'
+					'./htdocs/css/default.css' : './htdocs/css/default.styl'
 				}
 			}
 		},
 
-		// Run tests
+		// run tests
 		qunit: {},
 
-		// Compile Coffeescript module files to JS
-		coffee: {
-			app: {
-				files: {
-					'./js/default.js': './js/modules/*.coffee'
-				},
-				options: {
-					bare: false
-				}
-			}
-		},
-
-		// Lint and hint JS files
+		// lint and hint JS files
 		lint: {
-			files: ['./grunt.js', './js/default.js']
+			files: ['./grunt.js', './htdocs/js/default.js']
 		},
 		jshint: {
 			options: {
@@ -67,68 +55,73 @@ module.exports = function(grunt) {
 				browser: true
 			},
 			globals: {
-				google: true
+				$: true,
+				google: true,
+				console: true
 			}
 		},
 
-		// Concatenate files
-		concat: {},
+		// concatenate files
+		concat: {
+			app: {
+				src: ['./htdocs/js/modules/*.js'],
+				dest: './htdocs/js/default.js'
+			}
+		},
 
-		// Minify the main CSS file
+		// minify the main CSS file
 		mincss: {
-			compress: {
+			app: {
 				files: {
-					'css/default.min.css': ['<banner:meta.banner>', './css/default.css']
+					'./htdocs/css/default.min.css': ['<meta:banner>', './htdocs/css/default.css']
 				}
 			}
 		},
 
-		// Minify the main JS file
+		// minify the main JavaScript file
 		min: {
-			dist: {
-				src: ['<banner:meta.banner>', './js/default.js'],
-				dest: './js/default.min.js'
+			app: {
+				src: ['<meta:banner>', './htdocs/js/default.js'],
+				dest: './htdocs/js/default.min.js'
 			}
 		},
 
-		// Watch stuff
+		// minify images
+		pngmin: {
+			src: [
+				'./htdocs/assets/img/**/*.png'
+			],
+			dest: './htdocs'
+		},
+		jpgmin: {
+			src: [
+				'./htdocs/assets/img/**/*.jpg'
+			],
+			dest: './htdocs'
+		},
+		gifmin: {
+			src: [
+				'./htdocs/assets/img/**/*.gif'
+			],
+			dest: './htdocs'
+		},
+
+		// create data URI images
+		inlineImg: {
+			src: ['./htdocs/css/default.min.css'],
+			ie8: true // remove this?
+		},
+
+
+		// watch stuff
 		watch: {
 			files: '<config:lint.files>',
 			tasks: 'lint'
-		},
-
-		// Create custom Modernizr file
-		modernizr: {
-			'devFile': './js/vendor/modernizr.js',
-			'outputFile': './js/modernizr.min.js',
-			'extra': {
-				'shiv': true,
-				'printshiv': false,
-				'load': false,
-				'mq': false,
-				'cssclasses': true
-			},
-			'extensibility': {
-				'addtest': false,
-				'prefixed': false,
-				'teststyles': false,
-				'testprops': false,
-				'testallprops': false,
-				'hasevents': false,
-				'prefixes': false,
-				'domprefixes': false
-			},
-			'uglify': true,
-			'tests': [],
-			'parseFiles': true,
-			'matchCommunityTests': false,
-			'customTests': [],
-			'excludeFiles': []
 		}
 
 	});
 
-	// Default task
-	grunt.registerTask('default', 'stylus coffee lint modernizr min mincss');
+	// default task
+	grunt.registerTask('default', 'stylus concat min mincss pngmin jpgmin gifmin inlineImg');
 
 };

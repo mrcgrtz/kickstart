@@ -1,7 +1,7 @@
 # Kickstart
 
 This is my **Kickstart** library, now rewritten from scratch with a new file
-structure and awesome stuff like Stylus, Coffeescript, Normalize, Grunt, Ender,
+structure and awesome stuff like Stylus, jQuery, Normalize, Grunt,
 some PHP includes, basic search engine optimizations and some inspirations from
 HTML5 Boilerplate.
 
@@ -18,11 +18,9 @@ Default task which does the following sub-tasks:
 
  - create CSS files from [Stylus](http://learnboost.github.com/stylus/)
    sources
- - minify generated CSS files
- - create JS files from [Coffeescript](http://coffeescript.org/) sources
+ - concatenate and minify generated CSS files
  - lint generated JS files
- - concatenate built-in jQuery and generated JS files
- - minify generated JS files
+ - concatenate and minify generated JS files
 
 ## Cleanup generated stuff
 
@@ -34,7 +32,6 @@ modules, run the following command:
 ## To do
 
  - get rid of the Makefile, just use `npm install` and `grunt`
- - create an image optimization task using [grunt-imagine](https://github.com/asciidisco/grunt-imagine)
  - create proper `watch` and `clean` tasks for Grunt
 
 ## License
