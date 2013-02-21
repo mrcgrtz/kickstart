@@ -1,14 +1,17 @@
 window.__Kickstart = {} || window.__Kickstart;
 
-window.__Kickstart.MyModule = (function() {
+window.__Kickstart.MyModule = (function(window, document, undefined) {
 
 	'use strict';
 
+	var _myMethod;
+
 	/**
-	 * My Method
+	 * @method _myMethod
+	 * My Method does nothing. Sadface.
 	 * @private
 	 */
-	var _myMethod = function() {
+	_myMethod = function() {
 	};
 
 	return {
@@ -16,6 +19,6 @@ window.__Kickstart.MyModule = (function() {
 		}
 	};
 
-})();
+})(window, document);
 
 window.__Kickstart.MyModule.init();
