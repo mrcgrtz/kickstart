@@ -8,6 +8,7 @@
 		<!-- page title and description -->
 		<title><?php print $settings['title']; ?> | <?php print $config['global']['sitename']; ?></title>
 		<meta name="description" content="<?php print $settings['description']; ?>">
+		<?php if (in_array('admin', $settings['classes'])): ?><meta name="robots" content="noindex"><?php endif; ?>
 
 		<!-- mobile viewport optimized: h5bp.com/viewport -->
 		<meta name="viewport" content="width=device-width">
