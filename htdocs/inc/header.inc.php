@@ -56,7 +56,7 @@
 		<header>
 
 			<!-- logo -->
-			<div role="banner"><a href="/" rel="start">Logo</a></div>
+			<div role="banner"><a href="/" rel="start"><?php print $config['global']['sitename']; ?></a></div>
 
 			<!-- main navigation -->
 			<nav role="navigation">
