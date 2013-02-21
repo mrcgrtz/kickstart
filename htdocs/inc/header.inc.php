@@ -24,7 +24,7 @@
 		<?php endif; ?>
 
 		<?php if (isset($settings['microformats']) and is_array($settings['microformats'])): ?>
-			<!-- microformats profiles -->
+			<!-- Microformats profiles -->
 			<?php foreach ($settings['microformats'] as $format): ?>
 				<link rel="profile" href="//microformats.org/profile/<?= strtolower($format) ?>">
 			<?php endforeach; ?>
