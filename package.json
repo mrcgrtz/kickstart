@@ -1,6 +1,6 @@
 {
   "name": "kickstart",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "This is my Kickstart library.",
   "engine": ["node"],
   "dependencies": {
@@ -12,7 +12,7 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/Dreamseer/Kickstart.git"
+      "url": "https://github.com/Dreamseer/kickstart.git"
     }
   ],
   "author": {
