@@ -5,9 +5,15 @@
   "engine": ["node"],
   "dependencies": {
     "grunt": "",
-    "grunt-contrib": "",
-    "grunt-imagine": "",
-    "csso": ""
+    "grunt-cli": "",
+    "grunt-contrib-stylus": "",
+    "grunt-contrib-cssmin": "",
+    "grunt-contrib-csslint": "",
+    "grunt-contrib-concat": "",
+    "grunt-contrib-uglify": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-imagemin": "",
+    "grunt-image-embed": ""
   },
   "repositories": [
     {
