@@ -14,105 +14,153 @@
 
 // @subpackage Typography module
 // @license    WTFPL 2.0, http://sam.zoy.org/wtfpl/
-// @copyright  Copyleft (c) 2012, Marc Görtz
+// @copyright  Copyleft (c) 2013, Marc Görtz
 // @author     Marc Görtz
 // @media      all
 
-// @section main
-html
-	font base-size/1.375 text-copy
-	text-rendering optimizeLegibility
-	quotes '»' '«' '›' '‹'
-
 // @section headlines
-h1
-	margin 0 0 .5em
-	color lighten(color-text, 25%)
-	background transparent
-	font normal 2em/1 text-headline
-	text-transform uppercase
+h1 {
+	margin: 0 0 .5em;
+	color: lighten(color-text, 25%);
+	background: transparent;
+	font: normal 2em/1 text-headline;
+	text-transform: uppercase;
+}
 
-h2
-	margin 1em 0 .666666667em
-	color saturate(color-text, 50%)
-	background transparent
-	font normal 1.5em/1 text-headline
-	text-transform uppercase
+h2 {
+	margin: 1em 0 .666666667em;
+	color: saturate(color-text, 50%);
+	background: transparent;
+	font: normal 1.5em/1 text-headline;
+	text-transform: uppercase;
+}
 
-h3
-	margin 1.5em 0 1em
-	color color-text
-	background transparent
-	font bold 1em/1 text-copy
+h3 {
+	margin: 1.5em 0 1em;
+	color: color-text;
+	background: transparent;
+	font: bold 1em/1 text-copy;
+}
 
-h4
-	@extend h3
-	color lighten(color-text, 33%)
-	background transparent
+h4 {
+	@extend h3;
+	color: lighten(color-text, 33%);
+	background: transparent;
+}
 
-h5
-	margin 1.33333333333em 0
-	color lighten(color-text, 33%)
-	background transparent
-	font bold .75em/1 text-copy
-	text-transform uppercase
+h5 {
+	margin: 1.33333333333em 0;
+	color: lighten(color-text, 33%);
+	background: transparent;
+	font: bold .75em/1 text-copy;
+	text-transform: uppercase;
+}
 
-h6
-	@extend h5
+h6 {
+	@extend h5;
+}
 
-h1 , h2 , h3 , h4 , h5 , h6
+h1 ,
+h2 ,
+h3 ,
+h4 ,
+h5 ,
+h6 {
 
-	abbr[title]
-		border-bottom 0 none
+	abbr[title] {
+		border-bottom: 0 none;
+	}
+
+}
 
 // @section paragraphs
-p
-	margin 0 0 1em
+p {
+	margin: 0 0 1em;
+}
 
-address
-	@extend p
+address {
+	@extend p;
+}
 
 // @section quotations
-blockquote
-	@extend p
-	padding 0 1em
-	font-style italic
+blockquote {
+	@extend p;
+	padding: 0 1em;
+	font-style: italic;
+}
 
-q
-	quotes '»' '«' '›' '‹'
+q {
+	quotes: '»' '«' '›' '‹';
+}
 
 // @section links
-a
+a {
 
-	&:link , &:visited , &:hover , &:focus , &:active
-		text-rendering auto
-		text-decoration none
+	&:link ,
+	&:visited ,
+	&:hover ,
+	&:focus ,
+	&:active {
+		text-rendering: auto;
+	}
 
-	&:link , &:visited
-		color color-link
-		background transparent
+	&:link ,
+	&:visited {
+		color: color-link;
+		background: transparent;
+		text-decoration: underline;
+	}
 
-	&:hover , &:focus , &:active
-		color color-link-hover
-		background transparent
+	&:hover ,
+	&:focus ,
+	&:active {
+		color: color-link-hover;
+		background: transparent;
+		text-decoration: none;
+	}
+
+}
 
 // @section abbreviations
-abbr[title]
-	border-color lighten(color-text, 75%)
-	cursor help
+abbr[title] {
+	border-color: lighten(color-text, 75%);
+	cursor: help;
+}
+
+// @section sub-sup
+sub ,
+sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
 
 // @section code
-code
-	color darken(color-text, 100%)
-	background darken(color-background, 50%)
-	padding 2px 3px
-	border-radius 3px
-	text-shadow 0 1px 1px rgba(255, 255, 255, .75)
+code {
+	color: darken(color-text, 100%);
+	background: darken(color-background, 50%);
+	padding: 2px 3px;
+	border-radius: 3px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+}
 
-pre
-	@extend code
-	font-size 1em
-	margin 0 0 2em
-	padding 1em
-	overflow auto
-	tab-width 4
+pre {
+	@extend code;
+	font-size: 1em;
+	margin: 0 0 2em;
+	padding: 1em;
+	overflow: auto;
+	tab-width: 4;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}

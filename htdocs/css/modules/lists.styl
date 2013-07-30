@@ -14,33 +14,88 @@
 
 // @subpackage Lists module
 // @license    WTFPL 2.0, http://sam.zoy.org/wtfpl/
-// @copyright  Copyleft (c) 2012, Marc Görtz
+// @copyright  Copyleft (c) 2013, Marc Görtz
 // @author     Marc Görtz
 // @media      all
 
 // @section unordered-lists
-ul
-	margin 0 0 1em
-	padding 0 0 0 2.5em
-	list-style bull
+ul {
+	margin: 0 0 1em;
+	padding: 0 0 0 2.5em;
+	list-style: disc;
 
-	li
-		margin 0
-		padding 0
+	li {
+		margin: 0;
+		padding: 0;
+	}
 
-ol
-	@extend ul
-	list-style decimal
+}
+
+// @section ordered-lists
+ol {
+	@extend ul;
+	list-style decimal;
+}
 
 // @section definition-lists
-dl
-	margin 0 0 1em
-	overflow hidden
+dl {
+	margin 0 0 1em;
+	overflow hidden;
 
-	dt
-		float left
-		width 12em
-		font-weight bold
+	dt {
+		float: left;
+		width: 12em;
+		font-weight: bold;
+	}
 
-	dd
-		margin 0 0 0 13em
+	dd {
+		margin: 0 0 0 13em;
+	}
+
+}
+
+// @section navigation-lists
+nav {
+	overflow: hidden;
+	line-height: 1;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			float: left;
+			margin: 0;
+			padding: 0;
+		}
+
+	}
+
+	a {
+
+		&:link ,
+		&:visited ,
+		&:hover ,
+		&:focus ,
+		&:active {
+			float: left;
+			margin: 0 1em 0 0;
+		}
+
+		&:link ,
+		&:visited {
+			color: color-link;
+			background: transparent;
+		}
+
+		&:hover ,
+		&:focus ,
+		&:active {
+			color: color-link-hover;
+			background: transparent;
+		}
+
+	}
+
+}

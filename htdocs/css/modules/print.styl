@@ -14,58 +14,81 @@
 
 // @subpackage Print module
 // @license    WTFPL 2.0, http://sam.zoy.org/wtfpl/
-// @copyright  Copyleft (c) 2012, Marc Görtz
+// @copyright  Copyleft (c) 2013, Marc Görtz
 // @author     Marc Görtz
 // @media      print
 
-@media print
+@media print {
 
 	// @section page-layout
-	@page
-		size A4 landscape
-		margin 2cm
-		orphans 4
-		widows 2
+	@page {
+		size: A4 landscape;
+		margin: 2cm;
+		orphans: 4;
+		widows: 2;
+	}
 
-	@page :left
-		margin-left 3cm
+	@page :left {
+		margin-left: 3cm;
+	}
 
-	@page :right
-		margin-right 3cm
+	@page :right {
+		margin-right: 3cm;
+	}
 
-	@bottom-center
-		content counter(page)
+	@bottom-center {
+		content: counter(page);
+	}
 
-	body
-		width 100%
-		max-width none
-		margin 0
-		padding 0
-		color #000
-		background #fff
+	html ,
+	body {
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		color: #000;
+		background: #fff;
+	}
 
 	// @section page-breaks
-	h1 , h2 , h3 , h4 , h5 , h6 , table tr
-		page-break-inside avoid
+	h1 ,
+	h2 ,
+	h3 ,
+	h4 ,
+	h5 ,
+	h6 ,
+	table tr {
+		page-break-inside: avoid;
+	}
 
 	// @section images
-	img
-		max-width 100% !important // prevents images from being cut when they are larger than page width
+	img {
+		max-width: 100% !important; // prevents images from being cut when they are larger than page width
+	}
 
 	// @section links
-	a[href]
-		color #00c
-		background #fff
+	a[href] {
+		color: #00c;
+		background: #fff;
 
-		&:after
-			font-size 80%
-			content ' (' attr(href) ') '
+		&:after {
+			font-size: 80%;
+			content: ' (' attr(href) ') ';
+		}
 
-	a[href^='/']
+	}
 
-		&:after
-			content ' (http://example.com' attr(href) ') '
+	a[href^='/'] {
+
+		&:after {
+			content: ' (http://example.com' attr(href) ') ';
+		}
+
+	}
 
 	// @section hidden-elements
-	nav
-		display none
+	nav {
+		display: none;
+	}
+
+}

@@ -14,48 +14,104 @@
 
 // @subpackage Forms module
 // @license    WTFPL 2.0, http://sam.zoy.org/wtfpl/
-// @copyright  Copyleft (c) 2012, Marc Görtz
+// @copyright  Copyleft (c) 2013, Marc Görtz
 // @author     Marc Görtz
 // @media      all
 
 // @section form-defaults
-form
+form {
 
-	legend
-		color color-text
-		background transparent
+	legend {
+		border: 0 none; // corrects color not being inherited in IE8/9
+		color: color-text;
+		background: transparent;
+		white-space: normal; // corrects text not wrapping in FF3
+	}
 
-	input , textarea , select
+	input ,
+	textarea ,
+	select {
+		margin: 0;
 		font 1em text-copy
+		vertical-align: baseline;
+	}
 
-	label
-		display block
-		font-weight bold
+	textarea {
+		overflow: auto; // removes default vertical scrollbar in IE8/9
+		vertical-align: top; // improves readability and alignment in all browsers
+	}
 
-	input[type='checkbox'] + label , input[type='radio'] + label
-		display inline // for labels next to checkboxes or radio boxes
+	label {
+		display: block;
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+	input[type='checkbox'] ,
+	input[type='radio'] {
+		box-sizing: border-box; // addresses box-sizing set to content-box in IE8/9
+		padding: 0; // removes excess padding in IE8/9
+
+		& + label {
+			display: inline; // for labels next to checkboxes or radio boxes
+		}
+
+	}
 
 	// to highlight form errors or required form fields
-	[role='alert']
-		font-weight bold
-		color color-error
-		background transparent
+	[role='alert'] {
+		font-weight: bold;
+		color: color-error;
+		background: transparent;
+	}
+
+	// disabled elements
+	input ,
+	textarea ,
+	select ,
+	button {
+
+		&[disabled] {
+			cursor: default;
+		}
+
+	}
+
+}
 
 // @section buttons
-.button , button
+button ,
+.button {
 
 	// basic look and default state
-	& , &:link , &:visited , &:hover , &:focus , &:active
-		position relative
-		display inline-block
-		padding 0 1em
-		border 0 none
-		text-decoration none
-		text-align center
-		border-radius 5px
+	& ,
+	&:link ,
+	&:visited ,
+	&:hover ,
+	&:focus ,
+	&:active {
+		position: relative;
+		display: inline-block;
+		margin: 0;
+		padding: 0 1em;
+		border: 0 none;
+		text-decoration: none;
+		text-align: center;
+		border-radius: 5px;
+		cursor: pointer;
+		-webkit-appearance: button; // corrects inability to style clickable `input` types in iOS
+	}
+
+	// removes inner padding and border in FF3+
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0 none;
+	}
 
 	// focused state
 	//&:hover , &:focus
 
 	// active state
 	//&:active
+
+}

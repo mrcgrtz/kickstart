@@ -14,101 +14,42 @@
 
 // @subpackage Layout module
 // @license    WTFPL 2.0, http://sam.zoy.org/wtfpl/
-// @copyright  Copyleft (c) 2012, Marc Görtz
+// @copyright  Copyleft (c) 2013, Marc Görtz
 // @author     Marc Görtz
 // @media      all
 
-// @section main-tags
-html
-	color color-text
-	background color-background
-	overflow-y scroll // provides scrollbars to avoid jumping centered layouts
+// @section root-elements
+html {
+	color color-text;
+	background color-background;
+	font: base-size/1.375 text-copy;
+	text-rendering: optimizeLegibility;
+	quotes: '»' '«' '›' '‹';
+	overflow-y scroll; // provides scrollbars to avoid jumping centered layouts
+	-webkit-text-size-adjust: 100%; // prevents text size adjust after orientation change
+	-ms-text-size-adjust: 100%; // prevents text size adjust after orientation change
+}
 
-body
-	position relative
-	margin 0 auto
-	padding 0
-	width 60em
-	max-width 90% // respond on smaller screens
-	color color-text
-	background transparent
+body {
+	position relative;
+	margin 0 auto;
+	padding 0;
+	width 60em;
+	max-width 90%; // respond on smaller screens
+	color color-text;
+	background transparent;
+}
 
-// @section logo
-[role="banner"]
-
-	a
-
-		&:active
-			outline 0 none // logo and navigation links don’t need active highlighting
-
-// @section navigation-links
-nav
-	overflow hidden
-	line-height 1
-
-	ul
-		margin 0
-		padding 0
-		list-style none
-
-		li
-			float left
-			margin 0
-			padding 0
-
-			a
-
-				&:link , &:visited , &:hover , &:focus , &:active
-					float left
-					margin 0 0 0 1em
-
-				&:link , &:visited
-					color color-link
-					background transparent
-
-				&:hover , &:focus , &:active
-					color color-link-hover
-					background transparent
-
-			&:first-child
-
-				a
-
-					&:link , &:visited , &:hover , &:focus , &:active
-						margin 0
-
-// @section content
-[role="main"]
-	color color-text
-	background color-background
-	overflow hidden
+// @section main-content
+main {
+	display: block;
+	color: color-text;
+	background: color-background;
+	overflow: hidden;
+}
 
 // @section footer
-footer
-	display block
-	clear both // footers should clear all content floats
-
-// @section media
-img
-	color #333
-	background transparent
-	vertical-align bottom
-
-// @section browser-update
-.browser-update
-	font bold .75em/2 text-copy
-	text-align center
-	color darken(color-text, 100%)
-	background darken(color-background, 25%)
-
-	a
-
-		&:link , &:visited , &:hover , &:focus , &:active
-			color darken(color-text, 100%)
-			background transparent
-
-		&:link , &:visited
-			text-decoration underline
-
-		&:hover , &:focus , &:active
-			text-decoration none
+footer {
+	display: block;
+	clear: both; // footers should clear all content floats
+}
