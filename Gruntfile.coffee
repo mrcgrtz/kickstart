@@ -25,7 +25,7 @@ module.exports = (grunt) ->
 
 		# lint and hint JS files
 		jshint:
-			jshintrc: './jshintrc'
+			jshintrc: './.jshintrc'
 
 		# concatenate files
 		concat:

@@ -5,7 +5,7 @@ structure and awesome stuff like Stylus, jQuery, Normalize, Grunt,
 some PHP includes, basic search engine optimizations and some inspirations from
 HTML5 Boilerplate.
 
-## Initialization
+## Installation
 
 	make
 
