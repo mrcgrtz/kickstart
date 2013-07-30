@@ -47,6 +47,11 @@
 		<!-- all JavaScript at the bottom, except this custom Modernizr build -->
 		<script src="/js/modernizr.min.js"></script>
 
+		<?php if (!isset($_SERVER['HTTP_DNT']) or (isset($_SERVER['HTTP_DNT']) and $_SERVER['HTTP_DNT'] != 1)): ?>
+			<!-- asynchronous Google Analytics snippet: https://gist.github.com/1251641 -->
+			<script>//var _gaq=[['_setAccount','<?php print $config['google']['analytics'] ?>'],['_gat._anonymizeIp'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+		<?php endif; ?>
+
 	</head>
 	<body class="<?php print implode(' ', $settings['classes']) ?>">
 
