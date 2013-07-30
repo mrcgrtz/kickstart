@@ -1,0 +1,54 @@
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//                    Version 2, December 2004
+//
+// Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+//
+// Everyone is permitted to copy and distribute verbatim or modified
+// copies of this license document, and changing it is allowed as long
+// as the name is changed.
+//
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+//
+//  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+// @subpackage Media module
+// @license    WTFPL 2.0, http://sam.zoy.org/wtfpl/
+// @copyright  Copyleft (c) 2013, Marc Görtz
+// @author     Marc Görtz
+// @media      all
+
+// @section images
+img {
+	color #333;
+	background transparent;
+	vertical-align bottom;
+	border: 0 none; // removes border when inside `a` element in IE7/8/9
+	-ms-interpolation-mode: bicubic; // improves image quality when scaled in IE7
+}
+
+// @section figures
+figure {
+	display: block
+	margin: 0;
+}
+
+figcaption {
+	display: block;
+}
+
+// @section canvas
+canvas {
+	display: inline-block;
+}
+
+// @section audio-video
+audio ,
+video {
+	@extend canvas;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
