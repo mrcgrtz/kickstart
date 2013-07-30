@@ -1,7 +1,7 @@
 <?php $config = parse_ini_file(dirname(__FILE__) . '/../../config/config.ini', TRUE); ?>
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="no-js lt-ie9" id="" lang="de" itemscope itemtype="//schema.org/WebPage"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" id="" lang="de" itemscope itemtype="//schema.org/WebPage"> <!--<![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" id="" lang="de"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" id="" lang="de"> <!--<![endif]-->
 	<head prefix="og: //ogp.me/ns# fb: //ogp.me/ns/fb#">
 		<meta charset="utf-8">
 
@@ -56,10 +56,10 @@
 		<header>
 
 			<!-- logo -->
-			<div role="banner"><a href="/" rel="start"><?php print $config['global']['sitename']; ?></a></div>
+			<div class="logo"><a href="/" rel="start"><?php print $config['global']['sitename']; ?></a></div>
 
 			<!-- main navigation -->
-			<nav role="navigation">
+			<nav>
 				<ul>
 					<li><a href="/">Home</a></li>
 					<li><a href="#">Nav #1</a></li>
@@ -71,4 +71,4 @@
 		</header>
 
 		<!-- content -->
-		<div role="main" itemprop="mainContentOfPage">
+		<main>
