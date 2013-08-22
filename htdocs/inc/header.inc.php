@@ -1,7 +1,7 @@
 <?php $config = parse_ini_file(dirname(__FILE__) . '/../../config/config.ini', TRUE); ?>
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="no-js lt-ie9" id="" lang="de"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" id="" lang="de"> <!--<![endif]-->
+<!--[if lte IE 8]> <html class="no-js old-ie" id="<?php print str_replace('.', '-', $_SERVER['SERVER_NAME']); ?>" lang="de"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" id="<?php print str_replace('.', '-', $_SERVER['SERVER_NAME']); ?>" lang="de"> <!--<![endif]-->
 	<head prefix="og: //ogp.me/ns# fb: //ogp.me/ns/fb#">
 		<meta charset="utf-8">
 
