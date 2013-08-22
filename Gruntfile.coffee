@@ -32,7 +32,14 @@ module.exports = (grunt) ->
 
 		# lint and hint JS files
 		jshint:
-			jshintrc: './.jshintrc'
+			options:
+				jshintrc: './.jshintrc'
+			beforeconcat: [
+				'./htdocs/js/modules/*.js'
+			]
+			afterconcat: [
+				'./htdocs/js/default.js'
+			]
 
 		# concatenate files
 		concat:
@@ -117,6 +124,7 @@ module.exports = (grunt) ->
 		'stylus'
 		'concat'
 		'uglify'
+		'jshint'
 		'cssmin'
 	]
 
@@ -125,6 +133,7 @@ module.exports = (grunt) ->
 		'stylus'
 		'concat'
 		'uglify'
+		'jshint'
 		'cssmin'
 	]
 
