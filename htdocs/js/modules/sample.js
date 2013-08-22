@@ -1,4 +1,4 @@
-window.__Kickstart = {} || window.__Kickstart;
+window.__Kickstart = window.__Kickstart || {};
 
 window.__Kickstart.MyModule = (function(window, document, undefined) {
 
