@@ -30,13 +30,6 @@ after changing a file, start the watch task:
 You need a [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)
 for live reloading the page.
 
-## Cleanup generated stuff
-
-To get rid of all generated JS and CSS files and to remove all local NPM
-modules, run the following command:
-
-	make clean
-
 ## License
 
 Copyright (c) 2011–2013 Marc Görtz, http://marcgoertz.de/
