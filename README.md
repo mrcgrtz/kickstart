@@ -22,17 +22,22 @@ Default task which does the following sub-tasks:
  - lint generated JS files
  - concatenate and minify generated JS files
 
+## Watch and live-reload stuff
+
+To automatically run the Grunt default task and refresh the browser
+after changing a file, start the watch task:
+
+	grunt watch
+
+You need a [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)
+for live reloading the page.
+
 ## Cleanup generated stuff
 
 To get rid of all generated JS and CSS files and to remove all local NPM
 modules, run the following command:
 
 	make clean
-
-## To do
-
- - get rid of the Makefile, just use `npm install` and `grunt`
- - create proper `watch` and `clean` tasks for Grunt
 
 ## License
 

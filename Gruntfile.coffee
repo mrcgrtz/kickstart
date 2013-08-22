@@ -70,8 +70,18 @@ module.exports = (grunt) ->
 
 		# watch stuff
 		watch:
-			files: '<config:lint.files>'
-			tasks: 'lint'
+			options:
+				livereload: true
+			app:
+				files: [
+					'./htdocs/css/modules/*.styl'
+					'./htdocs/js/modules/*.js'
+					'./htdocs/inc/*.php'
+					'./htdocs/*.php'
+				]
+				tasks: [
+					'default'
+				]
 
 	# add additional tasks
 	grunt.loadNpmTasks 'grunt-contrib-stylus'
@@ -80,6 +90,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-concat'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-contrib-jshint'
+	grunt.loadNpmTasks 'grunt-contrib-watch'
 	#grunt.loadNpmTasks 'grunt-contrib-imagemin'
 	grunt.loadNpmTasks 'grunt-image-embed'
 

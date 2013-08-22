@@ -12,6 +12,7 @@
 		"grunt-contrib-concat": "",
 		"grunt-contrib-uglify": "",
 		"grunt-contrib-jshint": "",
+		"grunt-contrib-watch": "",
 		"grunt-contrib-imagemin": "",
 		"grunt-image-embed": ""
 	},
