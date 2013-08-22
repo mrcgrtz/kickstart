@@ -30,6 +30,14 @@ module.exports = (grunt) ->
 					targetDir: './htdocs/js/vendor/'
 					cleanBowerDir: true
 
+		# lint CSS files
+		csslint:
+			options:
+				csslintrc: './.csslintrc'
+			files: [
+				'./htdocs/css/default.css'
+			]
+
 		# lint and hint JS files
 		jshint:
 			options:
@@ -135,6 +143,12 @@ module.exports = (grunt) ->
 		'uglify'
 		'jshint'
 		'cssmin'
+	]
+
+	# linting task
+	grunt.registerTask 'lint', [
+		'jshint'
+		'csslint'
 	]
 
 	# image optimization task
