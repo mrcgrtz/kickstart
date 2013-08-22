@@ -32,10 +32,6 @@
 	],
 	"licenses": [
 		{
-			"type": "WTFPL",
-			"url": "http://sam.zoy.org/wtfpl/COPYING"
-		},
-		{
 			"type": "MIT",
 			"url": "http://www.opensource.org/licenses/mit-license.html"
 		}
