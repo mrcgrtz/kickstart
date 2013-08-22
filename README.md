@@ -1,20 +1,18 @@
 # Kickstart
 
-This is my **Kickstart** library, now rewritten from scratch with a new file
-structure and awesome stuff like Stylus, jQuery, Normalize, Grunt,
-some PHP includes, basic search engine optimizations and some inspirations from
-HTML5 Boilerplate.
+This is my **Kickstart** library, now rewritten from scratch with a new
+file structure and awesome stuff like Stylus, Grunt, Bower, some PHP
+includes, basic search engine optimizations and some inspirations from
+HTML5 Boilerplate and Normalize.
 
 ## Installation
 
-	make
+	npm install && grunt install
 
 Installs NPM dependencies listed in `package.json` and runs Grunt’s
-default task afterwards which is:
+install task afterwards.
 
-	grunt
-
-Default task which does the following sub-tasks:
+The Grunt default task (`grunt`) does the following sub-tasks:
 
  - create CSS files from [Stylus](http://learnboost.github.com/stylus/)
    sources

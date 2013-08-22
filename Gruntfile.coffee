@@ -23,6 +23,13 @@ module.exports = (grunt) ->
 				files:
 					'./htdocs/css/default.css': './htdocs/css/default.styl'
 
+		# install Bower components
+		bower:
+			install:
+				options:
+					targetDir: './htdocs/js/vendor/'
+					cleanBowerDir: true
+
 		# lint and hint JS files
 		jshint:
 			jshintrc: './.jshintrc'
@@ -30,7 +37,10 @@ module.exports = (grunt) ->
 		# concatenate files
 		concat:
 			app:
-				src: ['./htdocs/js/modules/*.js'],
+				src: [
+					'./htdocs/js/vendor/min.js/dist/$.js'
+					'./htdocs/js/modules/*.js'
+				],
 				dest: './htdocs/js/default.js'
 
 		# minify the main CSS file
@@ -48,8 +58,14 @@ module.exports = (grunt) ->
 			options:
 				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			app:
-				src: './htdocs/js/default.js'
-				dest: './htdocs/js/default.min.js'
+				files: {
+					'./htdocs/js/modernizr.min.js': [
+						'./htdocs/js/vendor/modernizr/modernizr.js'
+					]
+					'./htdocs/js/default.min.js': [
+						'./htdocs/js/default.js'
+					]
+				}
 
 		# minify images
 		imagemin:
@@ -84,6 +100,7 @@ module.exports = (grunt) ->
 				]
 
 	# add additional tasks
+	grunt.loadNpmTasks 'grunt-bower-task'
 	grunt.loadNpmTasks 'grunt-contrib-stylus'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
 	grunt.loadNpmTasks 'grunt-contrib-csslint'
@@ -94,12 +111,25 @@ module.exports = (grunt) ->
 	#grunt.loadNpmTasks 'grunt-contrib-imagemin'
 	grunt.loadNpmTasks 'grunt-image-embed'
 
+	# install task
+	grunt.registerTask 'install', [
+		'bower'
+		'stylus'
+		'concat'
+		'uglify'
+		'cssmin'
+	]
+
 	# default task
 	grunt.registerTask 'default', [
 		'stylus'
 		'concat'
 		'uglify'
 		'cssmin'
+	]
+
+	# image optimization task
+	grunt.registerTask 'images', [
 		#'imagemin'
 		'imageEmbed'
 	]

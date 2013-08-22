@@ -6,5 +6,5 @@ Developer: Marc Görtz (@Dreamseer)
 
 # Technology Colophon.
 Standards: HTML5, CSS3
-Components: jQuery, Grunt, Stylus, Nib
+Components: Grunt, Bower, Stylus, Nib
 Software: Sublime Text 2, Pixelmator
