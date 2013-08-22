@@ -8,11 +8,9 @@ module.exports = (grunt) ->
 
 		# create meta data
 		meta:
-			banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-				'<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-				'<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-				'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-				' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
+			banner: '/*! <%= pkg.name %> <%= pkg.version %> - ' +
+				'<%= grunt.template.today("yyyy-mm-dd") %> - ' +
+				'Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> */'
 
 		# compile Stylus module files to CSS
 		stylus:
@@ -62,7 +60,7 @@ module.exports = (grunt) ->
 		cssmin:
 			app:
 				options:
-					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+					banner: '<%= meta.banner %>'
 				files:
 					'./htdocs/css/default.min.css': [
 						'./htdocs/css/default.css'
@@ -71,7 +69,7 @@ module.exports = (grunt) ->
 		# minify the main JavaScript file
 		uglify:
 			options:
-				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+				banner: '<%= meta.banner %>'
 			app:
 				files: {
 					'./htdocs/js/modernizr.min.js': [
