@@ -53,6 +53,13 @@ form {
 		display: block;
 		font-weight: bold;
 		cursor: pointer;
+
+		// to highlight form errors or required form fields
+		&[role='alert'] {
+			color: color-error;
+			background: transparent;
+		}
+
 	}
 
 	input[type='checkbox'] ,
@@ -64,13 +71,6 @@ form {
 			display: inline; // for labels next to checkboxes or radio boxes
 		}
 
-	}
-
-	// to highlight form errors or required form fields
-	[role='alert'] {
-		font-weight: bold;
-		color: color-error;
-		background: transparent;
 	}
 
 	// disabled elements
@@ -108,6 +108,8 @@ button ,
 		border-radius: 5px;
 		cursor: pointer;
 		-webkit-appearance: button; // corrects inability to style clickable `input` types in iOS
+		-moz-appearance: button;
+		appearance: button;
 	}
 
 	// removes inner padding and border in FF3+

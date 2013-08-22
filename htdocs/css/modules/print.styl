@@ -71,7 +71,7 @@
 
 	// @section images
 	img {
-		max-width: 100% !important; // prevents images from being cut when they are larger than page width
+		max-width: 100%; // prevents images from being cut when they are larger than page width
 	}
 
 	// @section links
@@ -82,14 +82,6 @@
 		&:after {
 			font-size: 80%;
 			content: ' (' attr(href) ') ';
-		}
-
-	}
-
-	a[href^='/'] {
-
-		&:after {
-			content: ' (http://example.com' attr(href) ') ';
 		}
 
 	}
