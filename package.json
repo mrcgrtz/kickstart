@@ -1,7 +1,7 @@
 {
 	"name": "kickstart",
-	"version": "2.4.0",
-	"description": "This is my Kickstart library.",
+	"version": "2.4.1",
+	"description": "My Kickstart library, serving as a boilerplate for new projects written in PHP, Stylus and JavaScript.",
 	"engine": ["node"],
 	"dependencies": {
 		"grunt": "",
