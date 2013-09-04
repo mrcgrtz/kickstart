@@ -66,11 +66,6 @@ Disallow: /assets/fonts
 Disallow: /inc
 Disallow: /logs
 Disallow: /usage
-Disallow: /node_modules
-Disallow: /README.md
-Disallow: /grunt.js
-Disallow: /package.json
-Disallow: /Makefile
 
 # XML Sitemap.
 # Sitemap: http://example.com/sitemap
