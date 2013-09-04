@@ -60,9 +60,6 @@ Disallow: /
 # Friendly, low-speed bots are welcome viewing pages, but not everything.
 User-agent: *
 Allow: /
-Disallow: /css
-Disallow: /js
-Disallow: /assets/fonts
 Disallow: /inc
 Disallow: /logs
 Disallow: /usage
