@@ -73,14 +73,25 @@ module.exports = (grunt) ->
 			options:
 				banner: '<%= meta.banner %>'
 			app:
-				files: {
+				files:
 					'./htdocs/js/modernizr.min.js': [
 						'./htdocs/js/vendor/modernizr/modernizr.js'
 					]
 					'./htdocs/js/default.min.js': [
 						'./htdocs/js/default.js'
 					]
-				}
+
+		jsbeautifier:
+			options:
+				config: './.jsbeautifyrc'
+			app:
+				src: [
+					'./htdocs/js/modules/*.js'
+				]
+			test:
+				src: [
+					'./htdocs/js/default.min.js'
+				]
 
 		# minify images
 		imagemin:
@@ -116,6 +127,7 @@ module.exports = (grunt) ->
 
 	# add additional tasks
 	grunt.loadNpmTasks 'grunt-bower-task'
+	grunt.loadNpmTasks 'grunt-jsbeautifier'
 	grunt.loadNpmTasks 'grunt-contrib-stylus'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
 	grunt.loadNpmTasks 'grunt-contrib-csslint'
@@ -149,6 +161,11 @@ module.exports = (grunt) ->
 	grunt.registerTask 'lint', [
 		'jshint'
 		'csslint'
+	]
+
+	# linting task
+	grunt.registerTask 'beautify', [
+		'jsbeautifier:app'
 	]
 
 	# image optimization task

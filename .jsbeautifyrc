@@ -1,0 +1,28 @@
+{
+	"braceStyle": "collapse",
+	"breakChainedMethods": false,
+	"e4x": false,
+	"evalCode": false,
+	"indentChar": "\t",
+	"indentLevel": 0,
+	"indentScripts": "keep",
+	"indentSize": 1,
+	"indentWithTabs": true,
+	"jslintHappy": false,
+	"keepArrayIndentation": false,
+	"keepFunctionIndentation": false,
+	"maxPreserveNewlines": 2,
+	"preserveNewlines": true,
+	"spaceBeforeConditional": true,
+	"spaceInParen": false,
+	"unescapeStrings": false,
+	"unformatted": [
+		"a",
+		"sub",
+		"sup",
+		"b",
+		"i",
+		"u"
+	],
+	"wrapLineLength": 0
+}
