@@ -116,7 +116,7 @@ module.exports = (grunt) ->
 				livereload: true
 			app:
 				files: [
-					'./htdocs/css/modules/*.styl'
+					'./htdocs/css/**.styl'
 					'./htdocs/js/modules/*.js'
 					'./htdocs/inc/*.php'
 					'./htdocs/*.php'
