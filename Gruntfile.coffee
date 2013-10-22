@@ -81,6 +81,7 @@ module.exports = (grunt) ->
 						'./htdocs/js/default.js'
 					]
 
+		# beautify JavaScript code
 		jsbeautifier:
 			options:
 				config: './.jsbeautifyrc'
