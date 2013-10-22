@@ -74,9 +74,6 @@ module.exports = (grunt) ->
 				banner: '<%= meta.banner %>'
 			app:
 				files:
-					'./htdocs/js/modernizr.min.js': [
-						'./htdocs/js/vendor/modernizr/modernizr.js'
-					]
 					'./htdocs/js/default.min.js': [
 						'./htdocs/js/default.js'
 					]
@@ -111,6 +108,19 @@ module.exports = (grunt) ->
 				]
 				dest: './htdocs/css/default.min.css'
 
+		# create custom Modernizr build
+		modernizr:
+			devFile: './htdocs/js/vendor/modernizr/modernizr.js'
+			outputFile: './htdocs/js/modernizr.min.js'
+			extra:
+				load: false
+				mq: true
+			parseFiles: false
+			files: [
+				'./htdocs/css/default.min.css'
+				'./htdocs/js/default.min.js'
+			]
+
 		# watch stuff
 		watch:
 			options:
@@ -129,6 +139,7 @@ module.exports = (grunt) ->
 	# add additional tasks
 	grunt.loadNpmTasks 'grunt-bower-task'
 	grunt.loadNpmTasks 'grunt-jsbeautifier'
+	grunt.loadNpmTasks 'grunt-modernizr'
 	grunt.loadNpmTasks 'grunt-contrib-stylus'
 	grunt.loadNpmTasks 'grunt-contrib-cssmin'
 	grunt.loadNpmTasks 'grunt-contrib-csslint'
@@ -145,6 +156,7 @@ module.exports = (grunt) ->
 		'stylus'
 		'concat'
 		'uglify'
+		'modernizr'
 		'jshint'
 		'cssmin'
 	]
@@ -154,6 +166,7 @@ module.exports = (grunt) ->
 		'stylus'
 		'concat'
 		'uglify'
+		'modernizr'
 		'jshint'
 		'cssmin'
 	]
