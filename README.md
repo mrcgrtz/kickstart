@@ -17,11 +17,13 @@ The Grunt default task (`grunt`) does the following sub-tasks:
  - create CSS files from [Stylus](http://learnboost.github.com/stylus/)
    sources
  - concatenate and minify generated CSS files
- - lint generated JS files
+ - lint JS files
  - concatenate and minify generated JS files
  - create a custom Modernizr build based on generated CSS and JS files
 
-## Watch and live-reload stuff
+## Additional Grunt tasks
+
+### Watch and live-reload stuff
 
 To automatically run the Grunt default task and refresh the browser
 after changing a file, start the watch task:
@@ -29,7 +31,29 @@ after changing a file, start the watch task:
 	grunt watch
 
 You need a [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)
-for live reloading the page.
+for live reloading the page, of course.
+
+### Beautify JavaScript code
+
+For beautifying the JavaScript code in your modules according to my
+personal [Coding Style Guide](https://github.com/Dreamseer/styleguide),
+run this Grunt task:
+
+	grunt beautify
+
+### Compress and embed images
+
+For compressing your images and embedding them in your CSS file, run
+this Grunt task:
+
+	grunt images
+
+Embedding images is a separate task since mobile browsers seem to be
+[slower](https://www.mobify.com/blog/data-uris-are-slow-on-mobile/)
+when parsing Base64 sequences.
+
+Note: Compressing images has been disabled temporarily. It is on my
+roadmap for Kickstart 2.6.0.
 
 ## License
 
