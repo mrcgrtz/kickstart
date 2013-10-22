@@ -19,6 +19,7 @@ The Grunt default task (`grunt`) does the following sub-tasks:
  - concatenate and minify generated CSS files
  - lint generated JS files
  - concatenate and minify generated JS files
+ - create a custom Modernizr build based on generated CSS and JS files
 
 ## Watch and live-reload stuff
 
