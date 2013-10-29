@@ -115,7 +115,7 @@ module.exports = (grunt) ->
 			extra:
 				load: false
 				mq: true
-			parseFiles: false
+			parseFiles: true
 			files: [
 				'./htdocs/css/default.min.css'
 				'./htdocs/js/default.min.js'
