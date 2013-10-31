@@ -40,7 +40,7 @@ form {
 	textarea ,
 	select {
 		margin: 0;
-		font 1em text-copy
+		font: 1em text-copy
 		vertical-align: baseline;
 	}
 
@@ -64,8 +64,8 @@ form {
 
 	input[type='checkbox'] ,
 	input[type='radio'] {
-		box-sizing: border-box; // addresses box-sizing set to content-box in IE8/9
 		padding: 0; // removes excess padding in IE8/9
+		box-sizing: border-box; // addresses box-sizing set to content-box in IE8/9
 
 		& + label {
 			display: inline; // for labels next to checkboxes or radio boxes
@@ -112,16 +112,18 @@ button ,
 		appearance: button;
 	}
 
+	// focused state
+	//&:hover , &:focus {
+	//}
+
+	// active state
+	//&:active {
+	//}
+
 	// removes inner padding and border in FF3+
 	&::-moz-focus-inner {
 		padding: 0;
 		border: 0 none;
 	}
-
-	// focused state
-	//&:hover , &:focus
-
-	// active state
-	//&:active
 
 }
