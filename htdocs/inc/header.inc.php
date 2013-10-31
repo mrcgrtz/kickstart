@@ -42,7 +42,9 @@
 		<meta property="og:url" content="<?php print (isset($settings['ogp']['url'])) ? $settings['ogp']['url'] : 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
 		<meta property="og:image" content="<?php print (isset($settings['ogp']['image'])) ? $settings['ogp']['image'] : 'http://' . $_SERVER['SERVER_NAME'] .'/assets/img/facebook.png'; ?>">
 		<meta property="fb:admins" content="<?php print $config['facebook']['id']; ?>">
-		<meta property="twitter:site:id" content="@<?php print $config['twitter']['id']; ?>">
+		<?php if (isset($config['twitter']) and isset($config['twitter']['id'])): ?>
+			<meta property="twitter:site:id" content="@<?php print $config['twitter']['id']; ?>">
+		<?php endif; ?>
 
 		<!-- all JavaScript at the bottom, except this custom Modernizr build -->
 		<script src="/js/modernizr.min.js"></script>
