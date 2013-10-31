@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <!--[if lte IE 8]> <html class="no-js old-ie" id="<?php print str_replace('.', '-', $_SERVER['SERVER_NAME']); ?>" lang="de"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" id="<?php print str_replace('.', '-', $_SERVER['SERVER_NAME']); ?>" lang="de"> <!--<![endif]-->
-	<head prefix="og: //ogp.me/ns# fb: //ogp.me/ns/fb#">
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 		<meta charset="utf-8">
 
 		<!-- page title and description -->
