@@ -446,6 +446,13 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 # A little more security
 # ----------------------------------------------------------------------
 
+# Set headers against XSS, MIME type sniffing and click-jacking.
+<IfModule mod_headers.c>
+  Header always append X-Frame-Options "SAMEORIGIN"
+  Header always append X-Content-Type-Options "nosniff"
+  Header always append X-XSS-Protection "1; mode=block"
+</IfModule>
+
 # To avoid displaying the exact version number of Apache being used, add the
 # following to httpd.conf (it will not work in .htaccess):
 # ServerTokens Prod
