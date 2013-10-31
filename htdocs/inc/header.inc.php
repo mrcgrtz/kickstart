@@ -30,9 +30,11 @@
 			<?php endforeach; ?>
 		<?php endif; ?>
 
-		<!-- geo meta tags -->
-		<meta name="geo.position" content="<?php print $config['geo']['latitude']; ?>;<?php print $config['geo']['longitude']; ?>">
-		<meta name="icbm" content="<?php print $config['geo']['latitude']; ?>,<?php print $config['geo']['longitude']; ?>">
+		<?php if (isset($config['geo']) and is_array($config['geo'])): ?>
+			<!-- geo meta tags -->
+			<meta name="geo.position" content="<?php print $config['geo']['latitude']; ?>;<?php print $config['geo']['longitude']; ?>">
+			<meta name="icbm" content="<?php print $config['geo']['latitude']; ?>,<?php print $config['geo']['longitude']; ?>">
+		<?php endif; ?>
 
 		<!-- Open Graph meta tags: http://ogp.me/ -->
 		<link rel="schema.og" href="//opengraphprotocol.org/schema/">
