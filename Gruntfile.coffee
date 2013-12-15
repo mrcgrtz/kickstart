@@ -94,11 +94,20 @@ module.exports = (grunt) ->
 		# minify images
 		imagemin:
 			app:
+				files: [
+					expand: true
+					cwd: './htdocs/assets/img/'
+					dest: './htdocs/assets/img/'
+					src: ['**/*.{png,jpg,jpeg,gif}']
+				]
+		imageoptim:
+			app:
 				options:
-					optimizationLevel: 3
-					progressive: true
-				files:
-					'./htdocs/assets/img/': './htdocs/assets/img/*.{png,jpg,jpeg}'
+					imageAlpha: true
+					quitAfter: true
+				src: [
+					'./htdocs/assets/img/'
+				]
 		imageEmbed:
 			options:
 				deleteAfterEncoding: false
@@ -147,7 +156,8 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-contrib-jshint'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
-	#grunt.loadNpmTasks 'grunt-contrib-imagemin'
+	grunt.loadNpmTasks 'grunt-contrib-imagemin'
+	grunt.loadNpmTasks 'grunt-imageoptim'
 	grunt.loadNpmTasks 'grunt-image-embed'
 
 	# install task
@@ -184,6 +194,7 @@ module.exports = (grunt) ->
 
 	# image optimization task
 	grunt.registerTask 'images', [
-		#'imagemin'
+		'imagemin'
+		'imageoptim'
 		'imageEmbed'
 	]

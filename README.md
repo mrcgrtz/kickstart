@@ -52,15 +52,17 @@ Embedding images is a separate task since mobile browsers seem to be
 [slower](https://www.mobify.com/blog/data-uris-are-slow-on-mobile/)
 when parsing Base64 sequences.
 
-Note: Compressing images has been disabled temporarily. It is on my
-roadmap for Kickstart 2.6.0.
+Note: For using
+[grunt-imageoptim](https://github.com/JamieMason/grunt-imageoptim),
+[ImageOptim](http://imageoptim.com/) and
+[ImageAlpha](http://pngmini.com/) are required. If don’t have these apps
+installed, remove that sub-task from the `images` task.
 
 ## Roadmap
 
- * 2.6.0: Add support for image compression with grunt-contrib-imagemin.
  * 2.7.0: Add support for AMD with grunt-contrib-requirejs.
  * 2.8.0: Change Gruntfile to plain JavaScript to get rid of CoffeeScript
-   in all places. Modularize Grunt tasks. 
+   in all places. Modularize Grunt tasks.
  * 3.0.0: Change Kickstart to a Yeoman generator.
 
 ## License
