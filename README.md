@@ -67,7 +67,7 @@ installed, remove that sub-task from the `images` task.
 
 ## License
 
-Copyright (c) 2011–2013 Marc Görtz, http://marcgoertz.de/
+Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
