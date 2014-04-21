@@ -61,8 +61,7 @@ installed, remove that sub-task from the `images` task.
 ## Roadmap
 
  * 2.7.0: Add support for AMD with grunt-contrib-requirejs.
- * 2.8.0: Change Gruntfile to plain JavaScript to get rid of CoffeeScript
-   in all places. Modularize Grunt tasks.
+ * 2.8.0: Modularize Grunt tasks.
  * 3.0.0: Change Kickstart to a Yeoman generator.
 
 ## License
