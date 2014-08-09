@@ -1,6 +1,6 @@
 {
 	"name": "kickstart",
-	"version": "2.6.0",
+	"version": "2.7.0",
 	"description": "My Kickstart library, serving as a boilerplate for new projects written in PHP, Stylus and JavaScript.",
 	"engine": [
 		"node"
@@ -36,7 +36,7 @@
 		"grunt-contrib-stylus": "",
 		"grunt-contrib-cssmin": "",
 		"grunt-contrib-csslint": "",
-		"grunt-contrib-concat": "",
+		"grunt-contrib-requirejs": "",
 		"grunt-contrib-uglify": "",
 		"grunt-contrib-jshint": "",
 		"grunt-contrib-watch": "",

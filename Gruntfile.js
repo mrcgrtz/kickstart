@@ -54,23 +54,10 @@ module.exports = function(grunt) {
 			options: {
 				jshintrc: './.jshintrc'
 			},
-			beforeconcat: [
-				'./htdocs/js/modules/*.js'
-			],
-			afterconcat: [
+			dist: [
+				'./htdocs/js/modules/*.js',
 				'./htdocs/js/default.js'
 			]
-		},
-
-		// concatenate files
-		concat: {
-			dist: {
-				src: [
-					'./htdocs/js/vendor/min.js/dist/$.js',
-					'./htdocs/js/modules/*.js'
-				],
-				dest: './htdocs/js/default.js'
-			}
 		},
 
 		// minify the main CSS file
@@ -87,16 +74,30 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// minify the main JavaScript file
-		uglify: {
-			options: {
-				banner: '<%= meta.banner %>'
-			},
+		// compile JS modules and uglify them
+		requirejs: {
 			dist: {
-				files: {
-					'./htdocs/js/default.min.js': [
-						'./htdocs/js/default.js'
-					]
+				options: {
+					name:                    'default',
+					baseUrl:                 './htdocs/js',
+					out:                     './htdocs/js/default.min.js',
+					optimize:                'uglify2',
+					logLevel:                0,
+					inlineText:              true,
+					useStrict:               true,
+					generateSourceMaps:      true,
+					preserveLicenseComments: false,
+					wrap:                    true,
+					include: [
+						// use require.js
+						'../../node_modules/grunt-contrib-requirejs/node_modules/requirejs/require'
+					],
+					paths: {
+						// use jQuery via "jquery" in modules
+						jquery: 'vendor/jquery/jquery'
+					},
+					shim: {
+					}
 				}
 			}
 		},
@@ -198,8 +199,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -210,8 +210,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('install', [
 		'bower',
 		'stylus',
-		'concat',
-		'uglify',
+		'requirejs',
 		'modernizr',
 		'jshint',
 		'cssmin'
@@ -220,8 +219,7 @@ module.exports = function(grunt) {
 	// default task
 	grunt.registerTask('default', [
 		'stylus',
-		'concat',
-		'uglify',
+		'requirejs',
 		'modernizr',
 		'jshint',
 		'cssmin'

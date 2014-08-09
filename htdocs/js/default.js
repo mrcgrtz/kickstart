@@ -1,7 +1,7 @@
 /**
- * Sample Module
+ * Main Module
  *
- * This is an example module. Enhance it with your own stuff.
+ * This script initializes each given module.
  *
  * Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
  *
@@ -25,35 +25,25 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * @class     Sitename.Module
+ * @class     Sitename.Main
  * @link      http://example.com/
  * @version   1.0
  * @license   MIT License
  * @copyright Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
  * @author    Marc Görtz
  */
-define(function() {
+require([
+	'modules/sample'
+], function(sample) {
+
+	/*jshint unused:false */
 
 	// strict mode to prevent sloppy JS
 	'use strict';
 
-	var _myMethod;
-
-	/**
-	 * My Method does nothing. Sadface.
-	 * @method _myMethod
-	 * @private
-	 */
-	_myMethod = function() {
-	};
-
-	// public API
-	return {
-
-		// initialization method
-		init: function() {
-		}
-
-	};
+	// initialize each module
+	for (var i = arguments.length - 1; i >= 0; i--) {
+		arguments[i].init();
+	}
 
 });

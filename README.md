@@ -14,11 +14,10 @@ install task afterwards.
 
 The Grunt default task (`grunt`) does the following sub-tasks:
 
- - create CSS files from [Stylus](http://learnboost.github.com/stylus/)
-   sources
- - concatenate and minify generated CSS files
- - lint JS files
- - concatenate and minify generated JS files
+ - create and minify CSS files from
+   [Stylus](http://learnboost.github.com/stylus/) sources
+ - create and minify JS files from AMD-based
+   [require.js](http://requirejs.org/) modules
  - create a custom Modernizr build based on generated CSS and JS files
 
 ## Additional Grunt tasks
@@ -60,9 +59,11 @@ installed, remove that sub-task from the `images` task.
 
 ## Roadmap
 
- * 2.7.0: Add support for AMD with grunt-contrib-requirejs.
- * 2.8.0: Modularize Grunt tasks.
- * 3.0.0: Change Kickstart to a Yeoman generator.
+ * 2.8.0: Optimizations.
+ * 2.9.0: Styleguide implementation.
+ * 2.10.0: Modularize Grunt tasks.
+ * 3.0.0: Change Kickstart to either a Yeoman generator or a grunt-init
+   task.
 
 ## License
 

@@ -50,7 +50,7 @@ node_modules
 npm-debug.log
 htdocs/css/*.css
 htdocs/css/modules/*.css
-htdocs/js/*.js
+htdocs/js/*.min.js
 htdocs/js/vendor/*
 *.css.map
 *.js.map
