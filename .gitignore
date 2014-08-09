@@ -52,3 +52,5 @@ htdocs/css/*.css
 htdocs/css/modules/*.css
 htdocs/js/*.js
 htdocs/js/vendor/*
+*.css.map
+*.js.map
