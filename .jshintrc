@@ -64,10 +64,10 @@
 	"wsh"           : false,
 	"yui"           : false,
 
-	"globals"       : [
-		"define",
-		"require"
-	],
+	"globals"       : {
+		"define"  : true,
+		"require" : true
+	},
 
 	"nomen"         : false,
 	"onevar"        : true,

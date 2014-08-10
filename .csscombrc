@@ -203,6 +203,8 @@
 		"background-repeat",
 		"background-attachment",
 		"background-position",
+		"background-position-x",
+		"background-position-y",
 		"background-size",
 		"background-clip",
 		"background-origin",
