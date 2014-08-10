@@ -210,25 +210,25 @@ module.exports = function(grunt) {
 	grunt.registerTask('install', [
 		'bower',
 		'stylus',
-		'requirejs',
+		'cssmin',
 		'modernizr',
-		'jshint',
-		'cssmin'
+		'requirejs',
+		'jshint'
 	]);
 
 	// default task
 	grunt.registerTask('default', [
 		'stylus',
-		'requirejs',
+		'cssmin',
 		'modernizr',
-		'jshint',
-		'cssmin'
+		'requirejs',
+		'jshint'
 	]);
 
 	// linting task
 	grunt.registerTask('lint', [
-		'jshint',
-		'csslint'
+		'csslint',
+		'jshint'
 	]);
 
 	// linting task
