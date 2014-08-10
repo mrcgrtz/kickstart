@@ -1,10 +1,18 @@
 {
 	"name": "kickstart",
-	"version": "2.7.0",
+	"version": "2.7.1",
 	"description": "My Kickstart library, serving as a boilerplate for new projects written in PHP, Stylus and JavaScript.",
-	"engine": [
-		"node"
+	"keywords": [
+		"kickstart",
+		"boilerplate",
+		"php",
+		"html",
+		"stylus",
+		"javascript"
 	],
+	"engines": {
+		"node": ">=0.10.x"
+	},
 	"dependencies": {
 	},
 	"repository": {
