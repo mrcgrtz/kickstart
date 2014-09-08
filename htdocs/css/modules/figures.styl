@@ -20,84 +20,18 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-// @subpackage Helpers module
+// @subpackage Figures module
 // @license    MIT License
 // @copyright  Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
 // @author     Marc Görtz
 // @media      all
 
-// @section selections
-::selection {
-	color: invert(color-text);
-	background: invert(color-background);
+// @section figures
+figure {
+	display: block
+	margin: 0;
 }
 
-::-moz-selection {
-	color: invert(color-text);
-	background: invert(color-background);
-}
-
-// @section browser-update
-.browser-update {
-	font: bold .75em/2 text-copy;
-	text-align: center;
-	color: darken(color-text, 100%);
-	background: darken(color-background, 25%);
-
-	a {
-
-		&:link ,
-		&:visited ,
-		&:hover ,
-		&:focus ,
-		&:active {
-			color: darken(color-text, 100%);
-			background: transparent;
-		}
-
-		&:link ,
-		&:visited {
-			text-decoration: underline;
-		}
-
-		&:hover ,
-		&:focus ,
-		&:active {
-			text-decoration: none;
-		}
-
-	}
-
-}
-
-// @section classes
-[hidden] {
-	display: none;
-}
-
-.invisible {
-	position: absolute;
-	left: -1000em;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-}
-
-.alternate {
-	color: lighten(color-text, 50%);
-	background: transparent;
-	font: italic normal 1em 'Warnock Pro', 'Goudy Old Style', Palatino, 'Book Antiqua', Georgia, serif;
-}
-
-.quiet {
-	color: lighten(color-text, 50%);
-	background: transparent;
-}
-
-.kern {
-	letter-spacing: -.1em;
-}
-
-.clear {
-	clear: both;
+figcaption {
+	display: block;
 }

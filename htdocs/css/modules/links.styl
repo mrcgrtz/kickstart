@@ -20,59 +20,52 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-// @subpackage Typography module
+// @subpackage Links module
 // @license    MIT License
 // @copyright  Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
 // @author     Marc Görtz
 // @media      all
 
-// @section typographic-defaults
-html {
-	font: base-size/1.375 text-copy;
-	text-rendering: optimizeLegibility;
-	quotes: '»' '«' '›' '‹';
-	-webkit-text-size-adjust: 100%; // prevents text size adjust after orientation change
-	-ms-text-size-adjust: 100%; // prevents text size adjust after orientation change
+// @section links
+a {
+
+	&:link ,
+	&:visited ,
+	&:hover ,
+	&:focus ,
+	&:active {
+		text-rendering: auto;
+	}
+
+	&:link ,
+	&:visited {
+		color: color-link;
+		background: transparent;
+		text-decoration: underline;
+	}
+
+	&:hover ,
+	&:focus ,
+	&:active {
+		color: color-link-hover;
+		background: transparent;
+		text-decoration: none;
+	}
+
 }
 
-// @section paragraphs
-p {
-	margin: 0 0 1em;
-}
+// @section printed-links
+@media print {
 
-address {
-	@extend p;
-}
+	a[href] {
+		color: #00c;
+		background: #fff;
 
-// @section sub-sup
-sub ,
-sup {
-	position: relative;
-	font-size: 75%;
-	line-height: 0;
-	vertical-align: baseline;
-}
+		&:after {
+			font-size: 80%;
+			content: ' (' attr(href) ') ';
+		}
 
-sup {
-	top: -.5em;
-}
+	}
 
-sub {
-	bottom: -.25em;
-}
-
-// @section classes
-.alternate {
-	color: lighten(color-text, 50%);
-	background: transparent;
-	font: italic normal 1em 'Warnock Pro', 'Goudy Old Style', Palatino, 'Book Antiqua', Georgia, serif;
-}
-
-.quiet {
-	color: lighten(color-text, 50%);
-	background: transparent;
-}
-
-.kern {
-	letter-spacing: -.1em;
 }

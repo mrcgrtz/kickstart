@@ -20,45 +20,41 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-// @subpackage Media module
+// @subpackage Browser Update module
 // @license    MIT License
 // @copyright  Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
 // @author     Marc Görtz
 // @media      all
 
-// @section images
-img {
-	color: color-text;
-	background: transparent;
-	vertical-align: bottom;
-	max-width: 100%;
-	height: auto;
-	border: 0 none; // removes border when inside `a` element in IE7/8/9
-	-ms-interpolation-mode: bicubic; // improves image quality when scaled in IE7
-}
+// @section browser-update
+.browser-update {
+	font: bold .75em/2 text-copy;
+	text-align: center;
+	color: darken(color-text, 100%);
+	background: darken(color-background, 25%);
 
-// @section figures
-figure {
-	display: block
-	margin: 0;
-}
+	a {
 
-figcaption {
-	display: block;
-}
+		&:link ,
+		&:visited ,
+		&:hover ,
+		&:focus ,
+		&:active {
+			color: darken(color-text, 100%);
+			background: transparent;
+		}
 
-// @section canvas
-canvas {
-	display: inline-block;
-}
+		&:link ,
+		&:visited {
+			text-decoration: underline;
+		}
 
-// @section audio-video
-audio ,
-video {
-	@extend canvas;
-}
+		&:hover ,
+		&:focus ,
+		&:active {
+			text-decoration: none;
+		}
 
-audio:not([controls]) {
-	display: none;
-	height: 0;
+	}
+
 }

@@ -20,59 +20,38 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-// @subpackage Typography module
+// @subpackage Images module
 // @license    MIT License
 // @copyright  Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
 // @author     Marc Görtz
 // @media      all
 
-// @section typographic-defaults
-html {
-	font: base-size/1.375 text-copy;
-	text-rendering: optimizeLegibility;
-	quotes: '»' '«' '›' '‹';
-	-webkit-text-size-adjust: 100%; // prevents text size adjust after orientation change
-	-ms-text-size-adjust: 100%; // prevents text size adjust after orientation change
-}
-
-// @section paragraphs
-p {
-	margin: 0 0 1em;
-}
-
-address {
-	@extend p;
-}
-
-// @section sub-sup
-sub ,
-sup {
-	position: relative;
-	font-size: 75%;
-	line-height: 0;
-	vertical-align: baseline;
-}
-
-sup {
-	top: -.5em;
-}
-
-sub {
-	bottom: -.25em;
-}
-
-// @section classes
-.alternate {
-	color: lighten(color-text, 50%);
+// @section images
+img {
+	color: color-text;
 	background: transparent;
-	font: italic normal 1em 'Warnock Pro', 'Goudy Old Style', Palatino, 'Book Antiqua', Georgia, serif;
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+	border: 0 none; // removes border when inside `a` element in IE7/8/9
+	-ms-interpolation-mode: bicubic; // improves image quality when scaled in IE7
 }
 
-.quiet {
-	color: lighten(color-text, 50%);
-	background: transparent;
+// @section svg-images
+svg:not(:root) {
+	overflow: hidden;
 }
 
-.kern {
-	letter-spacing: -.1em;
+// @section canvas
+canvas {
+	display: inline-block;
+}
+
+// @section printed-images
+@media print {
+
+	img {
+		max-width: 100%; // prevents images from being cut when they are larger than page width
+	}
+
 }

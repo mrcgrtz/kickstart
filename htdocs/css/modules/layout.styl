@@ -28,14 +28,9 @@
 
 // @section root-elements
 html {
+	overflow-y: scroll; // provides scrollbars to avoid jumping centered layouts
 	color: color-text;
 	background: color-background;
-	font: base-size/1.375 text-copy;
-	text-rendering: optimizeLegibility;
-	quotes: '»' '«' '›' '‹';
-	overflow-y: scroll; // provides scrollbars to avoid jumping centered layouts
-	-webkit-text-size-adjust: 100%; // prevents text size adjust after orientation change
-	-ms-text-size-adjust: 100%; // prevents text size adjust after orientation change
 }
 
 body {
@@ -60,4 +55,26 @@ main {
 footer {
 	display: block;
 	clear: both; // footers should clear all content floats
+}
+
+// @section printed-page-layout
+@media print {
+
+	@page {
+		size: landscape;
+		margin: 2cm;
+		orphans: 4;
+		widows: 2;
+	}
+
+	html ,
+	body {
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		color: #000;
+		background: #fff;
+	}
+
 }
