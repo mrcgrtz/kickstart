@@ -64,7 +64,8 @@ module.exports = function(grunt) {
 		cssmin: {
 			dist: {
 				options: {
-					banner: '<%= meta.banner %>'
+					banner: '<%= meta.banner %>',
+					report: 'gzip'
 				},
 				files: {
 					'./htdocs/css/default.min.css': [
