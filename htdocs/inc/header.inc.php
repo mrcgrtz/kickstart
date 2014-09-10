@@ -59,7 +59,7 @@
 	</head>
 	<body class="<?php print implode(' ', $settings['classes']) ?>">
 
-		<!--[if lt IE 8]><div class="message message-update">Ihr Browser ist leider zu alt, um unsere Seite korrekt anzuzeigen. <a href="//windows.microsoft.com/de-DE/internet-explorer/downloads/ie">Laden Sie hier die neueste Version herunter</a> oder <a href="//www.google.com/chromeframe/?redirect=true">installieren Sie Google Chrome Frame</a>.</div><![endif]-->
+		<!--[if lt IE 8]><div class="message message-update">Ihr Browser ist leider zu alt, um unsere Seite korrekt anzuzeigen. <a href="//windows.microsoft.com/de-de/internet-explorer/download-ie">Laden Sie hier die neueste Version herunter</a> oder <a href="//getfirefox.com">installieren Sie Mozilla Firefox</a>.</div><![endif]-->
 
 		<!-- header -->
 		<header>
