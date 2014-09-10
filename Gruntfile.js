@@ -19,9 +19,10 @@ module.exports = function(grunt) {
 		// compile Stylus module files to CSS
 		stylus: {
 			dist: {
-				option: {
+				options: {
 					compress: false,
-					force: true
+					force: true,
+					urlfunc: 'embedurl'
 				},
 				files: {
 					'./htdocs/css/default.css': './htdocs/css/default.styl'
@@ -142,17 +143,6 @@ module.exports = function(grunt) {
 				]
 			}
 		},
-		imageEmbed: {
-			options: {
-				deleteAfterEncoding: false
-			},
-			dist: {
-				src: [
-					'./htdocs/css/default.min.css'
-				],
-				dest: './htdocs/css/default.min.css'
-			}
-		},
 
 		// create custom Modernizr build
 		modernizr: {
@@ -205,7 +195,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-imageoptim');
-	grunt.loadNpmTasks('grunt-image-embed');
 
 	// install task
 	grunt.registerTask('install', [
@@ -240,8 +229,7 @@ module.exports = function(grunt) {
 	// image optimization task
 	grunt.registerTask('images', [
 		'imagemin',
-		'imageoptim',
-		'imageEmbed'
+		'imageoptim'
 	]);
 
 };
