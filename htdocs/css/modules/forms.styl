@@ -26,115 +26,121 @@
 // @author     Marc Görtz <http://marcgoertz.de/>
 // @media      all
 
-// @section form-defaults
-form {
+// @section fieldset-legends
+legend {
+	border: 0 none; // corrects color not being inherited in IE8/9/10/11
+	color: color-text;
+	background: transparent;
+	white-space: normal; // corrects text not wrapping in FF3
+}
 
-	// fieldset legends
-	legend {
-		border: 0 none; // corrects color not being inherited in IE8/9
-		color: color-text;
-		background: transparent;
-		white-space: normal; // corrects text not wrapping in FF3
-	}
+// @section labels
+label {
+	display: block;
+	font-weight: bold;
+	cursor: pointer;
 
-	// labels (above fields)
-	label {
-		display: block;
-		font-weight: bold;
-		cursor: pointer;
-
-		// to highlight form errors or required form fields
-		&[role='alert'] {
-			color: color-error;
-			background: transparent;
-		}
-
-	}
-
-	// input field
-	input {
-		margin: 0;
-		font: 1em text-copy;
-		vertical-align: baseline;
-
-		// checkboxes and radio boxes
-		&[type='checkbox'] ,
-		&[type='radio'] {
-			padding: 0; // removes excess padding in IE8/9
-			box-sizing: border-box; // addresses box-sizing set to content-box in IE8/9
-
-			& + label {
-				display: inline-block; // for labels next to checkboxes or radio boxes
-			}
-
-		}
-
-		// Fix the cursor style for Chrome's increment/decrement buttons. For certain
-		// `font-size` values of the `input`, it causes the cursor style of the
-		// decrement button to change from `default` to `text`.
-		&[type='number']::-webkit-inner-spin-button ,
-		&[type='number']::-webkit-outer-spin-button {
-			height: auto;
-		}
-
-		// disabled inputs
-		&[readonly] ,
-		&[disabled] {
-			color: lighten(color-text, 50%);
-			background: transparent;
-			cursor: default;
-		}
-
-	}
-
-	// multi-line input field
-	textarea {
-		margin: 0;
-		overflow: auto; // removes default vertical scrollbar in IE8/9
-		font: 1em text-copy;
-		vertical-align: top; // improves readability and alignment in all browsers
-
-		// disabled inputs
-		&[readonly] ,
-		&[disabled] {
-			color: lighten(color-text, 50%);
-			background: transparent;
-			cursor: default;
-		}
-
-	}
-
-	// dropdowns
-	select {
-		margin: 0;
-		font: 1em text-copy;
-		vertical-align: baseline;
-
-		// disabled inputs
-		&[disabled] {
-			cursor: default;
-		}
-
-	}
-
-	// "required" annotation
-	.required {
-		font-weight: normal;
-		font-style: normal;
-		color: color-highlight;
+	// to highlight form errors or required form fields
+	&[role='alert'] {
+		color: color-error;
 		background: transparent;
 	}
 
-	// indented fields (like checkbox or radio fields)
-	.indented {
-		position: relative;
-		padding: 0 0 0 20px;
+}
 
-		input[type='checkbox'] ,
-		input[type='radio'] {
-			absolute: top .333em left 0;
+// @section inputs
+input {
+	margin: 0; // address margins set differently in Firefox 4+, Safari, and Chrome
+	font: inherit; // correct font properties not being inherited
+	color: inherit; // correct color not being inherited
+	vertical-align: baseline;
+
+	// checkboxes and radio boxes
+	&[type='checkbox'] ,
+	&[type='radio'] {
+		padding: 0; // removes excess padding in IE8/9/10
+		box-sizing: border-box; // addresses box-sizing set to content-box in IE8/9/10
+
+		& + label {
+			display: inline-block; // for labels next to checkboxes or radio boxes
 		}
 
+	}
+
+	// Fix the cursor style for Chrome's increment/decrement buttons. For certain
+	// `font-size` values of the `input`, it causes the cursor style of the
+	// decrement button to change from `default` to `text`.
+	&[type='number']::-webkit-inner-spin-button ,
+	&[type='number']::-webkit-outer-spin-button {
+		height: auto;
+	}
+
+	// disabled inputs
+	&[readonly] ,
+	&[disabled] {
+		color: lighten(color-text, 50%);
+		background: transparent;
+		cursor: default;
+	}
+
+}
+
+// @section multiline-inputs
+textarea {
+	margin: 0; // address margins set differently in Firefox 4+, Safari, and Chrome
+	overflow: auto; // removes default vertical scrollbar in 8/9/10/11
+	font: inherit; // correct font properties not being inherited
+	color: inherit; // correct color not being inherited
+	vertical-align: top; // improves readability and alignment in all browsers
+
+	// disabled inputs
+	&[readonly] ,
+	&[disabled] {
+		color: lighten(color-text, 50%);
+		background: transparent;
+		cursor: default;
+	}
+
+}
+
+// @section dropdowns
+select {
+	margin: 0; // address margins set differently in Firefox 4+, Safari, and Chrome
+	font: inherit; // correct font properties not being inherited
+	color: inherit; // correct color not being inherited
+	text-transform: none; // correct `select` style inheritance in Firefox
+	vertical-align: baseline;
+
+	optgroup {
+		margin: 0; // address margins set differently in Firefox 4+, Safari, and Chrome
+		font: inherit; // correct font properties not being inherited
+		font-weight: bold; // don't inherit the `font-weight` (applied by a rule above)
+		color: inherit; // correct color not being inherited
+	}
+
+	// disabled inputs
+	&[disabled] {
+		cursor: default;
+	}
+
+}
+
+// @section required-annotation
+.required {
+	font-weight: normal;
+	font-style: normal;
+	color: color-highlight;
+	background: transparent;
+}
+
+// @section indented-fields
+.indented {
+	position: relative;
+	padding: 0 0 0 20px;
+
+	input[type='checkbox'] ,
+	input[type='radio'] {
+		absolute: top .333em left 0;
 	}
 
 }
