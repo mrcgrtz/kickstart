@@ -3,7 +3,7 @@
  *
  * This script initializes each given module.
  *
- * Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
+ * Copyright (c) 2011–2014 Marc Görtz <http://marcgoertz.de/>
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -28,9 +28,9 @@
  * @class     Sitename.Main
  * @link      http://example.com/
  * @version   1.0
- * @license   MIT License
- * @copyright Copyright (c) 2011–2014 Marc Görtz, http://marcgoertz.de/
- * @author    Marc Görtz
+ * @license   MIT License <http://www.opensource.org/licenses/mit-license.php>
+ * @copyright Copyright (c) 2011–2014 Marc Görtz <http://marcgoertz.de/>
+ * @author    Marc Görtz <http://marcgoertz.de/>
  */
 require([
 	'modules/sample'
