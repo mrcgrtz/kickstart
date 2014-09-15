@@ -40,16 +40,11 @@ run this Grunt task:
 
 	grunt beautify
 
-### Compress and embed images
+### Compress images
 
-For compressing your images and embedding them in your CSS file, run
-this Grunt task:
+For compressing your images, run this Grunt task:
 
 	grunt images
-
-Embedding images is a separate task since mobile browsers seem to be
-[slower](https://www.mobify.com/blog/data-uris-are-slow-on-mobile/)
-when parsing Base64 sequences.
 
 Note: For using
 [grunt-imageoptim](https://github.com/JamieMason/grunt-imageoptim),
