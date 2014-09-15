@@ -1,10 +1,17 @@
-# humanstxt.org
+# humanstxt.org/
+# The humans responsible & technology colophon
 
-# The Team.
-Designer: Marc Görtz (@Dreamseer)
-Developer: Marc Görtz (@Dreamseer)
+# ##############################################################################
+# # TEAM                                                                       #
+# ##############################################################################
 
-# Technology Colophon.
-Standards: HTML5, CSS3
-Components: Grunt, Bower, Stylus, Nib
-Software: Sublime Text 2, Pixelmator
+Marc Görtz -- designer and developer -- @Dreamseer
+
+# ##############################################################################
+# # TECHNOLOGY COLOPHON                                                        #
+# ##############################################################################
+
+HTML5, CSS3
+Grunt, Bower, Stylus, Nib
+Apache Server Configs, jQuery, Modernizr, Normalize.css
+Sublime Text, Pixelmator
