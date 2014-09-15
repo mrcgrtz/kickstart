@@ -36,3 +36,12 @@ trim_trailing_whitespace = false
 # indent using 4 spaces
 indent_style = space
 indent_size = 4
+
+# ##############################################################################
+# # PACKAGES FILES                                                             #
+# ##############################################################################
+[{package.json,bower.json}]
+# The indent size used in the `package.json` file cannot be changed
+# https://github.com/npm/npm/pull/3180#issuecomment-16336516
+indent_style = space
+indent_size = 2

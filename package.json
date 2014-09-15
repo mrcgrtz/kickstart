@@ -1,54 +1,54 @@
 {
-	"name": "kickstart",
-	"version": "2.7.2",
-	"description": "My Kickstart library, serving as a boilerplate for new projects written in PHP, Stylus and JavaScript.",
-	"keywords": [
-		"kickstart",
-		"boilerplate",
-		"php",
-		"html",
-		"stylus",
-		"javascript"
-	],
-	"engines": {
-		"node": ">=0.10.x"
-	},
-	"dependencies": {
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Dreamseer/kickstart.git"
-	},
-	"author": {
-		"name": "Marc Görtz",
-		"email": "git@marcgoertz.de"
-	},
-	"maintainers": [
-		{
-			"name": "Marc Görtz",
-			"email": "git@marcgoertz.de",
-			"web": "http://marcgoertz.de/"
-		}
-	],
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/mit-license.html"
-		}
-	],
-	"devDependencies": {
-		"grunt": "",
-		"grunt-bower-task": "",
-		"grunt-jsbeautifier": "",
-		"grunt-modernizr": "",
-		"grunt-contrib-stylus": "",
-		"grunt-contrib-cssmin": "",
-		"grunt-contrib-csslint": "",
-		"grunt-contrib-requirejs": "",
-		"grunt-contrib-uglify": "",
-		"grunt-contrib-jshint": "",
-		"grunt-contrib-watch": "",
-		"grunt-contrib-imagemin": "",
-		"grunt-imageoptim": ""
-	}
+  "name": "kickstart",
+  "version": "2.7.2",
+  "description": "My Kickstart library, serving as a boilerplate for new projects written in PHP, Stylus and JavaScript.",
+  "keywords": [
+    "kickstart",
+    "boilerplate",
+    "php",
+    "html",
+    "stylus",
+    "javascript"
+  ],
+  "engines": {
+    "node": ">=0.10.x"
+  },
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dreamseer/kickstart.git"
+  },
+  "author": {
+    "name": "Marc Görtz",
+    "email": "git@marcgoertz.de"
+  },
+  "maintainers": [
+    {
+      "name": "Marc Görtz",
+      "email": "git@marcgoertz.de",
+      "web": "http://marcgoertz.de/"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.html"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "",
+    "grunt-bower-task": "",
+    "grunt-jsbeautifier": "",
+    "grunt-modernizr": "",
+    "grunt-contrib-stylus": "",
+    "grunt-contrib-cssmin": "",
+    "grunt-contrib-csslint": "",
+    "grunt-contrib-requirejs": "",
+    "grunt-contrib-uglify": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-watch": "",
+    "grunt-contrib-imagemin": "",
+    "grunt-imageoptim": ""
+  }
 }
