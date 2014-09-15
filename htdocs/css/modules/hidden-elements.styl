@@ -40,8 +40,20 @@ template {
 // @section invisible-elements
 .invisible {
 	position: absolute;
-	left: -1000em;
-	width: 1px;
-	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0 none;
 	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	size(1px, 1px);
+
+	&:focus ,
+	&:active {
+		position: static;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+		size(auto, auto);
+	}
+
 }
