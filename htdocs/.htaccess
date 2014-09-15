@@ -864,9 +864,9 @@ DefaultLanguage de
 # | Icons                                                                      |
 # ------------------------------------------------------------------------------
 
-# <IfModule mod_alias.c>
-#     RedirectPermanent /favicon.ico                      /assets/img/favicon.ico
-#     RedirectPermanent /apple-touch-icon-precomposed.png /assets/img/touchicon.png
+# <IfModule mod_rewrite.c>
+#     RewriteRule ^favicon.ico$                      /assets/img/favicon.ico [L]
+#     RewriteRule ^apple-touch-icon-precomposed.png$ /assets/img/touchicon.png [L]
 # </IfModule>
 
 # ------------------------------------------------------------------------------
