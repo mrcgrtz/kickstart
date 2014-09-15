@@ -855,9 +855,9 @@ DefaultLanguage de
 # ------------------------------------------------------------------------------
 
 # <IfModule mod_rewrite.c>
-#   RewriteRule ^google1234567890abcdef.html$     /auth/google.txt [L]
-#   RewriteRule ^LiveSearchSiteAuth.xml$          /auth/bing.txt [L]
-#   RewriteRule ^1234567890abcdefghijklmnopq.txt$ /auth/alexa.txt [L]
+#     RewriteRule ^google1234567890abcdef.html$     /auth/google.txt [L]
+#     RewriteRule ^LiveSearchSiteAuth.xml$          /auth/bing.txt [L]
+#     RewriteRule ^1234567890abcdefghijklmnopq.txt$ /auth/alexa.txt [L]
 # </IfModule>
 
 # ------------------------------------------------------------------------------
@@ -865,8 +865,8 @@ DefaultLanguage de
 # ------------------------------------------------------------------------------
 
 # <IfModule mod_alias.c>
-#   RedirectPermanent /favicon.ico                      /assets/img/favicon.ico
-#   RedirectPermanent /apple-touch-icon-precomposed.png /assets/img/touchicon.png
+#     RedirectPermanent /favicon.ico                      /assets/img/favicon.ico
+#     RedirectPermanent /apple-touch-icon-precomposed.png /assets/img/touchicon.png
 # </IfModule>
 
 # ------------------------------------------------------------------------------
@@ -874,6 +874,6 @@ DefaultLanguage de
 # ------------------------------------------------------------------------------
 
 # <IfModule mod_rewrite.c>
-#   RewriteRule ^folder$ /folder/file [N,R=301]
-#   RewriteRule ^file$   /file.php [L]
+#     RewriteRule ^folder$ /folder/file [N,R=301]
+#     RewriteRule ^file$   /file.php [L]
 # </IfModule>

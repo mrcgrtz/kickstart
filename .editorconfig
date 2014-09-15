@@ -33,6 +33,6 @@ trim_trailing_whitespace = false
 # # .HTACCESS FILES                                                            #
 # ##############################################################################
 [.htaccess]
-# indent using spaces
+# indent using 4 spaces
 indent_style = space
-indent_size = 2
+indent_size = 4
