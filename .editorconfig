@@ -38,7 +38,7 @@ indent_style = space
 indent_size = 4
 
 # ##############################################################################
-# # PACKAGES FILES                                                             #
+# # PACKAGE FILES                                                              #
 # ##############################################################################
 [{package.json,bower.json}]
 # The indent size used in the `package.json` file cannot be changed
