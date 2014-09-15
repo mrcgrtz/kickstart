@@ -33,8 +33,8 @@ img {
 	vertical-align: bottom;
 	max-width: 100%;
 	height: auto;
-	border: 0 none; // removes border when inside `a` element in IE7/8/9
 	-ms-interpolation-mode: bicubic; // improves image quality when scaled in IE7
+	border: 0 none; // removes border when inside `a` element in IE 8/9/10
 
 	// images in Google Maps
 	.gm-style & {
@@ -45,12 +45,12 @@ img {
 
 // @section svg-images
 svg:not(:root) {
-	overflow: hidden;
+	overflow: hidden; // correct overflow not hidden in IE 9/10/11
 }
 
 // @section canvas
 canvas {
-	display: inline-block;
+	display: inline-block; // correct `inline-block` display not defined in IE 8/9
 }
 
 // @section printed-images

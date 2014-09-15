@@ -26,12 +26,18 @@
 // @author     Marc Görtz <http://marcgoertz.de/>
 // @media      all
 
-// @section hidden elements
-template ,
-[hidden] {
-	display: none;
+// @section templates
+template {
+	display: none; // hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22
 }
 
+// @section hidden-elements
+[hidden] ,
+[aria-hidden='true'] {
+	display: none; // address `[hidden]` styling not present in IE 8/9/10
+}
+
+// @section invisible-elements
 .invisible {
 	position: absolute;
 	left: -1000em;

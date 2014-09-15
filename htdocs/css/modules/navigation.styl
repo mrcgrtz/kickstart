@@ -28,9 +28,9 @@
 
 // @section navigation-lists
 nav {
-	display: block;
-	overflow: hidden;
+	display: block; // correct `block` display not defined in IE 8/9/10/11.
 	line-height: 1;
+	clearfix();
 
 	ul {
 		margin: 0;
