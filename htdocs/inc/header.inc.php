@@ -37,7 +37,6 @@
 		<?php endif; ?>
 
 		<!-- Open Graph meta tags: http://ogp.me/ -->
-		<link rel="schema.og" href="//opengraphprotocol.org/schema/">
 		<meta property="og:site_name" content="<?php print $config['global']['sitename']; ?>">
 		<meta property="og:title" content="<?php print (isset($settings['ogp']['title'])) ? $settings['ogp']['title'] : $settings['title']; ?>">
 		<meta property="og:type" content="<?php print (isset($settings['ogp']['type'])) ? $settings['ogp']['type'] : $config['facebook']['type']; ?>">
