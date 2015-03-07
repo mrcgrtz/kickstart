@@ -6,22 +6,33 @@
 		"while",
 		"do",
 		"try",
-		"catch"
+		"catch",
+		"case",
+		"default"
 	],
 	"requireSpaceAfterKeywords": [
+		"do",
+		"for",
 		"if",
 		"else",
-		"for",
-		"while",
-		"do",
 		"switch",
-		"return",
+		"case",
 		"try",
-		"catch"
+		"catch",
+		"void",
+		"while",
+		"with",
+		"return",
+		"typeof"
 	],
+	"disallowNewlineBeforeBlockStatements": true,
 	"requireSpaceBeforeBlockStatements": true,
+	"requireSpacesInForStatement": true,
 	"requireParenthesesAroundIIFE": true,
 	"requireSpacesInConditionalExpression": true,
+	"requireFunctionDeclarations": true,
+	"validateParameterSeparator": ", ",
+	"requireSpaceBetweenArguments": true,
 	"requireSpacesInFunctionExpression": {
 		"beforeOpeningCurlyBrace": true
 	},
@@ -36,7 +47,7 @@
 	},
 	"requireSpacesInNamedFunctionExpression": {
 		"beforeOpeningCurlyBrace": true
-		},
+	},
 	"disallowSpacesInNamedFunctionExpression": {
 		"beforeOpeningRoundBrace": true
 	},
@@ -46,13 +57,17 @@
 	"disallowSpacesInFunctionDeclaration": {
 		"beforeOpeningRoundBrace": true
 	},
+	"disallowSpacesInCallExpression": true,
 	"requireBlocksOnNewline": true,
 	"disallowEmptyBlocks": true,
 	"disallowSpacesInsideParentheses": true,
-	"requireSpacesInsideObjectBrackets": "allButNested",
 	"requireSpacesInsideArrayBrackets": "allButNested",
+	"requireSpacesInsideObjectBrackets": "allButNested",
+	"requireAlignedObjectValues": "ignoreFunction",
 	"disallowQuotedKeysInObjects": "allButReserved",
+	"requirePaddingNewLinesInObjects": true,
 	"disallowSpaceAfterObjectKeys": true,
+	"requireSpaceBeforeObjectValues": true,
 	"requireCommaBeforeLineBreak": true,
 	"requireOperatorBeforeLineBreak": true,
 	"disallowSpaceAfterPrefixUnaryOperators": true,
@@ -85,11 +100,13 @@
 	"requireLineFeedAtFileEnd": true,
 	"maximumLineLength": {
 		"value": 120,
-		"tabSize": 4,
+		"tabSize": 1,
 		"allowComments": true,
 		"allowUrlComments": true,
 		"allowRegex": true
 	},
+	"disallowMultipleVarDecl": true,
+	"requireLineBreakAfterVariableAssignment": true,
 	"requireCapitalizedConstructors": true,
 	"safeContextKeyword": [
 		"that",

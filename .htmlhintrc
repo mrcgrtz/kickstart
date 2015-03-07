@@ -7,6 +7,7 @@
 	"doctype-first"            : true,
 	"doctype-html5"            : true,
 	"head-script-disabled"     : true,
+	"href-abs-or-rel"          : "rel",
 	"id-class-ad-disabled"     : true,
 	"id-class-value"           : "dash",
 	"id-unique"                : true,

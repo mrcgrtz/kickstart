@@ -20,6 +20,9 @@
 	"space-before-closing-brace"      : "\n",
 	"strip-spaces"                    : true,
 	"unitless-zero"                   : true,
+	"tab-size"                        : 4,
+	"vendor-prefix-align"             : true,
+	"sort-order-fallback"             : "abc",
 	"sort-order": [ [
 		"$variable"
 	], [
