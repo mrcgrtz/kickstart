@@ -35,17 +35,15 @@
 define(function() {
 
 	// strict mode to prevent sloppy JS
-	'use strict';
-
-	var _myMethod;
+	'use strict' ;
 
 	/**
 	 * My Method does nothing. Sadface.
 	 * @method _myMethod
 	 * @private
 	 */
-	_myMethod = function() {
-	};
+	function _myMethod() {
+	}
 
 	// public API
 	return {
