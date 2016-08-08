@@ -1,77 +1,95 @@
-/* globals module */
+/* globals module, require */
 module.exports = function(grunt) {
 
-	'use strict';
+	"use strict";
 
 	// project configuration
 	grunt.initConfig({
 
 		// package file containing meta data
-		pkg: grunt.file.readJSON('package.json'),
+		pkg: grunt.file.readJSON("package.json"),
 
-		// create meta data
-		meta: {
-			banner: '/*! <%= pkg.name %> <%= pkg.version %> - ' +
-				'<%= grunt.template.today("yyyy-mm-dd") %> - ' +
-				'Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> */'
+		concat: {
+			options: {
+				sourceMap:      true,
+				sourceMapStyle: "inline"
+			},
+			dist:    {
+				src:  [
+					"./htdocs/css/src/variables.css",
+					"./htdocs/css/src/layout.css",
+					"./htdocs/css/src/typography.css",
+					"./htdocs/css/src/links.css",
+					"./htdocs/css/src/buttons.css",
+					"./htdocs/css/src/navigation.css",
+					"./htdocs/css/src/headlines.css",
+					"./htdocs/css/src/lists.css",
+					"./htdocs/css/src/tables.css",
+					"./htdocs/css/src/forms.css",
+					"./htdocs/css/src/figures.css",
+					"./htdocs/css/src/images.css",
+					"./htdocs/css/src/audio-video.css",
+					"./htdocs/css/src/abbreviations.css",
+					"./htdocs/css/src/code.css",
+					"./htdocs/css/src/quotes.css",
+					"./htdocs/css/src/browser-update.css",
+					"./htdocs/css/src/hidden-elements.css",
+					"./htdocs/css/src/selection.css"
+				],
+				dest: "./htdocs/css/look.css"
+			}
 		},
 
-		// compile Stylus module files to CSS
-		stylus: {
-			dist: {
+		postcss: {
+			lint: {
 				options: {
-					compress: false,
-					force: true,
-					urlfunc: 'embedurl'
+					processors: [
+						require("stylelint")(),
+						require("postcss-reporter")({
+							clearMessages: true
+						})
+					]
 				},
-				files: {
-					'./htdocs/css/default.css': './htdocs/css/default.styl'
-				}
+				src: "./htdocs/css/src/*.css"
+			},
+			dist:    {
+				options: {
+					map:        {
+						inline:     false,
+						annotation: "./htdocs/css"
+					},
+					processors: [
+						/* eslint global-require: "off"*/
+						require("postcss-assets")({
+							basePath:  "./htdocs/",
+							loadPaths: [ "./htdocs/assets/" ],
+							relative:  true
+						}),
+						require("postcss-cssnext")({
+							browsers:          "last 2 versions",
+							warnForDuplicates: false
+						}),
+						require("cssnano")()
+					]
+				},
+				src:  "./htdocs/css/look.css",
+				dest: "./htdocs/css/look.css"
 			}
+		},
+
+		// lint JS modules
+		eslint: {
+			target: [
+				"./htdocs/js/src/*.js"
+			]
 		},
 
 		// install Bower components
 		bower: {
 			install: {
 				options: {
-					targetDir: './htdocs/js/vendor/',
+					targetDir:     "./htdocs/js/vendor/",
 					cleanBowerDir: true
-				}
-			}
-		},
-
-		// lint CSS files
-		csslint: {
-			options: {
-				csslintrc: './.csslintrc'
-			},
-			files: [
-				'./htdocs/css/default.css'
-			]
-		},
-
-		// lint and hint JS files
-		jshint: {
-			options: {
-				jshintrc: './.jshintrc'
-			},
-			dist: [
-				'./htdocs/js/modules/*.js',
-				'./htdocs/js/default.js'
-			]
-		},
-
-		// minify the main CSS file
-		cssmin: {
-			dist: {
-				options: {
-					banner: '<%= meta.banner %>',
-					report: 'gzip'
-				},
-				files: {
-					'./htdocs/css/default.min.css': [
-						'./htdocs/css/default.css'
-					]
 				}
 			}
 		},
@@ -80,86 +98,48 @@ module.exports = function(grunt) {
 		requirejs: {
 			dist: {
 				options: {
-					name:                    'default',
-					baseUrl:                 './htdocs/js',
-					out:                     './htdocs/js/default.min.js',
-					optimize:                'uglify2',
+					name:                    "main",
+					baseUrl:                 "./htdocs/js",
+					out:                     "./htdocs/js/feel.js",
+					optimize:                "uglify2",
+					locale:                  "de-de",
 					logLevel:                0,
 					inlineText:              true,
 					useStrict:               true,
 					generateSourceMaps:      true,
 					preserveLicenseComments: false,
-					wrap:                    true,
-					include: [
-						// use require.js
-						'../../node_modules/grunt-contrib-requirejs/node_modules/requirejs/require'
+					include:                 [
+						"../../node_modules/requirejs/require"
 					],
-					paths: {
-						// use jQuery via "jquery" in modules
-						jquery: 'vendor/jquery/jquery'
+					paths:                   {
+						jquery: "vendor/jquery/jquery"
 					},
-					shim: {
+					wrap:                    {
+						start: "(function() {",
+						end:   "$.noConflict(true); }());"
 					}
 				}
-			}
-		},
-
-		// beautify JavaScript code
-		jsbeautifier: {
-			options: {
-				config: './.jsbeautifyrc'
-			},
-			dist: {
-				src: [
-					'./htdocs/js/modules/*.js'
-				]
-			},
-			test: {
-				src: [
-					'./htdocs/js/default.min.js'
-				]
-			}
-		},
-
-		// minify images
-		imagemin: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: './htdocs/assets/img/',
-					dest: './htdocs/assets/img/',
-					src: ['**/*.{png,jpg,jpeg,gif}']
-				}]
-			}
-		},
-		imageoptim: {
-			dist: {
-				options: {
-					imageAlpha: true,
-					quitAfter: true
-				},
-				src: [
-					'./htdocs/assets/img/'
-				]
 			}
 		},
 
 		// create custom Modernizr build
 		modernizr: {
 			dist: {
-				devFile: './htdocs/js/vendor/modernizr/modernizr.js',
-				outputFile: './htdocs/js/modernizr.min.js',
-				extra: {
-					load: false,
-					mq: true
-				},
-				parseFiles: true,
-				files: {
+				crawl:       true,
+				uglify:      true,
+				tests:       [],
+				customTests: [],
+				dest:        "./htdocs/js/modernizr.js",
+				files:       {
 					src: [
-						'./htdocs/css/default.min.css',
-						'./htdocs/js/default.min.js'
+						"./htdocs/css/look.css",
+						"./htdocs/js/src/*.js"
 					]
-				}
+				},
+				options:     [
+					"html5shiv",
+					"setClasses"
+				]
 			}
 		},
 
@@ -170,13 +150,14 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: [
-					'./htdocs/css/**.styl',
-					'./htdocs/js/modules/*.js',
-					'./htdocs/inc/*.php',
-					'./htdocs/*.php'
+					"./htdocs/css/src/*.css",
+					"./htdocs/js/src/*.js",
+					"./htdocs/js/main.js",
+					"./htdocs/**/*.php",
+					"./Gruntfile.js"
 				],
 				tasks: [
-					'default'
+					"default"
 				]
 			}
 		}
@@ -184,52 +165,37 @@ module.exports = function(grunt) {
 	});
 
 	// add additional tasks
-	grunt.loadNpmTasks('grunt-bower-task');
-	grunt.loadNpmTasks('grunt-jsbeautifier');
-	grunt.loadNpmTasks('grunt-modernizr');
-	grunt.loadNpmTasks('grunt-contrib-stylus');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-imageoptim');
-
-	// install task
-	grunt.registerTask('install', [
-		'bower',
-		'stylus',
-		'cssmin',
-		'modernizr',
-		'requirejs',
-		'jshint'
-	]);
+	grunt.loadNpmTasks("grunt-contrib-concat");
+	grunt.loadNpmTasks("grunt-contrib-requirejs");
+	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks("grunt-bower-task");
+	grunt.loadNpmTasks("grunt-modernizr");
+	grunt.loadNpmTasks("grunt-postcss");
+	grunt.loadNpmTasks("grunt-eslint");
 
 	// default task
-	grunt.registerTask('default', [
-		'stylus',
-		'cssmin',
-		'modernizr',
-		'requirejs',
-		'jshint'
+	grunt.registerTask("default", [
+		"concat",
+		"postcss",
+		"eslint",
+		"requirejs",
+		"modernizr"
 	]);
 
-	// linting task
-	grunt.registerTask('lint', [
-		'csslint',
-		'jshint'
+	// install task
+	grunt.registerTask("install", [
+		"bower",
+		"concat",
+		"postcss",
+		"eslint",
+		"requirejs",
+		"modernizr"
 	]);
 
-	// linting task
-	grunt.registerTask('beautify', [
-		'jsbeautifier:dist'
-	]);
-
-	// image optimization task
-	grunt.registerTask('images', [
-		'imagemin',
-		'imageoptim'
+	// liniting task
+	grunt.registerTask("lint", [
+		"postcss:lint",
+		"eslint"
 	]);
 
 };

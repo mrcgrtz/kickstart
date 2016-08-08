@@ -1,0 +1,12 @@
+/**
+ * Abbreviations
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+abbr[title] {
+	border-bottom: 1px dotted color(var(--color-gray) l(+75%));
+	cursor: help;
+}

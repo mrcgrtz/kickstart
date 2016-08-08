@@ -17,40 +17,14 @@ Thumbs.db
 
 
 ##############################################################################
-# Editor project files
-# @see https://github.com/github/gitignore/blob/master/Global/
-##############################################################################
-
-# TextMate
-*.tmproj
-*.tmproject
-tmtags
-
-# Espresso
-*.esproj
-
-# SublimeText
-*.sublime-project
-*.sublime-workspace
-
-
-##############################################################################
-# Subversion (you never know…)
-# @see https://github.com/github/gitignore/blob/master/Global/SVN.gitignore
-##############################################################################
-
-.svn/
-
-
-##############################################################################
-# Generated files (via Grunt or Make)
+# Generated files (via Grunt or Node)
 ##############################################################################
 
 node_modules
 npm-debug.log
-htdocs/css/*.css
-htdocs/css/modules/*.css
-htdocs/js/*.min.js
-htdocs/js/vendor/*
+look.css
 *.css.map
+modernizr.js
+feel.js
 *.js.map
+vendor

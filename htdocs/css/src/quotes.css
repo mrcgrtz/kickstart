@@ -1,0 +1,13 @@
+/**
+ * Quotes
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+blockquote {
+	margin: 0 0 1em;
+	padding: 0 1em;
+	font-style: italic;
+}

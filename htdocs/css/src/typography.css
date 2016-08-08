@@ -1,0 +1,38 @@
+/**
+ * Typography
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* typographic defaults */
+html {
+	font: 16px/1.375 var(--font-stack);
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%; /* prevents text size adjust after orientation change */
+	quotes: "»" "«" "›" "‹";
+}
+
+/* paragraphs and addresses */
+p ,
+address {
+	margin: 0 0 1em;
+}
+
+/* sub and sup */
+sub ,
+sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -.5em;
+}
+
+sub {
+	bottom: -.25em;
+}

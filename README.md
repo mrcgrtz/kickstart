@@ -1,68 +1,52 @@
 # Kickstart
 
-This is my **Kickstart** library, now rewritten from scratch with a new
-file structure and awesome stuff like Stylus, Grunt, Bower, some PHP
-includes, basic search engine optimizations and some inspirations from
-HTML5 Boilerplate and Normalize.
+This is my **Kickstart** toolset consisting of awesome stuff like
+[Grunt](http://gruntjs.com/),
+[PostCSS](http://postcss.org),
+[require.js](http://www.requirejs.org/),
+[jQuery](https://jquery.com/),
+some PHP includes, basic search engine optimizations and some inspirations from
+[HTML5 Boilerplate](https://html5boilerplate.com) and
+[Normalize](https://necolas.github.io/normalize.css/).
+
+## Requirements
+
+* [Node](https://nodejs.org/en/) with npm
+* [grunt-cli](http://gruntjs.com/)
 
 ## Installation
 
-	npm install && grunt install
+```
+npm install && grunt install
+```
 
 Installs NPM dependencies listed in `package.json` and runs Grunt’s
-install task afterwards.
+installation task afterwards.
 
-The Grunt default task (`grunt`) does the following sub-tasks:
+## Grunt tasks
 
- - create and minify CSS files from
-   [Stylus](http://learnboost.github.com/stylus/) sources
- - create and minify JS files from AMD-based
-   [require.js](http://requirejs.org/) modules
- - create a custom Modernizr build based on generated CSS and JS files
+### Default task
 
-## Additional Grunt tasks
+The default Grunt task using `grunt` lints and builds CSS/JS files from their
+sources. CSS files are linted using Stylelint and transformed using PostCSS
+while JS files are linted using ESLint on their AMD-based source files which get
+compiled using r.js.
 
 ### Watch and live-reload stuff
 
 To automatically run the Grunt default task and refresh the browser
 after changing a file, start the watch task:
 
-	grunt watch
+```
+grunt watch
+```
 
 You need a [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)
 for live reloading the page, of course.
 
-### Beautify JavaScript code
-
-For beautifying the JavaScript code in your modules according to my
-personal [Coding Style Guide](https://github.com/Dreamseer/styleguide),
-run this Grunt task:
-
-	grunt beautify
-
-### Compress images
-
-For compressing your images, run this Grunt task:
-
-	grunt images
-
-Note: For using
-[grunt-imageoptim](https://github.com/JamieMason/grunt-imageoptim),
-[ImageOptim](http://imageoptim.com/) and
-[ImageAlpha](http://pngmini.com/) are required. If don’t have these apps
-installed, remove that sub-task from the `images` task.
-
-## Roadmap
-
- * 2.8.0: Optimizations.
- * 2.9.0: Styleguide implementation.
- * 2.10.0: Modularize Grunt tasks.
- * 3.0.0: Change Kickstart to either a Yeoman generator or a grunt-init
-   task.
-
 ## License
 
-Copyright (c) 2011–2014 Marc Görtz <http://marcgoertz.de/>
+Copyright (c) 2011–2016 Marc Görtz <https://marcgoertz.de/>
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the

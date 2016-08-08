@@ -1,0 +1,56 @@
+/**
+ * Layout
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* root elements */
+html {
+	overflow-y: scroll; /* provides scrollbars to avoid jumping centered layouts */
+	color: var(--color-gray);
+	background: var(--color-white);
+}
+
+body {
+	position: relative;
+	margin: 0 auto;
+	width: 60em;
+	max-width: 90%; /* respond on smaller screens */
+	color: var(--color-gray);
+	background: transparent;
+}
+
+/* main content */
+main {
+	display: block; /* correct `block` display not defined in IE 8/9/10/11. */
+	color: var(--color-gray);
+	background: var(--color-white);
+}
+
+/* footer */
+footer {
+	display: block; /* correct `block` display not defined in IE 8/9 */
+	clear: both; /* footers should clear all content floats */
+}
+
+/* printed page layout */
+@media print {
+
+	html {
+		orphans: 4;
+		widows: 2;
+	}
+
+	html ,
+	body {
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		color: #000;
+		background: #fff;
+	}
+
+}

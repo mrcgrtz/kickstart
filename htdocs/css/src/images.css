@@ -1,0 +1,41 @@
+/**
+ * Images
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* images */
+img {
+	color: var(--color-gray);
+	background: transparent;
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+	border: 0 none; /* removes border when inside `a` element in IE 8/9/10 */
+}
+
+/* images in Google Maps */
+.gm-style img {
+	max-width: none;
+}
+
+/* SVG images */
+svg:not(:root) {
+	overflow: hidden; /* correct overflow not hidden in IE 9/10/11 */
+}
+
+/* canvas */
+canvas {
+	display: inline-block; /* correct `inline-block` display not defined in IE 8/9 */
+}
+
+/* printed images */
+@media print {
+
+	img {
+		max-width: 100%; /* prevents images from being cut when they are larger than page width */
+	}
+
+}

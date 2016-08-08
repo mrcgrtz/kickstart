@@ -1,0 +1,21 @@
+/**
+ * Variables (Custom Properties)
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+:root {
+
+	--font-stack: "Open Sans", freesans, arial, sans-serif;
+	--font-stack-serif: palatino, "Times New Roman", serif;
+
+	--color-gray: #333;
+	--color-black: #000;
+	--color-white: #fff;
+	--color-blue: #38b;
+	--color-orange: #f93;
+	--color-red: #c00;
+
+}

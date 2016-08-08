@@ -1,0 +1,48 @@
+/**
+ * Links
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* links */
+a:link ,
+a:visited ,
+a:hover ,
+a:focus ,
+a:active {
+	text-rendering: auto;
+	text-decoration-skip: objects; /* remove gaps in links underline in iOS 8+ and Safari 8+ */
+	-webkit-tap-highlight-color: rgba(var(--color-orange), .15);
+}
+
+a:link ,
+a:visited {
+	color: var(--color-blue);
+	background: transparent;
+	text-decoration: underline;
+}
+
+a:hover ,
+a:focus ,
+a:active {
+	color: var(--color-orange);
+	background: transparent;
+	text-decoration: none;
+}
+
+/* printed links */
+@media print {
+
+	a[href] {
+		color: #00c;
+		background: #fff;
+	}
+
+	a[href]::after {
+		font-size: 80%;
+		content: " (" attr(href) ") ";
+	}
+
+}

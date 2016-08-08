@@ -1,0 +1,16 @@
+/**
+ * Figures
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+figure {
+	display: block; /* correct `block` display not defined in IE 8/9 */
+	margin: 0;
+}
+
+figcaption {
+	display: block; /* correct `block` display not defined in IE 8/9 */
+}

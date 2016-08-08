@@ -1,0 +1,34 @@
+/**
+ * Browser Update
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+.browser-update {
+	font: bold .75em/2 var(--font-stack);
+	text-align: center;
+	color: var(--color-black);
+	background: color(var(--color-white) l(-25%));
+}
+
+.browser-update a:link ,
+.browser-update a:visited ,
+.browser-update a:hover ,
+.browser-update a:focus ,
+.browser-update a:active {
+	color: var(--color-black);
+	background: transparent;
+}
+
+.browser-update a:link ,
+.browser-update a:visited {
+	text-decoration: underline;
+}
+
+.browser-update a:hover ,
+.browser-update a:focus ,
+.browser-update a:active {
+	text-decoration: none;
+}

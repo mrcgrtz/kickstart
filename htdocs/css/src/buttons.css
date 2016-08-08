@@ -1,0 +1,42 @@
+/**
+ * Buttons
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+button ,
+html input[type="button"] ,
+input[type="reset"] ,
+input[type="submit"] {
+	position: relative;
+	display: inline-block;
+	margin: 0; /* address margins set differently in Firefox 4+, Safari, and Chrome */
+	padding: 0 1em;
+	border: 0 none;
+	border-radius: 5px;
+	overflow: visible; /* address `overflow` set to `hidden` in IE 8/9/10/11 */
+	font: inherit; /* correct font properties not being inherited */
+	text-decoration: none;
+	text-align: center;
+	text-transform: none; /* correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera */
+	color: inherit; /* correct color not being inherited */
+	cursor: pointer; /* improve usability and consistency of cursor style between image-type `input` and others. */
+	appearance: button; /* corrects inability to style clickable `input` types in iOS */
+}
+
+/* disabled state */
+button[disabled] ,
+html input[type="button"][disabled] ,
+input[type="reset"][disabled] ,
+input[type="submit"][disabled] {
+	cursor: default;
+}
+
+/* removes inner padding and border in FF3+ */
+button::-moz-focus-inner ,
+input::-moz-focus-inner {
+	padding: 0;
+	border: 0 none;
+}

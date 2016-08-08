@@ -1,9 +1,8 @@
 {
   "name": "kickstart",
-  "version": "2.7.2",
+  "version": "3.0.0",
   "main": "./htdocs/index.php",
   "dependencies": {
-    "jquery": "",
-    "modernizr": ""
+    "jquery": ""
   }
 }

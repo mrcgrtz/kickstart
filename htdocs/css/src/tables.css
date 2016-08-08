@@ -1,0 +1,35 @@
+/**
+ * Tables
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* table defaults */
+table {
+	margin: 0 0 1em;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th {
+	padding: 0;
+	text-align: left;
+	color: var(--color-gray);
+	background: color(var(--color-white) l(-50%));
+}
+
+td {
+	padding: 0;
+}
+
+/* page breaks */
+@media print {
+
+	tr {
+		page-break-inside: avoid;
+	}
+
+}

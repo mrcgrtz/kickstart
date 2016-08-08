@@ -1,0 +1,70 @@
+/**
+ * Headlines
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* headlines */
+h1 {
+	display: none;
+	margin: 0 0 .5em;
+	color: color-headline;
+	background: transparent;
+	font: bold 2em/1.3 var(--font-stack-serif);
+}
+
+h2 {
+	margin: 1em 0 .666667em;
+	color: color-headline;
+	background: transparent;
+	font: bold 1.375em/1.3 var(--font-stack-serif);
+}
+
+h3 {
+	margin: 1.5em 0 1em;
+	color: var(--color-gray);
+	background: transparent;
+	font: bold 1em/1 var(--font-stack);
+}
+
+h4 {
+	margin: 1.5em 0 1em;
+	color: color(var(--color-gray) l(+33%));
+	background: transparent;
+	font: bold 1em/1 var(--font-stack);
+}
+
+h5 ,
+h6 {
+	margin: 1.333333em 0;
+	color: color(var(--color-gray) l(+33%));
+	background: transparent;
+	font: bold .75em/1 var(--font-stack);
+	text-transform: uppercase;
+}
+
+/* abbreviations in headlines */
+h1 abbr[title] ,
+h2 abbr[title] ,
+h3 abbr[title] ,
+h4 abbr[title] ,
+h5 abbr[title] ,
+h6 abbr[title] {
+	border-bottom: 0 none;
+}
+
+/* page breaks */
+@media print {
+
+	h1 ,
+	h2 ,
+	h3 ,
+	h4 ,
+	h5 ,
+	h6 {
+		page-break-inside: avoid;
+	}
+
+}

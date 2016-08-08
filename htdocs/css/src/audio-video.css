@@ -1,0 +1,17 @@
+/**
+ * Audio & Video
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+audio ,
+video {
+	display: inline-block; /* correct `inline-block` display not defined in IE 8/9 */
+}
+
+audio:not([controls]) {
+	display: none; /* prevent modern browsers from displaying `audio` without controls */
+	height: 0; /* remove excess height in iOS 5 devices */
+}

@@ -1,0 +1,12 @@
+/**
+ * Selections
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+::selection {
+	color: invert(var(--color-gray));
+	background: invert(var(--color-white));
+}

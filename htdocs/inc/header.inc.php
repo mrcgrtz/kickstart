@@ -1,7 +1,6 @@
 <?php $config = parse_ini_file(dirname(__FILE__) . '/../../config/config.ini', TRUE); ?>
 <!DOCTYPE html>
-<!--[if lte IE 8]> <html class="no-js old-ie" id="<?php print str_replace('.', '-', $_SERVER['SERVER_NAME']); ?>" lang="de"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" id="<?php print str_replace('.', '-', $_SERVER['SERVER_NAME']); ?>" lang="de"> <!--<![endif]-->
+<html lang="de" class="no-js <?php print implode(' ', $settings['classes']) ?>" id="<?php print str_replace('.', '-', $_SERVER['SERVER_NAME']); ?>">
 	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 		<meta charset="utf-8">
 
@@ -11,22 +10,15 @@
 		<?php if (in_array('admin', $settings['classes'])): ?><meta name="robots" content="noindex"><?php endif; ?>
 
 		<!-- mobile viewport optimized: h5bp.com/viewport -->
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- minified stylesheet -->
-		<link rel="stylesheet" href="/css/default.min.css">
+		<link rel="stylesheet" href="/css/look.css">
 
 		<?php if (isset($settings['alternate']) and is_array($settings['alternate'])): ?>
 			<!-- alternate versions -->
 			<?php foreach ($settings['alternate'] as $format => $url): ?>
 				<link rel="alternate" href="<?= $url ?>" type="<?= $format ?>">
-			<?php endforeach; ?>
-		<?php endif; ?>
-
-		<?php if (isset($settings['microformats']) and is_array($settings['microformats'])): ?>
-			<!-- Microformats profiles -->
-			<?php foreach ($settings['microformats'] as $format): ?>
-				<link rel="profile" href="//microformats.org/profile/<?= strtolower($format) ?>">
 			<?php endforeach; ?>
 		<?php endif; ?>
 
@@ -48,7 +40,7 @@
 		<?php endif; ?>
 
 		<!-- all JavaScript at the bottom, except this custom Modernizr build -->
-		<script src="/js/modernizr.min.js"></script>
+		<script src="/js/modernizr.js"></script>
 
 		<?php if (!isset($_SERVER['HTTP_DNT']) or (isset($_SERVER['HTTP_DNT']) and $_SERVER['HTTP_DNT'] != 1)): ?>
 			<!-- asynchronous Google Analytics snippet: https://gist.github.com/1251641 -->
@@ -56,7 +48,7 @@
 		<?php endif; ?>
 
 	</head>
-	<body class="<?php print implode(' ', $settings['classes']) ?>">
+	<body>
 
 		<!--[if lt IE 8]><div class="browser-update">Ihr Browser ist leider zu alt, um unsere Seite korrekt anzuzeigen. <a href="//windows.microsoft.com/de-de/internet-explorer/download-ie">Laden Sie hier die neueste Version herunter</a> oder <a href="//getfirefox.com">installieren Sie Mozilla Firefox</a>.</div><![endif]-->
 

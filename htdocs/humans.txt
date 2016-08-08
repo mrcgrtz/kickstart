@@ -12,6 +12,6 @@ Marc Görtz -- designer and developer -- @Dreamseer
 # ##############################################################################
 
 HTML5, CSS3
-Grunt, Bower, Stylus, Nib
+Grunt, Bower, PostCSS, require.js
 Apache Server Configs, jQuery, Modernizr, Normalize.css
-Sublime Text, Pixelmator
+Atom, Sketch, Pixelmator

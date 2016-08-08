@@ -1,0 +1,56 @@
+/**
+ * Lists
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* unordered lists */
+ul {
+	margin: 0 0 1em;
+	padding: 0 0 0 2.5em;
+	list-style: disc;
+}
+
+ul li {
+	margin: 0;
+	padding: 0;
+}
+
+/* ordered lists */
+ol {
+	margin: 0 0 1em;
+	padding: 0 0 0 2.5em;
+	list-style: decimal;
+}
+
+ol li {
+	margin: 0;
+	padding: 0;
+}
+
+/* definition lists */
+dl {
+	margin: 0 0 1em;
+}
+
+dl::before ,
+dl::after {
+	content: " ";
+	display: table;
+}
+
+dl::after {
+	clear: both;
+}
+
+dt {
+	float: left;
+	width: 12em;
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 0 0 13em;
+}

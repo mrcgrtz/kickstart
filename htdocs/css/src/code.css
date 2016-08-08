@@ -1,0 +1,35 @@
+/**
+ * Code
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* inline code */
+code {
+	padding: 2px 3px;
+	border-radius: 3px;
+	font-family: monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
+	font-size: 1em;
+	text-shadow: 0 1px 1px rgba(#fff, .75);
+	color: var(--color-black);
+	background: color(var(--color-white) l(-50%));
+}
+
+/* block code */
+pre {
+	margin: 0 0 2em;
+	padding: 1em;
+	border-radius: 3px;
+	overflow: auto; /* contain overflow in all browsers */
+	font-family: monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
+	font-size: 1em;
+	text-shadow: 0 1px 1px rgba(#fff, .75);
+	color: var(--color-black);
+	background: color(var(--color-white) l(-50%));
+	tab-width: 4;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}

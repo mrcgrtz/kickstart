@@ -1,0 +1,39 @@
+/**
+ * Hidden Elements
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* templates */
+template {
+	display: none; /* hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22 */
+}
+
+/* hidden elements */
+[hidden] {
+	display: none; /* address `[hidden]` styling not present in IE 8/9/10 */
+}
+
+/* invisible elements */
+.invisible {
+	position: absolute;
+	margin: -1px;
+	padding: 0;
+	border: 0 none;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+}
+
+.invisible:focus ,
+.invisible:active {
+	position: static;
+	margin: 0;
+	width: auto;
+	height: auto;
+	overflow: visible;
+	clip: auto;
+}

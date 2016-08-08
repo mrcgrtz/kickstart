@@ -1,0 +1,125 @@
+/**
+ * Forms
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* fieldset and legends */
+legend {
+	border: 0 none; /* corrects color not being inherited in IE8/9/10/11 */
+	color: var(--color-gray);
+	background: transparent;
+	white-space: normal; /* corrects text not wrapping in FF3 */
+}
+
+/* labels */
+label {
+	display: block;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* to highlight form errors or required form fields */
+label[role="alert"] {
+	color: var(--color-red);
+	background: transparent;
+}
+
+/* inputs */
+input {
+	margin: 0; /* address margins set differently in Firefox 4+, Safari, and Chrome */
+	font: inherit; /* correct font properties not being inherited */
+	color: inherit; /* correct color not being inherited */
+	vertical-align: baseline;
+}
+
+/* checkboxes and radio boxes */
+input[type="checkbox"] ,
+input[type="radio"] {
+	padding: 0; /* removes excess padding in IE8/9/10 */
+	box-sizing: border-box; /* addresses box-sizing set to content-box in IE8/9/10 */
+}
+
+input[type="checkbox"] + label ,
+input[type="radio"] + label {
+	display: inline-block; /* for labels next to checkboxes or radio boxes */
+}
+
+/*
+Fix the cursor style for Chrome's increment/decrement buttons. For certain
+`font-size` values of the `input`, it causes the cursor style of the
+decrement button to change from `default` to `text`.
+*/
+input[type="number"]::-webkit-inner-spin-button ,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/* disabled inputs */
+input[readonly] ,
+input[disabled] {
+	color: color(var(--color-gray) l(+50%));
+	background: transparent;
+	cursor: default;
+}
+
+/* multiline-inputs */
+textarea {
+	margin: 0; /* address margins set differently in Firefox 4+, Safari, and Chrome */
+	overflow: auto; /* removes default vertical scrollbar in 8/9/10/11 */
+	font: inherit; /* correct font properties not being inherited */
+	color: inherit; /* correct color not being inherited */
+	vertical-align: top; /* improves readability and alignment in all browsers */
+}
+
+/* disabled inputs */
+textarea[readonly] ,
+textarea[disabled] {
+	color: color(var(--color-gray) l(+50%));
+	background: transparent;
+	cursor: default;
+}
+
+/* dropdowns */
+select {
+	margin: 0; /* address margins set differently in Firefox 4+, Safari, and Chrome */
+	font: inherit; /* correct font properties not being inherited */
+	color: inherit; /* correct color not being inherited */
+	text-transform: none; /* correct `select` style inheritance in Firefox */
+	vertical-align: baseline;
+}
+
+/* disabled inputs */
+select[disabled] {
+	cursor: default;
+}
+
+optgroup {
+	margin: 0; /* address margins set differently in Firefox 4+, Safari, and Chrome */
+	font: inherit; /* correct font properties not being inherited */
+	font-weight: bold; /* don't inherit the `font-weight` (applied by a rule above) */
+	color: inherit; /* correct color not being inherited */
+}
+
+/* required annotation */
+.required {
+	font-weight: normal;
+	font-style: normal;
+	color: var(--color-red);
+	background: transparent;
+}
+
+/* indented fields */
+.indented {
+	position: relative;
+	padding: 0 0 0 20px;
+}
+
+.indented input[type="checkbox"] ,
+.indented input[type="radio"] {
+	position: absolute;
+	top: .333em;
+	left: 0;
+}
