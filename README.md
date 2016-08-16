@@ -1,13 +1,22 @@
 # Kickstart
 
-This is my **Kickstart** toolset consisting of awesome stuff like
-[Grunt](http://gruntjs.com/),
-[PostCSS](http://postcss.org),
-[require.js](http://www.requirejs.org/),
-[jQuery](https://jquery.com/),
-some PHP includes, basic search engine optimizations and some inspirations from
-[HTML5 Boilerplate](https://html5boilerplate.com) and
-[Normalize](https://necolas.github.io/normalize.css/).
+**Kickstart** is my opinionated starter kit for frontend development.
+
+[![GitHub tag](https://img.shields.io/github/tag/dreamseer/kickstart.svg?maxAge=2592000)]()
+[![David](https://img.shields.io/david/dev/dreamseer/kickstart.svg?maxAge=2592000)]()
+[![license](https://img.shields.io/github/license/dreamseer/kickstart.svg?maxAge=2592000)]()
+
+## Features
+
+* build process using [Grunt](http://gruntjs.com/)
+* CSS optimizations using [PostCSS](http://postcss.org)
+* JavaScript modules using [require.js](http://www.requirejs.org/)
+* latest [jQuery](https://jquery.com/)
+* some inspirations from [HTML5 Boilerplate](https://html5boilerplate.com)
+* minimalistic [Normalize](https://necolas.github.io/normalize.css/) for good
+  default styling
+* some optimized PHP includes
+* basic search engine optimization
 
 ## Requirements
 
