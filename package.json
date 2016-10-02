@@ -1,6 +1,6 @@
 {
   "name": "kickstart",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "This is my Kickstart toolset, serving as a boilerplate for new projects written in PHP, CSS and JavaScript.",
   "keywords": [
     "kickstart",
