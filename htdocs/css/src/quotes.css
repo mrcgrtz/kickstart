@@ -8,6 +8,11 @@
 
 blockquote {
 	margin: 0 0 1em;
-	padding: 0 1em;
+	padding: 1em 2em;
+	border-left: 2px solid color(var(--color-white) l(-25%));
 	font-style: italic;
+}
+
+blockquote p:only-child {
+	margin: 0;
 }

@@ -29,6 +29,12 @@ main {
 	background: var(--color-white);
 }
 
+/* header */
+header {
+	display: block; /* correct `block` display not defined in IE 8/9 */
+	margin: 0 0 1em;
+}
+
 /* footer */
 footer {
 	display: block; /* correct `block` display not defined in IE 8/9 */

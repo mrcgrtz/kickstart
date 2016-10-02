@@ -12,22 +12,23 @@ code {
 	border-radius: 3px;
 	font-family: monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
 	font-size: 1em;
-	text-shadow: 0 1px 1px rgba(#fff, .75);
+	text-shadow: 0 1px 1px color(var(--color-white) a(-25%));
 	color: var(--color-black);
-	background: color(var(--color-white) l(-50%));
+	background: color(var(--color-white) l(-25%));
 }
 
 /* block code */
 pre {
-	margin: 0 0 2em;
-	padding: 1em;
+	margin: 2em 0;
+	padding: 1em 2em;
 	border-radius: 3px;
+	max-height: 20em;
 	overflow: auto; /* contain overflow in all browsers */
 	font-family: monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
 	font-size: 1em;
-	text-shadow: 0 1px 1px rgba(#fff, .75);
+	text-shadow: 0 1px 1px color(var(--color-white) a(-25%));
 	color: var(--color-black);
-	background: color(var(--color-white) l(-50%));
+	background: color(var(--color-white) l(-25%));
 	tab-width: 4;
 	white-space: pre;
 	white-space: pre-wrap;

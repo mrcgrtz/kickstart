@@ -13,15 +13,16 @@ input[type="submit"] {
 	position: relative;
 	display: inline-block;
 	margin: 0; /* address margins set differently in Firefox 4+, Safari, and Chrome */
-	padding: 0 1em;
-	border: 0 none;
-	border-radius: 5px;
+	padding: .25em 2em;
+	border: 2px solid var(--color-blue);
+	border-radius: 100px;
 	overflow: visible; /* address `overflow` set to `hidden` in IE 8/9/10/11 */
 	font: inherit; /* correct font properties not being inherited */
 	text-decoration: none;
 	text-align: center;
 	text-transform: none; /* correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera */
-	color: inherit; /* correct color not being inherited */
+	color: var(--color-blue);
+	background: var(--color-white);
 	cursor: pointer; /* improve usability and consistency of cursor style between image-type `input` and others. */
 	appearance: button; /* corrects inability to style clickable `input` types in iOS */
 }
@@ -30,8 +31,15 @@ input[type="submit"] {
 button[disabled] ,
 html input[type="button"][disabled] ,
 input[type="reset"][disabled] ,
-input[type="submit"][disabled] {
-	cursor: default;
+input[type="submit"][disabled] ,
+button[disabled]:hover ,
+html input[type="button"][disabled]:hover ,
+input[type="reset"][disabled]:hover ,
+input[type="submit"][disabled]:hover {
+	color: color(var(--color-white) l(-25%));
+	background: var(--color-white);
+	border: 2px solid color(var(--color-white) l(-25%));
+	cursor: not-allowed;
 }
 
 /* removes inner padding and border in FF3+ */
@@ -39,4 +47,13 @@ button::-moz-focus-inner ,
 input::-moz-focus-inner {
 	padding: 0;
 	border: 0 none;
+}
+
+/* hover state */
+button:hover ,
+html input[type="button"]:hover ,
+input[type="reset"]:hover ,
+input[type="submit"]:hover {
+	color: var(--color-white);
+	background: var(--color-blue);
 }
