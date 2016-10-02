@@ -69,6 +69,7 @@ module.exports = function(grunt) {
 							browsers:          "last 2 versions",
 							warnForDuplicates: false
 						}),
+						require("postcss-flexbugs-fixes")(),
 						require("cssnano")()
 					]
 				},
