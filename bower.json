@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "main": "./htdocs/index.php",
   "dependencies": {
-    "jquery": ""
+    "jquery": "",
+    "pepjs": ""
   }
 }

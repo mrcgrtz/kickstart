@@ -5,8 +5,9 @@
  */
 
 define([
+	"pep",
 	"jquery"
-], function($) {
+], function(pep, $) {
 
 	"use strict";
 
@@ -16,6 +17,9 @@ define([
 	function init() {
 		/* eslint no-console: "off" */
 		console.log($.fn.jquery);
+		$(document).on("pointerdown", function(evt) {
+			console.log(evt.target);
+		});
 	}
 
 	// public API

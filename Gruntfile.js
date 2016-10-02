@@ -112,7 +112,8 @@ module.exports = function(grunt) {
 						"../../node_modules/requirejs/require"
 					],
 					paths:                   {
-						jquery: "vendor/jquery/jquery"
+						jquery: "vendor/jquery/jquery",
+						pep:    "vendor/pepjs/pep"
 					},
 					wrap:                    {
 						start: "(function() {",
