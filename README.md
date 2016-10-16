@@ -1,6 +1,6 @@
-# Kickstart
+# <img src="https://cdn.rawgit.com/Dreamseer/kickstart/master/htdocs/assets/img/kickstart.svg" alt="Kickstart" width="300" height="83">
 
-**Kickstart** is my opinionated starter kit for frontend development.
+> **Kickstart** is my opinionated starter kit for frontend development.
 
 [![GitHub tag](https://img.shields.io/github/tag/dreamseer/kickstart.svg?maxAge=2592000)]()
 [![David](https://img.shields.io/david/dev/dreamseer/kickstart.svg?maxAge=2592000)]()
