@@ -14,14 +14,14 @@ input[type="submit"] {
 	display: inline-block;
 	margin: 0; /* address margins set differently in Firefox 4+, Safari, and Chrome */
 	padding: .25em 2em;
-	border: 2px solid var(--color-blue);
+	border: 2px solid var(--color-magenta);
 	border-radius: 100px;
 	overflow: visible; /* address `overflow` set to `hidden` in IE 8/9/10/11 */
 	font: inherit; /* correct font properties not being inherited */
 	text-decoration: none;
 	text-align: center;
 	text-transform: none; /* correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera */
-	color: var(--color-blue);
+	color: var(--color-magenta);
 	background: var(--color-white);
 	cursor: pointer; /* improve usability and consistency of cursor style between image-type `input` and others. */
 	appearance: button; /* corrects inability to style clickable `input` types in iOS */
@@ -55,5 +55,5 @@ html input[type="button"]:hover ,
 input[type="reset"]:hover ,
 input[type="submit"]:hover {
 	color: var(--color-white);
-	background: var(--color-blue);
+	background: var(--color-magenta);
 }

@@ -7,6 +7,6 @@
 @charset "utf-8";
 
 ::selection {
-	color: invert(var(--color-gray));
-	background: invert(var(--color-white));
+	color: var(--color-white);
+	background: var(--color-magenta);
 }

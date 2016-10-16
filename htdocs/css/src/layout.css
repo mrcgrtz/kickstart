@@ -32,7 +32,12 @@ main {
 /* header */
 header {
 	display: block; /* correct `block` display not defined in IE 8/9 */
-	margin: 0 0 1em;
+	margin: 0 0 2em;
+}
+
+header .logo {
+	margin: 2em 0;
+	text-align: center;
 }
 
 /* footer */

@@ -13,23 +13,16 @@ nav {
 }
 
 nav ul {
+	display: table;
 	margin: 0;
 	padding: 0;
+	width: 100%;
+	text-align: center;
 	list-style: none;
 }
 
-nav ul::before ,
-nav ul::after {
-	content: " ";
-	display: table;
-}
-
-nav ul::after {
-	clear: both;
-}
-
 nav ul li {
-	float: left;
+	display: table-cell;
 	margin: 0;
 	padding: 0;
 }
@@ -39,21 +32,8 @@ nav a:visited ,
 nav a:hover ,
 nav a:focus ,
 nav a:active {
-	float: left;
+	display: block;
 	margin: 0 1em 0 0;
-}
-
-nav a:link ,
-nav a:visited {
-	color: var(--color-blue);
-	background: transparent;
-}
-
-nav a:hover ,
-nav a:focus ,
-nav a:active {
-	color: var(--color-orange);
-	background: transparent;
 }
 
 /* hidden navigation */

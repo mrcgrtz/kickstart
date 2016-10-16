@@ -10,7 +10,7 @@
 code {
 	padding: 2px 3px;
 	border-radius: 3px;
-	font-family: monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
+	font-family: hack, "fira mono", "ubuntu mono", monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
 	font-size: 1em;
 	text-shadow: 0 1px 1px color(var(--color-white) a(-25%));
 	color: var(--color-black);

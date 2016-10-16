@@ -14,12 +14,12 @@ a:focus ,
 a:active {
 	text-rendering: auto;
 	text-decoration-skip: objects; /* remove gaps in links underline in iOS 8+ and Safari 8+ */
-	-webkit-tap-highlight-color: rgba(var(--color-orange), .15);
+	-webkit-tap-highlight-color: color(var(--color-magenta) alpha(15%));
 }
 
 a:link ,
 a:visited {
-	color: var(--color-blue);
+	color: var(--color-magenta);
 	background: transparent;
 	text-decoration: underline;
 }
@@ -27,7 +27,7 @@ a:visited {
 a:hover ,
 a:focus ,
 a:active {
-	color: var(--color-orange);
+	color: var(--color-blue);
 	background: transparent;
 	text-decoration: none;
 }
@@ -36,8 +36,8 @@ a:active {
 @media print {
 
 	a[href] {
-		color: #00c;
-		background: #fff;
+		color: var(--color-blue);
+		background: var(--color-white);
 	}
 
 	a[href]::after {

@@ -33,7 +33,9 @@
 <!--[if lt IE 8]><div class="browser-update">Ihr Browser ist leider zu alt, um unsere Seite korrekt anzuzeigen. <a href="//windows.microsoft.com/de-de/internet-explorer/download-ie">Laden Sie hier die neueste Version herunter</a> oder <a href="//getfirefox.com">installieren Sie Mozilla Firefox</a>.</div><![endif]-->
 
 <header>
-	<div class="logo"><a href="/" rel="start"><?php print $config['global']['sitename']; ?></a></div>
+	<div class="logo">
+		<a href="/" rel="start"><img src="/assets/img/kickstart.svg" width="300" height="83" alt="<?php print $config['global']['sitename']; ?>"></a>
+	</div>
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
