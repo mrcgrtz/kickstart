@@ -33,9 +33,7 @@ canvas {
 
 /* printed images */
 @media print {
-
 	img {
 		max-width: 100%; /* prevents images from being cut when they are larger than page width */
 	}
-
 }

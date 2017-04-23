@@ -9,8 +9,6 @@ define([
 	"jquery"
 ], function(pep, $) {
 
-	"use strict";
-
 	/**
 	 * Initializes sample.
 	 */

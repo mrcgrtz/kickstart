@@ -10,7 +10,7 @@
 code {
 	padding: 2px 3px;
 	border-radius: 3px;
-	font-family: hack, "fira mono", "ubuntu mono", monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
+	font-family: var(--font-stack-monospace);
 	font-size: 1em;
 	text-shadow: 0 1px 1px color(var(--color-white) a(-25%));
 	color: var(--color-black);
@@ -24,12 +24,12 @@ pre {
 	border-radius: 3px;
 	max-height: 20em;
 	overflow: auto; /* contain overflow in all browsers */
-	font-family: monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
+	font-family: var(--font-stack-monospace);
 	font-size: 1em;
 	text-shadow: 0 1px 1px color(var(--color-white) a(-25%));
 	color: var(--color-black);
 	background: color(var(--color-white) l(-25%));
-	tab-width: 4;
+	tab-size: 4;
 	white-space: pre;
 	white-space: pre-wrap;
 	word-wrap: break-word;

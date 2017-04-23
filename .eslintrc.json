@@ -1,5 +1,12 @@
 {
-  "extends":                       "eslint:recommended",
+  "plugins": [
+    "unicorn"
+  ],
+
+  "extends": [
+  	"eslint:recommended",
+    "plugin:unicorn/recommended"
+  ],
 
   "rules": {
 

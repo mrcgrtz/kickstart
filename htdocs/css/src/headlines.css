@@ -56,7 +56,6 @@ h6 abbr[title] {
 
 /* page breaks */
 @media print {
-
 	h1 ,
 	h2 ,
 	h3 ,
@@ -65,5 +64,4 @@ h6 abbr[title] {
 	h6 {
 		page-break-inside: avoid;
 	}
-
 }

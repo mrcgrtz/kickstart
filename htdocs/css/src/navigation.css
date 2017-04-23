@@ -38,9 +38,7 @@ nav a:active {
 
 /* hidden navigation */
 @media print {
-
 	nav {
 		display: none;
 	}
-
 }

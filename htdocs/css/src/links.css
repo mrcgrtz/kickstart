@@ -34,7 +34,6 @@ a:active {
 
 /* printed links */
 @media print {
-
 	a[href] {
 		color: var(--color-blue);
 		background: var(--color-white);
@@ -44,5 +43,4 @@ a:active {
 		font-size: 80%;
 		content: " (" attr(href) ") ";
 	}
-
 }

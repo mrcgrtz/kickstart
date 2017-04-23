@@ -48,7 +48,6 @@ footer {
 
 /* printed page layout */
 @media print {
-
 	html {
 		orphans: 4;
 		widows: 2;
@@ -63,5 +62,4 @@ footer {
 		color: #000;
 		background: #fff;
 	}
-
 }
