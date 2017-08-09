@@ -10,7 +10,9 @@
     "declaration-no-important": true,
     "font-family-name-quotes": "always-where-recommended",
     "font-weight-notation": "named-where-possible",
-    "function-url-data-uris": "never",
+    "function-url-scheme-blacklist": [
+      "data"
+    ],
     "function-url-quotes": "always",
     "indentation": "tab",
     "max-nesting-depth": 3,
