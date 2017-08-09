@@ -1,8 +1,6 @@
 /* globals module, require */
 module.exports = function(grunt) {
 
-	"use strict";
-
 	// project configuration
 	grunt.initConfig({
 
@@ -80,7 +78,7 @@ module.exports = function(grunt) {
 
 		// lint JS modules
 		eslint: {
-			target: [
+			src: [
 				"./htdocs/js/src/*.js"
 			]
 		},

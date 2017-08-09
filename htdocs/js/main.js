@@ -10,8 +10,6 @@ require([
 	"src/sample"
 ], function(sample) {
 
-	"use strict";
-
 	// initialize each module
 	for (var idx = arguments.length - 1; idx >= 0; idx--) {
 		arguments[idx].init();
