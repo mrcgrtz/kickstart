@@ -26,11 +26,11 @@
 ## Installation
 
 ```
-npm install && grunt install
+npm install && grunt
 ```
 
 Installs NPM dependencies listed in `package.json` and runs Grunt’s
-installation task afterwards.
+default task afterwards.
 
 ## Grunt tasks
 

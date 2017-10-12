@@ -83,16 +83,6 @@ module.exports = function(grunt) {
 			]
 		},
 
-		// install Bower components
-		bower: {
-			install: {
-				options: {
-					targetDir:     "./htdocs/js/vendor/",
-					cleanBowerDir: true
-				}
-			}
-		},
-
 		// compile JS modules and uglify them
 		requirejs: {
 			dist: {
@@ -111,8 +101,8 @@ module.exports = function(grunt) {
 						"../../node_modules/requirejs/require"
 					],
 					paths:                   {
-						jquery: "vendor/jquery/jquery",
-						pep:    "vendor/pepjs/pep"
+						jquery: "../../node_modules/jquery/dist/jquery",
+						pep:    "../../node_modules/pepjs/dist/pep"
 					},
 					wrap:                    {
 						start: "(function() {",
@@ -168,23 +158,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-requirejs");
 	grunt.loadNpmTasks("grunt-contrib-watch");
-	grunt.loadNpmTasks("grunt-bower-task");
 	grunt.loadNpmTasks("grunt-modernizr");
 	grunt.loadNpmTasks("grunt-postcss");
 	grunt.loadNpmTasks("grunt-eslint");
 
 	// default task
 	grunt.registerTask("default", [
-		"concat",
-		"postcss",
-		"eslint",
-		"requirejs",
-		"modernizr"
-	]);
-
-	// install task
-	grunt.registerTask("install", [
-		"bower",
 		"concat",
 		"postcss",
 		"eslint",
