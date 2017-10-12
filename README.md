@@ -3,8 +3,8 @@
 > **Kickstart** is my opinionated starter kit for frontend development.
 
 [![GitHub tag](https://img.shields.io/github/tag/dreamseer/kickstart.svg?maxAge=2592000)]()
-[![David](https://img.shields.io/david/dev/dreamseer/kickstart.svg?maxAge=2592000)]()
-[![license](https://img.shields.io/github/license/dreamseer/kickstart.svg?maxAge=2592000)]()
+[![Dependency state](https://img.shields.io/david/dev/dreamseer/kickstart.svg?maxAge=2592000)]()
+[![MIT License](https://img.shields.io/github/license/dreamseer/kickstart.svg?maxAge=2592000)]()
 
 ## Features
 
@@ -20,16 +20,16 @@
 
 ## Requirements
 
-* [Node](https://nodejs.org/en/) with npm
+* [Yarn](https://yarnpkg.com/)
 * [grunt-cli](http://gruntjs.com/)
 
 ## Installation
 
 ```
-npm install && grunt
+yarn && grunt
 ```
 
-Installs NPM dependencies listed in `package.json` and runs Grunt’s
+Installs all dependencies listed in `package.json` and runs Grunt’s
 default task afterwards.
 
 ## Grunt tasks
@@ -50,7 +50,7 @@ after changing a file, start the watch task:
 grunt watch
 ```
 
-You need a [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)
+You need a [LiveReload browser extension](http://livereload.com/extensions/)
 for live reloading the page, of course.
 
 ## License
