@@ -8,8 +8,8 @@
 
 ## Features
 
-* build process using [Grunt](http://gruntjs.com/)
-* CSS optimizations using [PostCSS](http://postcss.org)
+* build process using [Gulp](https://gulpjs.com/)
+* CSS optimizations using [PostCSS](http://postcss.org/)
 * JavaScript modules using [require.js](http://www.requirejs.org/)
 * latest [jQuery](https://jquery.com/) and [PEP](https://github.com/jquery/PEP)
 * some inspirations from [HTML5 Boilerplate](https://html5boilerplate.com)
@@ -21,37 +21,34 @@
 ## Requirements
 
 * [Yarn](https://yarnpkg.com/)
-* [grunt-cli](http://gruntjs.com/)
+* [gulp-cli](https://gulpjs.com/)
 
 ## Installation
 
 ```
-yarn && grunt
+yarn && gulp
 ```
 
-Installs all dependencies listed in `package.json` and runs Grunt’s
+Installs all dependencies listed in `package.json` and runs Gulp’s
 default task afterwards.
 
-## Grunt tasks
+## Gulp tasks
 
 ### Default task
 
-The default Grunt task using `grunt` lints and builds CSS/JS files from their
+The default Gulp task using `gulp` lints and builds CSS/JS files from their
 sources. CSS files are linted using Stylelint and transformed using PostCSS
 while JS files are linted using ESLint on their AMD-based source files which get
 compiled using r.js.
 
-### Watch and live-reload stuff
+### Watch changes
 
-To automatically run the Grunt default task and refresh the browser
-after changing a file, start the watch task:
+To automatically run the Gulp default task after changing a file, start the
+watch task:
 
 ```
-grunt watch
+gulp watch
 ```
-
-You need a [LiveReload browser extension](http://livereload.com/extensions/)
-for live reloading the page, of course.
 
 ## License
 

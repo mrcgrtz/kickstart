@@ -12,6 +12,6 @@ Marc Görtz -- designer and developer -- @Dreamseer
 # ##############################################################################
 
 HTML5, CSS3
-Grunt, PostCSS, require.js
+Gulp, PostCSS, require.js
 Apache Server Configs, jQuery, Modernizr, Normalize.css
 Atom, Sketch, Pixelmator
