@@ -31,4 +31,5 @@ function getStuff() {
 	<p>Was nichts kostet, ist nichts wert.</p>
 </blockquote>
 
-<?php include_once(dirname(__FILE__) . '/inc/footer.inc.php'); ?>
+<?php
+include_once(dirname(__FILE__) . '/inc/footer.inc.php');
