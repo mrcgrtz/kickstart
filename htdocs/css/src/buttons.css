@@ -6,10 +6,7 @@
 
 @charset "utf-8";
 
-button ,
-html input[type="button"] ,
-input[type="reset"] ,
-input[type="submit"] {
+button {
 	position: relative;
 	display: inline-block;
 	margin: 0; /* address margins set differently in Firefox 4+, Safari, and Chrome */
@@ -29,13 +26,8 @@ input[type="submit"] {
 
 /* disabled state */
 button[disabled] ,
-html input[type="button"][disabled] ,
-input[type="reset"][disabled] ,
-input[type="submit"][disabled] ,
 button[disabled]:hover ,
-html input[type="button"][disabled]:hover ,
-input[type="reset"][disabled]:hover ,
-input[type="submit"][disabled]:hover {
+button[disabled]:focus {
 	color: color(var(--color-white) l(-25%));
 	background: var(--color-white);
 	border: 2px solid color(var(--color-white) l(-25%));
@@ -43,17 +35,14 @@ input[type="submit"][disabled]:hover {
 }
 
 /* removes inner padding and border in FF3+ */
-button::-moz-focus-inner ,
-input::-moz-focus-inner {
+button::-moz-focus-inner {
 	padding: 0;
 	border: 0 none;
 }
 
-/* hover state */
+/* selected state */
 button:hover ,
-html input[type="button"]:hover ,
-input[type="reset"]:hover ,
-input[type="submit"]:hover {
+button:focus {
 	color: var(--color-white);
 	background: var(--color-magenta);
 }
