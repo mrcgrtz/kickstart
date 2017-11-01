@@ -35,22 +35,11 @@ h4 {
 	font: bold 1em/1 var(--font-stack);
 }
 
-h5 ,
-h6 {
-	margin: 1.333333em 0;
-	color: color(var(--color-gray) l(+33%));
-	background: transparent;
-	font: bold .75em/1 var(--font-stack);
-	text-transform: uppercase;
-}
-
 /* abbreviations in headlines */
 h1 abbr[title] ,
 h2 abbr[title] ,
 h3 abbr[title] ,
-h4 abbr[title] ,
-h5 abbr[title] ,
-h6 abbr[title] {
+h4 abbr[title] {
 	border-bottom: 0 none;
 }
 
@@ -59,9 +48,7 @@ h6 abbr[title] {
 	h1 ,
 	h2 ,
 	h3 ,
-	h4 ,
-	h5 ,
-	h6 {
+	h4 {
 		page-break-inside: avoid;
 	}
 }
