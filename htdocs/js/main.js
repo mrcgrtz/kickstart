@@ -15,4 +15,11 @@ require([
 		arguments[idx].init();
 	}
 
+	// register service worker
+	if (navigator.serviceWorker) {
+		navigator.serviceWorker.register("/serviceworker.js", {
+			scope: "/"
+		});
+	}
+
 });
