@@ -1,0 +1,13 @@
+/**
+ * Footer
+ * @project Kickstart
+ * @author  Marc Görtz <https://marcgoertz.de/>
+ */
+
+@charset "utf-8";
+
+/* footer */
+footer {
+	display: block; /* correct `block` display not defined in IE 8/9 */
+	clear: both; /* footers should clear all content floats */
+}

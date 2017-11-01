@@ -27,6 +27,8 @@ gulp.task("css", [ "css:lint" ], () => gulp
 		"./htdocs/css/src/typography.css",
 		"./htdocs/css/src/links.css",
 		"./htdocs/css/src/buttons.css",
+		"./htdocs/css/src/header.css",
+		"./htdocs/css/src/footer.css",
 		"./htdocs/css/src/navigation.css",
 		"./htdocs/css/src/headlines.css",
 		"./htdocs/css/src/lists.css",
