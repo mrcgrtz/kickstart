@@ -6,6 +6,8 @@
 <title><?php print $settings['title']; ?> | <?php print $config['global']['sitename']; ?></title>
 <meta name="description" content="<?php print $settings['description']; ?>">
 <?php if (in_array('admin', $settings['classes'])): ?><meta name="robots" content="noindex"><?php endif; ?>
+<meta name="theme-color" content="#c36">
+<link rel="manifest" href="/.well-known/manifest.json">
 <link rel="stylesheet" href="/css/look.css">
 <?php if (isset($settings['alternate']) and is_array($settings['alternate'])): ?>
 	<?php foreach ($settings['alternate'] as $format => $url): ?>

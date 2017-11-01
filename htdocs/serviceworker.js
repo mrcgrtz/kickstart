@@ -10,6 +10,9 @@ const CACHE = "cache-and-update";
 function fillCache() {
 	return caches.open(CACHE).then(cache => {
 		cache.addAll([
+			// PWA start URL and ...
+			"/?utm_source=homescreen",
+			// ... assets that won't block the installation during chaching
 			"/css/look.css",
 			"/js/feel.js",
 			"/assets/img/kickstart.svg"
