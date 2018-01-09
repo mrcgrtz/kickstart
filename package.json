@@ -30,20 +30,20 @@
   "license": "MIT",
   "devDependencies": {
     "cssnano": "^3.10.0",
-    "eslint-plugin-unicorn": "^2.1.1",
+    "eslint-plugin-unicorn": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-eslint": "^4.0.0",
+    "gulp-eslint": "^4.0.1",
     "gulp-modernizr-build": "^0.0.5",
-    "gulp-postcss": "^7.0.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-requirejs-optimize": "^1.2.0",
-    "gulp-sourcemaps": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.3",
     "gulp-uglify": "^3.0.0",
     "modernizr": "^3.5.0",
     "postcss-assets": "^5.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-flexbugs-fixes": "^3.2.0",
-    "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0"
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
   }
 }
