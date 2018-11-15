@@ -20,7 +20,7 @@ gulp.task("css:lint", () => gulp
 );
 
 // concatenate CSS modules and transform them using PostCSS
-gulp.task("css", [ "css:lint" ], () => gulp
+gulp.task("css", gulp.series("css:lint", () => gulp
 	.src([
 		"./htdocs/css/src/variables.css",
 		"./htdocs/css/src/layout.css",
@@ -61,7 +61,7 @@ gulp.task("css", [ "css:lint" ], () => gulp
 	]))
 	.pipe(sourcemaps.write("."))
 	.pipe(gulp.dest("./htdocs/css/"))
-);
+));
 
 // lint JS modules
 gulp.task("js:lint", () => gulp
@@ -76,7 +76,7 @@ gulp.task("js:lint", () => gulp
 );
 
 // compile JS modules and uglify them
-gulp.task("js", [ "js:lint" ], () => gulp
+gulp.task("js", gulp.series("js:lint", () => gulp
 	.src("./htdocs/js/main.js")
 	.pipe(sourcemaps.init())
 	.pipe(requirejsOptimize({
@@ -104,7 +104,7 @@ gulp.task("js", [ "js:lint" ], () => gulp
 	}))
 	.pipe(sourcemaps.write("."))
 	.pipe(gulp.dest("./htdocs/js/"))
-);
+));
 
 // create custom Modernizr build
 gulp.task("modernizr", () => gulp
@@ -125,18 +125,18 @@ gulp.task("watch", () => gulp
 		"./htdocs/js/main.js",
 		"./htdocs/**/*.php",
 		"./gulpfile.js"
-	], [
-		"default"
-	])
+	], () => {
+		gulp.parallel("default");
+	})
 );
 
-gulp.task("default", [
+gulp.task("default", gulp.parallel(
 	"css",
 	"js",
 	"modernizr"
-]);
+));
 
-gulp.task("lint", [
+gulp.task("lint", gulp.parallel(
 	"css:lint",
 	"js:lint"
-]);
+));
