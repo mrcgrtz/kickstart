@@ -9,7 +9,7 @@
 blockquote {
 	margin: 0 0 1em;
 	padding: 1em 2em;
-	border-left: 2px solid color(var(--color-white) l(-25%));
+	border-left: 2px solid color-mod(var(--color-white) l(-25%));
 	font-style: italic;
 }
 

@@ -8,6 +8,6 @@
 
 abbr[title] {
 	text-decoration: none;
-	border-bottom: 1px dotted color(var(--color-gray) l(+75%));
+	border-bottom: 1px dotted color-mod(var(--color-gray) l(+75%));
 	cursor: help;
 }

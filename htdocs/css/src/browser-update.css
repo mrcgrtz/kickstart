@@ -10,7 +10,7 @@
 	font: bold .75em/2 var(--font-stack);
 	text-align: center;
 	color: var(--color-black);
-	background: color(var(--color-white) l(-25%));
+	background: color-mod(var(--color-white) l(-25%));
 }
 
 .browser-update a:link ,

@@ -52,10 +52,10 @@ gulp.task("css", gulp.series("css:lint", () => gulp
 			loadPaths: [ "./htdocs/assets/" ],
 			relative:  true
 		}),
-		require("postcss-cssnext")({
-			browsers:          "last 2 versions",
-			warnForDuplicates: false
+		require("postcss-preset-env")({
+			browsers: "last 2 versions"
 		}),
+		require("postcss-color-mod-function")(),
 		require("postcss-flexbugs-fixes")(),
 		require("cssnano")()
 	]))

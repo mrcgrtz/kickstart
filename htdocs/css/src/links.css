@@ -14,7 +14,7 @@ a:focus ,
 a:active {
 	text-rendering: auto;
 	text-decoration-skip: objects; /* remove gaps in links underline in iOS 8+ and Safari 8+ */
-	-webkit-tap-highlight-color: color(var(--color-magenta) alpha(15%));
+	-webkit-tap-highlight-color: color-mod(var(--color-magenta) alpha(15%));
 }
 
 a:link ,
