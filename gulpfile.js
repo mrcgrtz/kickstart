@@ -52,9 +52,7 @@ gulp.task("css", gulp.series("css:lint", () => gulp
 			loadPaths: [ "./htdocs/assets/" ],
 			relative:  true
 		}),
-		require("postcss-preset-env")({
-			browsers: "last 2 versions"
-		}),
+		require("postcss-preset-env")(),
 		require("postcss-color-mod-function")(),
 		require("postcss-flexbugs-fixes")(),
 		require("cssnano")()

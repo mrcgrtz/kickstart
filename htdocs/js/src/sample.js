@@ -15,8 +15,8 @@ define([
 	function init() {
 		/* eslint no-console: "off" */
 		console.log($.fn.jquery);
-		$(document).on("pointerdown", function(evt) {
-			console.log(evt.target);
+		$(document).on("pointerdown", function(event) {
+			console.log(event.target);
 		});
 	}
 
