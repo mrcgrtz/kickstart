@@ -8,5 +8,5 @@
 
 ::selection {
 	color: var(--color-white);
-	background: var(--color-magenta);
+	background-color: var(--color-magenta);
 }

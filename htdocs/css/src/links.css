@@ -7,36 +7,34 @@
 @charset "utf-8";
 
 /* links */
-a:link ,
-a:visited ,
-a:hover ,
-a:focus ,
+a:link,
+a:visited,
+a:hover,
+a:focus,
 a:active {
-	text-rendering: auto;
-	text-decoration-skip: objects; /* remove gaps in links underline in iOS 8+ and Safari 8+ */
 	-webkit-tap-highlight-color: color-mod(var(--color-magenta) alpha(15%));
-}
-
-a:link ,
-a:visited {
-	color: var(--color-magenta);
-	background: transparent;
 	text-decoration: underline;
 }
 
-a:hover ,
-a:focus ,
+a:link,
+a:visited {
+	color: var(--color-magenta);
+	background-color: transparent;
+}
+
+a:hover,
+a:focus,
 a:active {
 	color: var(--color-blue);
-	background: transparent;
-	text-decoration: none;
+	background-color: transparent;
 }
 
 /* printed links */
 @media print {
 	a[href] {
 		color: var(--color-blue);
-		background: var(--color-white);
+		background-color: var(--color-white);
+		text-decoration: underline;
 	}
 
 	a[href]::after {

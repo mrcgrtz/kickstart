@@ -6,7 +6,7 @@
 
 @charset "utf-8";
 
-audio ,
+audio,
 video {
 	display: inline-block; /* correct `inline-block` display not defined in IE 8/9 */
 }

@@ -21,14 +21,14 @@ template {
 	position: absolute;
 	margin: -1px;
 	padding: 0;
-	border: 0 none;
+	border: 0;
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 }
 
-.invisible:focus ,
+.invisible:focus,
 .invisible:active {
 	position: static;
 	margin: 0;

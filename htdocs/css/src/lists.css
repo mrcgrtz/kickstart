@@ -35,7 +35,7 @@ dl {
 	margin: 0 0 1em;
 }
 
-dl::before ,
+dl::before,
 dl::after {
 	content: " ";
 	display: table;

@@ -7,28 +7,28 @@
 @charset "utf-8";
 
 .browser-update {
-	font: bold .75em/2 var(--font-stack);
+	font: bold 0.75em/2 var(--font-stack);
 	text-align: center;
 	color: var(--color-black);
-	background: color-mod(var(--color-white) l(-25%));
+	background-color: color-mod(var(--color-white) l(-25%));
 }
 
-.browser-update a:link ,
-.browser-update a:visited ,
-.browser-update a:hover ,
-.browser-update a:focus ,
+.browser-update a:link,
+.browser-update a:visited,
+.browser-update a:hover,
+.browser-update a:focus,
 .browser-update a:active {
 	color: var(--color-black);
-	background: transparent;
+	background-color: transparent;
 }
 
-.browser-update a:link ,
+.browser-update a:link,
 .browser-update a:visited {
 	text-decoration: underline;
 }
 
-.browser-update a:hover ,
-.browser-update a:focus ,
+.browser-update a:hover,
+.browser-update a:focus,
 .browser-update a:active {
 	text-decoration: none;
 }

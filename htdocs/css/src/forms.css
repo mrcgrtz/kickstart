@@ -8,9 +8,9 @@
 
 /* fieldset and legends */
 legend {
-	border: 0 none; /* corrects color not being inherited in IE8/9/10/11 */
+	border: 0; /* corrects color not being inherited in IE8/9/10/11 */
 	color: var(--color-gray);
-	background: transparent;
+	background-color: transparent;
 	white-space: normal; /* corrects text not wrapping in FF3 */
 }
 
@@ -24,7 +24,7 @@ label {
 /* to highlight form errors or required form fields */
 label[role="alert"] {
 	color: var(--color-red);
-	background: transparent;
+	background-color: transparent;
 }
 
 /* inputs */
@@ -36,13 +36,13 @@ input {
 }
 
 /* checkboxes and radio boxes */
-input[type="checkbox"] ,
+input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; /* removes excess padding in IE8/9/10 */
 	box-sizing: border-box; /* addresses box-sizing set to content-box in IE8/9/10 */
 }
 
-input[type="checkbox"] + label ,
+input[type="checkbox"] + label,
 input[type="radio"] + label {
 	display: inline-block; /* for labels next to checkboxes or radio boxes */
 }
@@ -52,16 +52,16 @@ Fix the cursor style for Chrome's increment/decrement buttons. For certain
 `font-size` values of the `input`, it causes the cursor style of the
 decrement button to change from `default` to `text`.
 */
-input[type="number"]::-webkit-inner-spin-button ,
+input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 	height: auto;
 }
 
 /* disabled inputs */
-input[readonly] ,
+input[readonly],
 input[disabled] {
 	color: color-mod(var(--color-gray) l(+50%));
-	background: transparent;
+	background-color: transparent;
 	cursor: default;
 }
 
@@ -75,10 +75,10 @@ textarea {
 }
 
 /* disabled inputs */
-textarea[readonly] ,
+textarea[readonly],
 textarea[disabled] {
 	color: color-mod(var(--color-gray) l(+50%));
-	background: transparent;
+	background-color: transparent;
 	cursor: default;
 }
 
@@ -108,7 +108,7 @@ optgroup {
 	font-weight: normal;
 	font-style: normal;
 	color: var(--color-red);
-	background: transparent;
+	background-color: transparent;
 }
 
 /* indented fields */
@@ -117,9 +117,9 @@ optgroup {
 	padding: 0 0 0 20px;
 }
 
-.indented input[type="checkbox"] ,
+.indented input[type="checkbox"],
 .indented input[type="radio"] {
 	position: absolute;
-	top: .333em;
+	top: 0.333em;
 	left: 0;
 }

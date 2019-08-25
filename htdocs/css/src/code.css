@@ -14,7 +14,7 @@ code {
 	font-size: 1em;
 	text-shadow: 0 1px 1px color-mod(var(--color-white) a(-25%));
 	color: var(--color-black);
-	background: color-mod(var(--color-white) l(-25%));
+	background-color: color-mod(var(--color-white) l(-25%));
 }
 
 /* block code */
@@ -28,7 +28,7 @@ pre {
 	font-size: 1em;
 	text-shadow: 0 1px 1px color-mod(var(--color-white) a(-25%));
 	color: var(--color-black);
-	background: color-mod(var(--color-white) l(-25%));
+	background-color: color-mod(var(--color-white) l(-25%));
 	tab-size: 4;
 	white-space: pre;
 	white-space: pre-wrap;

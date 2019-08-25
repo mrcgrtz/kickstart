@@ -8,12 +8,12 @@
 
 /* headlines */
 h1 {
-	margin: 0 0 .5em;
+	margin: 0 0 0.5em;
 	font: bold 2em/1.3 var(--font-stack-serif);
 }
 
 h2 {
-	margin: 1em 0 .666667em;
+	margin: 1em 0 0.666667em;
 	font: bold 1.375em/1.3 var(--font-stack-serif);
 }
 
@@ -28,18 +28,18 @@ h4 {
 }
 
 /* abbreviations in headlines */
-h1 abbr[title] ,
-h2 abbr[title] ,
-h3 abbr[title] ,
+h1 abbr[title],
+h2 abbr[title],
+h3 abbr[title],
 h4 abbr[title] {
-	border-bottom: 0 none;
+	border-bottom: 0;
 }
 
 /* page breaks */
 @media print {
-	h1 ,
-	h2 ,
-	h3 ,
+	h1,
+	h2,
+	h3,
 	h4 {
 		page-break-inside: avoid;
 	}

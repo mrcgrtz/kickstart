@@ -10,7 +10,7 @@
 html {
 	overflow-y: scroll; /* provides scrollbars to avoid jumping centered layouts */
 	color: var(--color-gray);
-	background: var(--color-white);
+	background-color: var(--color-white);
 }
 
 body {
@@ -19,14 +19,14 @@ body {
 	width: 60em;
 	max-width: 90%; /* respond on smaller screens */
 	color: var(--color-gray);
-	background: transparent;
+	background-color: transparent;
 }
 
 /* main content */
 main {
 	display: block; /* correct `block` display not defined in IE 8/9/10/11. */
 	color: var(--color-gray);
-	background: var(--color-white);
+	background-color: var(--color-white);
 }
 
 /* printed page layout */
@@ -36,13 +36,13 @@ main {
 		widows: 2;
 	}
 
-	html ,
+	html,
 	body {
 		width: 100%;
 		max-width: none;
 		margin: 0;
 		padding: 0;
 		color: #000;
-		background: #fff;
+		background-color: #fff;
 	}
 }
