@@ -1,4 +1,3 @@
-/* eslint one-var: "off", global-require: "off" */
 const gulp = require("gulp");
 const concat = require("gulp-concat");
 const postcss = require("gulp-postcss");
