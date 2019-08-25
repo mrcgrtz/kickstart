@@ -1,5 +1,13 @@
 # robotstxt.org
 
+# XML Sitemap.
+# Sitemap: https://example.com/sitemap
+
+# Friendly, low-speed bots are welcome viewing pages, but not everything.
+User-agent: *
+Disallow: /logs
+Disallow: /usage
+
 # Advertising-related bots.
 User-agent: Mediapartners-Google*
 Disallow: /
@@ -56,11 +64,3 @@ Disallow: /
 # A capture bot, downloads gazillions of pages with no public benefit.
 User-agent: WebReaper
 Disallow: /
-
-# Friendly, low-speed bots are welcome viewing pages, but not everything.
-User-agent: *
-Disallow: /logs
-Disallow: /usage
-
-# XML Sitemap.
-# Sitemap: http://example.com/sitemap
