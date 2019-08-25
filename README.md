@@ -9,8 +9,8 @@
 ## Features
 
 * build process using [Gulp](https://gulpjs.com/)
-* CSS optimizations using [PostCSS](http://postcss.org/)
-* JavaScript modules using [require.js](http://www.requirejs.org/)
+* CSS optimizations using [PostCSS](https://postcss.org/)
+* JavaScript modules using [require.js](https://requirejs.org/)
 * latest [jQuery](https://jquery.com/) and [PEP](https://github.com/jquery/PEP)
 * some inspirations from [HTML5 Boilerplate](https://html5boilerplate.com)
 * minimalistic [Normalize](https://necolas.github.io/normalize.css/) for good

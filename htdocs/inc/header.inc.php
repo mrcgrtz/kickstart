@@ -19,8 +19,8 @@
 <meta property="og:site_name" content="<?php print $config['global']['sitename']; ?>">
 <meta property="og:title" content="<?php print (isset($settings['ogp']['title'])) ? $settings['ogp']['title'] : $settings['title']; ?>">
 <meta property="og:type" content="<?php print (isset($settings['ogp']['type'])) ? $settings['ogp']['type'] : $config['facebook']['type']; ?>">
-<meta property="og:url" content="<?php print (isset($settings['ogp']['url'])) ? $settings['ogp']['url'] : 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
-<meta property="og:image" content="<?php print (isset($settings['ogp']['image'])) ? $settings['ogp']['image'] : 'http://' . $_SERVER['SERVER_NAME'] .'/assets/img/facebook.png'; ?>">
+<meta property="og:url" content="<?php print (isset($settings['ogp']['url'])) ? $settings['ogp']['url'] : 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
+<meta property="og:image" content="<?php print (isset($settings['ogp']['image'])) ? $settings['ogp']['image'] : 'https://' . $_SERVER['SERVER_NAME'] .'/assets/img/facebook.png'; ?>">
 <meta property="fb:admins" content="<?php print $config['facebook']['id']; ?>">
 <?php if (isset($config['twitter']) and isset($config['twitter']['id'])): ?>
 	<meta property="twitter:site:id" content="@<?php print $config['twitter']['id']; ?>">
