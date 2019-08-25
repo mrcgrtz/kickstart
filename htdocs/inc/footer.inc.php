@@ -3,4 +3,4 @@
 <footer>
 </footer>
 
-<script src="/js/feel.js"></script>
+<script src="/js/feel.js" async defer></script>
