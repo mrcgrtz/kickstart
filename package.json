@@ -25,7 +25,7 @@
     "node": ">=4.4.x"
   },
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "pepjs": "^0.5.2"
   },
   "devDependencies": {
