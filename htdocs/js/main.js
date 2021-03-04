@@ -11,8 +11,8 @@ require([
 ], function(sample) {
 
 	// initialize each module
-	for (var idx = arguments.length - 1; idx >= 0; idx--) {
-		arguments[idx].init();
+	for (var index = arguments.length - 1; index >= 0; index--) {
+		arguments[index].init();
 	}
 
 });
