@@ -1,17 +1,34 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
-# ##############################################################################
-# # TEAM                                                                       #
-# ##############################################################################
+# ######################################################################
+# # TEAM                                                               #
+# ######################################################################
 
 Marc Görtz -- designer and developer -- @Dreamseer
 
-# ##############################################################################
-# # TECHNOLOGY COLOPHON                                                        #
-# ##############################################################################
+# ######################################################################
+# # TECHNOLOGY COLOPHON                                                #
+# ######################################################################
 
-HTML5, CSS3
-Gulp, PostCSS, require.js
-Apache Server Configs, jQuery, Modernizr, Normalize.css
-Atom, Sketch, Pixelmator
+Frontend tech:
+ - HTML 5.1
+ - Responsive CSS using progressive enhancement
+ - A little bit of plain vanilla JavaScript
+
+Backend tech:
+ - PHP 7
+ - MySQL
+ - server-configs-apache -- https://h5bp.org/
+ - No WordPress, Drupal, Joomla or anything else
+
+Build pipeline:
+ - Gulp -- https://gulpjs.com/
+ - PostCSS -- https://postcss.org/
+ - Babel -- https://babeljs.io/
+ - Flow -- https://flow.org/
+
+Software:
+ - Visual Studio Code -- https://code.visualstudio.com/
+ - Affinity Designer -- https://affinity.serif.com/designer/
+ - Pixelmator Pro -- https://www.pixelmator.com/pro/

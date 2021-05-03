@@ -20,7 +20,7 @@
 <meta property="og:title" content="<?php print (isset($settings['ogp']['title'])) ? $settings['ogp']['title'] : $settings['title']; ?>">
 <meta property="og:type" content="<?php print (isset($settings['ogp']['type'])) ? $settings['ogp']['type'] : $config['facebook']['type']; ?>">
 <meta property="og:url" content="<?php print (isset($settings['ogp']['url'])) ? $settings['ogp']['url'] : 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
-<meta property="og:image" content="<?php print (isset($settings['ogp']['image'])) ? $settings['ogp']['image'] : 'https://' . $_SERVER['SERVER_NAME'] .'/assets/img/facebook.png'; ?>">
+<meta property="og:image" content="<?php print (isset($settings['ogp']['image'])) ? $settings['ogp']['image'] : 'https://' . $_SERVER['SERVER_NAME'] .'/img/facebook.png'; ?>">
 <meta property="fb:admins" content="<?php print $config['facebook']['id']; ?>">
 <?php if (isset($config['twitter']) and isset($config['twitter']['id'])): ?>
 	<meta property="twitter:site:id" content="@<?php print $config['twitter']['id']; ?>">
@@ -34,7 +34,7 @@
 
 <header>
 	<div class="logo">
-		<a href="/" rel="start"><img src="/assets/img/kickstart.svg" width="300" height="83" alt="<?php print $config['global']['sitename']; ?>"></a>
+		<a href="/" rel="start"><img src="/img/kickstart.svg" width="300" height="83" alt="<?php print $config['global']['sitename']; ?>"></a>
 	</div>
 	<nav>
 		<ul>
