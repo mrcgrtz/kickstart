@@ -1,16 +1,26 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
 
 // Gulp and its plugins
-const gulp = require('gulp');
-const concat = require('gulp-concat');
-const postcss = require('gulp-postcss');
-const xo = require('gulp-xo');
-const babel = require('gulp-babel');
-const modernizr = require('gulp-modernizr-build');
-const terser = require('gulp-terser');
-const sourcemaps = require('gulp-sourcemaps');
-const hash = require('hash.js');
+import gulp from 'gulp';
+import concat from 'gulp-concat';
+import postcss from 'gulp-postcss';
+import xo from 'gulp-xo';
+import babel from 'gulp-babel';
+import modernizr from 'gulp-modernizr-build';
+import terser from 'gulp-terser';
+import sourcemaps from 'gulp-sourcemaps';
+import hash from 'hash.js';
+
+// PostCSS modules
+import stylelint from 'stylelint';
+import postcssReporter from 'postcss-reporter';
+import postcssAssets from 'postcss-assets';
+import postcssPresetEnv from 'postcss-preset-env';
+import postcssColorRgb from 'postcss-color-rgb';
+import postcssColorModFunction from 'postcss-color-mod-function';
+import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
+import cssnano from 'cssnano';
 
 // Get file with cache buster to become immutable
 const immutable = (realFilePath, resolvedFilePath) => {
@@ -23,8 +33,8 @@ const immutable = (realFilePath, resolvedFilePath) => {
 gulp.task('css:lint', () => gulp
 	.src('./public/css/src/**/*.css')
 	.pipe(postcss([
-		require('stylelint')(),
-		require('postcss-reporter')({
+		stylelint(),
+		postcssReporter({
 			clearMessages: true
 		})
 	]))
@@ -58,23 +68,23 @@ gulp.task('css', gulp.series('css:lint', () => gulp
 	.pipe(sourcemaps.init())
 	.pipe(concat('look.css'))
 	.pipe(postcss([
-		require('postcss-assets')({
+		postcssAssets({
 			basePath: './public',
 			loadPaths: ['fonts', 'img'],
 			cachebuster: (realFilePath, resolvedFilePath) => ({
 				pathname: immutable(realFilePath, resolvedFilePath)
 			})
 		}),
-		require('postcss-preset-env')({
+		postcssPresetEnv({
 			preserve: false,
 			autoprefixer: {
 				grid: 'no-autoplace'
 			}
 		}),
-		require('postcss-color-rgb')(),
-		require('postcss-color-mod-function')(),
-		require('postcss-flexbugs-fixes')(),
-		require('cssnano')({
+		postcssColorRgb(),
+		postcssColorModFunction(),
+		postcssFlexbugsFixes(),
+		cssnano({
 			autoprefixer: true,
 			discardUnused: true,
 			mergeIdents: true,
@@ -88,7 +98,7 @@ gulp.task('css', gulp.series('css:lint', () => gulp
 // Lint JS modules
 gulp.task('js:lint', () => gulp
 	.src([
-		'./gulpfile.js',
+		'./gulpfile.mjs',
 		'./public/js/src/**/*.js'
 	])
 	.pipe(xo())
