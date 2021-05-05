@@ -21,7 +21,7 @@ const immutable = (realFilePath, resolvedFilePath) => {
 
 // Lint CSS modules
 gulp.task('css:lint', () => gulp
-	.src('./htdocs/css/src/**/*.css')
+	.src('./public/css/src/**/*.css')
 	.pipe(postcss([
 		require('stylelint')(),
 		require('postcss-reporter')({
@@ -33,33 +33,33 @@ gulp.task('css:lint', () => gulp
 // Concatenate CSS modules and transform them using PostCSS
 gulp.task('css', gulp.series('css:lint', () => gulp
 	.src([
-		'./htdocs/css/src/variables.css',
-		'./htdocs/css/src/layout.css',
-		'./htdocs/css/src/typography.css',
-		'./htdocs/css/src/links.css',
-		'./htdocs/css/src/buttons.css',
-		'./htdocs/css/src/header.css',
-		'./htdocs/css/src/footer.css',
-		'./htdocs/css/src/navigation.css',
-		'./htdocs/css/src/headlines.css',
-		'./htdocs/css/src/lists.css',
-		'./htdocs/css/src/tables.css',
-		'./htdocs/css/src/forms.css',
-		'./htdocs/css/src/figures.css',
-		'./htdocs/css/src/images.css',
-		'./htdocs/css/src/audio-video.css',
-		'./htdocs/css/src/abbreviations.css',
-		'./htdocs/css/src/code.css',
-		'./htdocs/css/src/quotes.css',
-		'./htdocs/css/src/browser-update.css',
-		'./htdocs/css/src/hidden-elements.css',
-		'./htdocs/css/src/selection.css'
+		'./public/css/src/variables.css',
+		'./public/css/src/layout.css',
+		'./public/css/src/typography.css',
+		'./public/css/src/links.css',
+		'./public/css/src/buttons.css',
+		'./public/css/src/header.css',
+		'./public/css/src/footer.css',
+		'./public/css/src/navigation.css',
+		'./public/css/src/headlines.css',
+		'./public/css/src/lists.css',
+		'./public/css/src/tables.css',
+		'./public/css/src/forms.css',
+		'./public/css/src/figures.css',
+		'./public/css/src/images.css',
+		'./public/css/src/audio-video.css',
+		'./public/css/src/abbreviations.css',
+		'./public/css/src/code.css',
+		'./public/css/src/quotes.css',
+		'./public/css/src/browser-update.css',
+		'./public/css/src/hidden-elements.css',
+		'./public/css/src/selection.css'
 	])
 	.pipe(sourcemaps.init())
 	.pipe(concat('look.css'))
 	.pipe(postcss([
 		require('postcss-assets')({
-			basePath: './htdocs',
+			basePath: './public',
 			loadPaths: ['fonts', 'img'],
 			cachebuster: (realFilePath, resolvedFilePath) => ({
 				pathname: immutable(realFilePath, resolvedFilePath)
@@ -82,14 +82,14 @@ gulp.task('css', gulp.series('css:lint', () => gulp
 		})
 	]))
 	.pipe(sourcemaps.write('.'))
-	.pipe(gulp.dest('./htdocs/css/'))
+	.pipe(gulp.dest('./public/css/'))
 ));
 
 // Lint JS modules
 gulp.task('js:lint', () => gulp
 	.src([
 		'./gulpfile.js',
-		'./htdocs/js/src/**/*.js'
+		'./public/js/src/**/*.js'
 	])
 	.pipe(xo())
 	.pipe(xo.format())
@@ -99,7 +99,7 @@ gulp.task('js:lint', () => gulp
 // Transform JS modules
 gulp.task('js', gulp.series('js:lint', () => gulp
 	.src([
-		'./htdocs/js/src/**/*.js'
+		'./public/js/src/**/*.js'
 	])
 	.pipe(sourcemaps.init())
 	.pipe(babel({
@@ -111,26 +111,26 @@ gulp.task('js', gulp.series('js:lint', () => gulp
 	.pipe(concat('feel.js'))
 	.pipe(terser())
 	.pipe(sourcemaps.write('.'))
-	.pipe(gulp.dest('./htdocs/js/'))
+	.pipe(gulp.dest('./public/js/'))
 ));
 
 // Create custom Modernizr build
 gulp.task('modernizr', () => gulp
 	.src([
-		'./htdocs/js/src/**/*.js',
-		'./htdocs/css/src/**/*.css'
+		'./public/js/src/**/*.js',
+		'./public/css/src/**/*.css'
 	])
 	.pipe(modernizr('modernizr.js'))
 	.pipe(terser())
-	.pipe(gulp.dest('./htdocs/js/'))
+	.pipe(gulp.dest('./public/js/'))
 );
 
 // Watch stuff
 gulp.task('watch', () => gulp
 	.watch([
-		'./htdocs/css/src/*.css',
-		'./htdocs/js/src/*.js',
-		'./htdocs/**/*.php',
+		'./public/css/src/*.css',
+		'./public/js/src/*.js',
+		'./public/**/*.php',
 		'./gulpfile.js'
 	], () => {
 		gulp.parallel('default');
