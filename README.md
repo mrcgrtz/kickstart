@@ -19,13 +19,12 @@
 
 ## Requirements
 
-* [Yarn](https://yarnpkg.com/)
 * [gulp-cli](https://gulpjs.com/)
 
 ## Installation
 
 ```bash
-yarn && gulp
+npm install && gulp
 ```
 
 Installs all dependencies listed in `package.json` and runs
