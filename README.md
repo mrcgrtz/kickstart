@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/Dreamseer/kickstart/master/htdocs/img/kickstart.svg" alt="Kickstart" width="300" height="83">
+# <img src="https://cdn.rawgit.com/Dreamseer/kickstart/master/public/img/kickstart.svg" alt="Kickstart" width="300" height="83">
 
 > **Kickstart** is my opinionated starter kit for frontend development.
 
