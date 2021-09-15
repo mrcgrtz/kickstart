@@ -33,7 +33,7 @@
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-flow": "^7.13.13",
     "babel-eslint": "^10.1.0",
-    "cssnano": "^5.0.5",
+    "cssnano": "^5.0.8",
     "eslint-config-xo-flow": "^0.2.0",
     "eslint-plugin-flowtype": "^6.0.1",
     "flow-bin": "^0.159.0",
