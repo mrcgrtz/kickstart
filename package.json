@@ -41,7 +41,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-modernizr-build": "^0.0.6",
-    "gulp-postcss": "^9.0.0",
+    "gulp-postcss": "^9.0.1",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.0.1",
     "gulp-xo": "^0.25.0",
