@@ -47,7 +47,7 @@
     "gulp-xo": "^0.25.0",
     "hash.js": "^1.1.7",
     "modernizr": "^3.11.8",
-    "postcss": "^8.3.6",
+    "postcss": "^8.3.7",
     "postcss-assets": "^6.0.0",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-color-rgb": "^2.0.0",
