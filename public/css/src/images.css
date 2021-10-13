@@ -13,22 +13,12 @@ img {
 	vertical-align: bottom;
 	max-width: 100%;
 	height: auto;
-	border: 0; /* removes border when inside `a` element in IE 8/9/10 */
+	border: 0; /* remove the border on images inside links in IE 10 */
 }
 
 /* images in Google Maps */
 .gm-style img {
 	max-width: none;
-}
-
-/* SVG images */
-svg:not(:root) {
-	overflow: hidden; /* correct overflow not hidden in IE 9/10/11 */
-}
-
-/* canvas */
-canvas {
-	display: inline-block; /* correct `inline-block` display not defined in IE 8/9 */
 }
 
 /* printed images */
