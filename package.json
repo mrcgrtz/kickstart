@@ -36,7 +36,7 @@
     "cssnano": "^5.0.8",
     "eslint-config-xo-flow": "^0.3.0",
     "eslint-plugin-flowtype": "^8.0.3",
-    "flow-bin": "^0.162.1",
+    "flow-bin": "^0.163.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
