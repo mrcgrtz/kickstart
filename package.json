@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-env": "^7.16.0",
     "@babel/preset-flow": "^7.16.0",
     "babel-eslint": "^10.1.0",
     "cssnano": "^5.0.8",
