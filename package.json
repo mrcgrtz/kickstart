@@ -26,12 +26,11 @@
   },
   "scripts": {
     "build": "gulp",
-    "test": "gulp lint"
+    "test": "xo && stylelint ./public/css/src/**/*.css"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
-    "babel-eslint": "^10.1.0",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "cssnano": "^5.0.11",
@@ -41,7 +40,6 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.1.0",
-    "gulp-xo": "^0.25.0",
     "hash.js": "^1.1.7",
     "postcss": "^8.3.11",
     "postcss-assets": "^6.0.0",
@@ -49,7 +47,6 @@
     "postcss-color-rgb": "^2.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.0.0",
-    "postcss-reporter": "^7.0.4",
     "stylelint": "^14.1.0",
     "stylelint-config-standard": "^24.0.0",
     "through2": "^4.0.2",

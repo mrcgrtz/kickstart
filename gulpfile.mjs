@@ -5,7 +5,6 @@ import path from 'node:path';
 import gulp from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
-import xo from 'gulp-xo';
 import terser from 'gulp-terser';
 import sourcemaps from 'gulp-sourcemaps';
 import browserify from 'browserify';
@@ -17,8 +16,6 @@ import through from 'through2';
 import hash from 'hash.js';
 
 // PostCSS modules
-import stylelint from 'stylelint';
-import postcssReporter from 'postcss-reporter';
 import postcssAssets from 'postcss-assets';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssColorRgb from 'postcss-color-rgb';
@@ -33,19 +30,8 @@ const immutable = (realFilePath, resolvedFilePath) => {
 	return `${path.dirname(resolvedFilePath)}/${path.basename(resolvedFilePath, path.extname(resolvedFilePath))}.v_${fileHash}${path.extname(resolvedFilePath)}`;
 };
 
-// Lint CSS modules
-gulp.task('css:lint', () => gulp
-	.src('./public/css/src/**/*.css')
-	.pipe(postcss([
-		stylelint(),
-		postcssReporter({
-			clearMessages: true
-		})
-	]))
-);
-
 // Concatenate CSS modules and transform them using PostCSS
-gulp.task('css', gulp.series('css:lint', () => gulp
+gulp.task('css', () => gulp
 	.src([
 		'./public/css/src/variables.css',
 		'./public/css/src/layout.css',
@@ -65,7 +51,7 @@ gulp.task('css', gulp.series('css:lint', () => gulp
 		'./public/css/src/code.css',
 		'./public/css/src/quotes.css',
 		'./public/css/src/hidden-elements.css',
-		'./public/css/src/selection.css'
+		'./public/css/src/selection.css',
 	])
 	.pipe(sourcemaps.init())
 	.pipe(concat('look.css'))
@@ -74,14 +60,14 @@ gulp.task('css', gulp.series('css:lint', () => gulp
 			basePath: './public',
 			loadPaths: ['fonts', 'img'],
 			cachebuster: (realFilePath, resolvedFilePath) => ({
-				pathname: immutable(realFilePath, resolvedFilePath)
-			})
+				pathname: immutable(realFilePath, resolvedFilePath),
+			}),
 		}),
 		postcssPresetEnv({
 			preserve: false,
 			autoprefixer: {
-				grid: 'no-autoplace'
-			}
+				grid: 'no-autoplace',
+			},
 		}),
 		postcssColorRgb(),
 		postcssColorModFunction(),
@@ -90,22 +76,11 @@ gulp.task('css', gulp.series('css:lint', () => gulp
 			autoprefixer: true,
 			discardUnused: true,
 			mergeIdents: true,
-			zindex: true
-		})
+			zindex: true,
+		}),
 	]))
 	.pipe(sourcemaps.write('.'))
-	.pipe(gulp.dest('./public/css/'))
-));
-
-// Lint JS modules
-gulp.task('js:lint', () => gulp
-	.src([
-		'./gulpfile.mjs',
-		'./public/js/src/**/*.ts'
-	])
-	.pipe(xo())
-	.pipe(xo.format())
-	.pipe(xo.failAfterError())
+	.pipe(gulp.dest('./public/css/')),
 );
 
 // Transform JS modules
@@ -149,18 +124,13 @@ gulp.task('watch', () => gulp
 		'./public/css/src/*.css',
 		'./public/js/src/*.ts',
 		'./public/**/*.php',
-		'./gulpfile.js'
+		'./gulpfile.js',
 	], () => {
 		gulp.parallel('default');
-	})
+	}),
 );
 
 gulp.task('default', gulp.parallel(
 	'css',
 	'js',
-));
-
-gulp.task('lint', gulp.parallel(
-	'css:lint',
-	'js:lint'
 ));
