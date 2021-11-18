@@ -63,7 +63,6 @@ gulp.task('css', () => gulp
 			}),
 		}),
 		postcssPresetEnv({
-			preserve: false,
 			autoprefixer: {
 				grid: 'no-autoplace',
 			},
@@ -72,6 +71,7 @@ gulp.task('css', () => gulp
 		postcssFlexbugsFixes(),
 		cssnano({
 			autoprefixer: true,
+			cssDeclarationSorter: false,
 			discardUnused: true,
 			mergeIdents: true,
 			zindex: true,
