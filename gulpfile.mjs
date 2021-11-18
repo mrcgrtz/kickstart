@@ -5,10 +5,8 @@ import path from 'node:path';
 import gulp from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
-import terser from 'gulp-terser';
 import sourcemaps from 'gulp-sourcemaps';
 import browserify from 'browserify';
-import tsify from 'tsify';
 import buffer from 'vinyl-buffer';
 import source from 'vinyl-source-stream';
 import {globby} from 'globby';
@@ -88,7 +86,6 @@ gulp.task('js', async () => {
 		.pipe(source('feel.js'))
 		.pipe(buffer())
 		.pipe(sourcemaps.init({loadMaps: true}))
-		.pipe(terser())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('./public/js/'));
 
@@ -102,11 +99,12 @@ gulp.task('js', async () => {
 			packageCache: {},
 		});
 		b
-			.plugin(tsify)
+			.plugin('tsify')
 			.transform('babelify', {
 				presets: ['@babel/preset-env'],
 				extensions: ['.ts'],
 			})
+			.plugin('tinyify')
 			.bundle()
 			.pipe(bundledStream);
 	} catch (error) {
