@@ -25,7 +25,6 @@
 <?php if (isset($config['twitter']) and isset($config['twitter']['id'])): ?>
 	<meta property="twitter:site:id" content="@<?php print $config['twitter']['id']; ?>">
 <?php endif; ?>
-<script src="/js/modernizr.js"></script>
 <?php if (!isset($_SERVER['HTTP_DNT']) or (isset($_SERVER['HTTP_DNT']) and $_SERVER['HTTP_DNT'] != 1)): ?>
 	<script>//var _gaq=[['_setAccount','<?php print $config['google']['analytics'] ?>'],['_gat._anonymizeIp'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 <?php endif; ?>

@@ -6,7 +6,6 @@ import gulp from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
 import xo from 'gulp-xo';
-import modernizr from 'gulp-modernizr-build';
 import terser from 'gulp-terser';
 import sourcemaps from 'gulp-sourcemaps';
 import browserify from 'browserify';
@@ -144,17 +143,6 @@ gulp.task('js', async () => {
 	return bundledStream;
 });
 
-// Create custom Modernizr build
-gulp.task('modernizr', () => gulp
-	.src([
-		'./public/js/src/**/*.ts',
-		'./public/css/src/**/*.css'
-	])
-	.pipe(modernizr('modernizr.js'))
-	.pipe(terser())
-	.pipe(gulp.dest('./public/js/'))
-);
-
 // Watch stuff
 gulp.task('watch', () => gulp
 	.watch([
@@ -170,7 +158,6 @@ gulp.task('watch', () => gulp
 gulp.task('default', gulp.parallel(
 	'css',
 	'js',
-	'modernizr'
 ));
 
 gulp.task('lint', gulp.parallel(

@@ -30,7 +30,5 @@ config/config.ini
 node_modules
 npm-debug.log
 look.css
-*.css.map
-modernizr.js
 feel.js
-*.js.map
+*.map
