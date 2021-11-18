@@ -53,6 +53,10 @@ gulp watch
 
 There are no actual unit or integration tests (yet). Testing currently includes linting the CSS source files using [Stylelint](https://stylelint.io/) and linting the TypeScript source files using [XO](https://github.com/xojs/xo):
 
+```bash
+npm test
+```
+
 ## License
 
 MIT © [Marc Görtz](https://marcgoertz.de/)
