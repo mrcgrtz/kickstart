@@ -9,7 +9,7 @@
 :root {
 	--font-stack: system-ui;
 	--font-stack-serif: serif;
-	--font-stack-monospace: "fira code", monospace, monospace; /* address odd `em`-unit font size rendering in all browsers */
+	--font-stack-monospace: "fira code", monospace;
 	--color-gray: #333;
 	--color-black: #000;
 	--color-white: #fff;
