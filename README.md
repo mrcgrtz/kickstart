@@ -2,15 +2,17 @@
 
 > **Kickstart** is my opinionated starter kit for frontend development.
 
-[![GitHub tag](https://img.shields.io/github/tag/dreamseer/kickstart.svg?maxAge=2592000)]()
-[![Dependency state](https://img.shields.io/david/dev/dreamseer/kickstart.svg?maxAge=2592000)]()
-[![MIT License](https://img.shields.io/github/license/dreamseer/kickstart.svg?maxAge=2592000)]()
+![GitHub tag](https://img.shields.io/github/tag/dreamseer/kickstart.svg?maxAge=2592000)
+![Dependency state](https://img.shields.io/david/dev/dreamseer/kickstart.svg?maxAge=2592000)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![Types](https://img.shields.io/badge/types-TypeScript-blue)](https://www.typescriptlang.org/)
+![MIT License](https://img.shields.io/github/license/dreamseer/kickstart.svg?maxAge=2592000)
 
 ## Features
 
 * build process using [Gulp](https://gulpjs.com/)
 * CSS optimizations using [PostCSS](https://postcss.org/)
-* JavaScript modules using [Babel](https://babeljs.io) and [Flow](https://flow.org/)
+* TypeScript module transpiling with [Browserify](https://browserify.org/)
 * some inspirations from [HTML5 Boilerplate](https://html5boilerplate.com)
 * minimalistic [Normalize](https://necolas.github.io/normalize.css/) for good
   default styling
@@ -30,23 +32,30 @@ npm install && gulp
 Installs all dependencies listed in `package.json` and runs
 Gulp’s default task afterwards.
 
-## Gulp tasks
+## Scripts
 
-### Default task
+### Build assets
 
-The default Gulp task using `gulp` lints and builds CSS/JS
-files from their sources. CSS files are linted using Stylelint
-and transformed using PostCSS while JS files are linted using
-XO on their source files which get compiled using Flow and
-Babel.
+The default Gulp task using `gulp` builds CSS/JS files from their sources. CSS files get transformed using PostCSS while TypeScript files get compiled using Browserify.
+
+```bash
+gulp
+```
 
 ### Watch changes
 
-To automatically run the Gulp default task after changing a
-file, start the watch task:
+To automatically run the Gulp default task after changing a file, start the watch task:
 
 ```bash
 gulp watch
+```
+
+### Lint source files
+
+To lint the CSS source files using [Stylelint](https://stylelint.io/) and JavaScript or TypeScript source files using [XO](https://github.com/xojs/xo), run this:
+
+```bash
+npm run-script lint
 ```
 
 ## License

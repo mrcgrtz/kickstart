@@ -14,7 +14,7 @@ Marc Görtz -- designer and developer -- @Dreamseer
 Frontend tech:
  - HTML 5.1
  - Responsive CSS using progressive enhancement
- - A little bit of plain vanilla JavaScript
+ - A little bit of plain vanilla JavaScript, typed using TypeScript
 
 Backend tech:
  - PHP 7
@@ -25,8 +25,8 @@ Backend tech:
 Build pipeline:
  - Gulp -- https://gulpjs.com/
  - PostCSS -- https://postcss.org/
- - Babel -- https://babeljs.io/
- - Flow -- https://flow.org/
+ - Browserify -- https://browserify.org/
+ - TypeScript -- https://www.typescriptlang.org/
 
 Software:
  - Visual Studio Code -- https://code.visualstudio.com/

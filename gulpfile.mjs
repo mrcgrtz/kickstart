@@ -6,10 +6,15 @@ import gulp from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
 import xo from 'gulp-xo';
-import babel from 'gulp-babel';
 import modernizr from 'gulp-modernizr-build';
 import terser from 'gulp-terser';
 import sourcemaps from 'gulp-sourcemaps';
+import browserify from 'browserify';
+import tsify from 'tsify';
+import buffer from 'vinyl-buffer';
+import source from 'vinyl-source-stream';
+import {globby} from 'globby';
+import through from 'through2';
 import hash from 'hash.js';
 
 // PostCSS modules
@@ -97,7 +102,7 @@ gulp.task('css', gulp.series('css:lint', () => gulp
 gulp.task('js:lint', () => gulp
 	.src([
 		'./gulpfile.mjs',
-		'./public/js/src/**/*.js'
+		'./public/js/src/**/*.ts'
 	])
 	.pipe(xo())
 	.pipe(xo.format())
@@ -105,27 +110,44 @@ gulp.task('js:lint', () => gulp
 );
 
 // Transform JS modules
-gulp.task('js', gulp.series('js:lint', () => gulp
-	.src([
-		'./public/js/src/**/*.js'
-	])
-	.pipe(sourcemaps.init())
-	.pipe(babel({
-		presets: [
-			'@babel/preset-env',
-			'@babel/preset-flow'
-		]
-	}))
-	.pipe(concat('feel.js'))
-	.pipe(terser())
-	.pipe(sourcemaps.write('.'))
-	.pipe(gulp.dest('./public/js/'))
-));
+gulp.task('js', async () => {
+	const bundledStream = through();
+	bundledStream
+		.pipe(source('feel.js'))
+		.pipe(buffer())
+		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(terser())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('./public/js/'));
+
+	try {
+		const entries = await globby(['./public/js/src/**/*.ts']);
+		const b = browserify({
+			entries,
+			basedir: '.',
+			debug: true,
+			cache: {},
+			packageCache: {},
+		});
+		b
+			.plugin(tsify)
+			.transform('babelify', {
+				presets: ['@babel/preset-env'],
+				extensions: ['.ts'],
+			})
+			.bundle()
+			.pipe(bundledStream);
+	} catch (error) {
+		bundledStream.emit('error', error);
+	}
+
+	return bundledStream;
+});
 
 // Create custom Modernizr build
 gulp.task('modernizr', () => gulp
 	.src([
-		'./public/js/src/**/*.js',
+		'./public/js/src/**/*.ts',
 		'./public/css/src/**/*.css'
 	])
 	.pipe(modernizr('modernizr.js'))
@@ -137,7 +159,7 @@ gulp.task('modernizr', () => gulp
 gulp.task('watch', () => gulp
 	.watch([
 		'./public/css/src/*.css',
-		'./public/js/src/*.js',
+		'./public/js/src/*.ts',
 		'./public/**/*.php',
 		'./gulpfile.js'
 	], () => {
