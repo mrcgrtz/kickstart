@@ -50,13 +50,9 @@ To automatically run the Gulp default task after changing a file, start the watc
 gulp watch
 ```
 
-### Lint source files
+### Run tests
 
-To lint the CSS source files using [Stylelint](https://stylelint.io/) and JavaScript or TypeScript source files using [XO](https://github.com/xojs/xo), run this:
-
-```bash
-npm run-script lint
-```
+There are no actual unit or integration tests (yet). Testing currently includes linting the CSS source files using [Stylelint](https://stylelint.io/) and linting the TypeScript source files using [XO](https://github.com/xojs/xo):
 
 ## License
 
