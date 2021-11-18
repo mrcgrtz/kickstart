@@ -3,7 +3,6 @@
 > **Kickstart** is my opinionated starter kit for frontend development.
 
 ![GitHub tag](https://img.shields.io/github/tag/dreamseer/kickstart.svg?maxAge=2592000)
-![Dependency state](https://img.shields.io/david/dev/dreamseer/kickstart.svg?maxAge=2592000)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![Types](https://img.shields.io/badge/types-TypeScript-blue)](https://www.typescriptlang.org/)
 ![MIT License](https://img.shields.io/github/license/dreamseer/kickstart.svg?maxAge=2592000)
