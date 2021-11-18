@@ -18,7 +18,6 @@ import hash from 'hash.js';
 // PostCSS modules
 import postcssAssets from 'postcss-assets';
 import postcssPresetEnv from 'postcss-preset-env';
-import postcssColorRgb from 'postcss-color-rgb';
 import postcssColorModFunction from 'postcss-color-mod-function';
 import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
 import cssnano from 'cssnano';
@@ -69,7 +68,6 @@ gulp.task('css', () => gulp
 				grid: 'no-autoplace',
 			},
 		}),
-		postcssColorRgb(),
 		postcssColorModFunction(),
 		postcssFlexbugsFixes(),
 		cssnano({
