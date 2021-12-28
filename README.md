@@ -1,11 +1,11 @@
-# <img src="https://cdn.rawgit.com/Dreamseer/kickstart/master/public/img/kickstart.svg" alt="Kickstart" width="300" height="83">
+# <img src="https://cdn.rawgit.com/mrcgrtz/kickstart/main/public/img/kickstart.svg" alt="Kickstart" width="300" height="83">
 
 > **Kickstart** is my opinionated starter kit for frontend development.
 
-![GitHub tag](https://img.shields.io/github/tag/dreamseer/kickstart.svg?maxAge=2592000)
+![GitHub tag](https://img.shields.io/github/tag/mrcgrtz/kickstart.svg?maxAge=2592000)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![Types](https://img.shields.io/badge/types-TypeScript-blue)](https://www.typescriptlang.org/)
-![MIT License](https://img.shields.io/github/license/dreamseer/kickstart.svg?maxAge=2592000)
+![MIT License](https://img.shields.io/github/license/mrcgrtz/kickstart.svg?maxAge=2592000)
 
 ## Features
 

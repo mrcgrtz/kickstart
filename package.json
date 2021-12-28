@@ -12,10 +12,7 @@
     "javascript"
   ],
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Dreamseer/kickstart.git"
-  },
+  "repository": "github:mrcgrtz/kickstart",
   "author": {
     "name": "Marc Görtz",
     "email": "git@marcgoertz.de",
