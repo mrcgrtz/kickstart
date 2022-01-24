@@ -43,7 +43,7 @@
     "postcss-color-mod-function": "^3.0.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.2.3",
-    "stylelint": "^14.2.0",
+    "stylelint": "^14.3.0",
     "stylelint-config-standard": "^24.0.0",
     "through2": "^4.0.2",
     "tinyify": "^3.0.0",
