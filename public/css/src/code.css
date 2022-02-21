@@ -12,9 +12,9 @@ code {
 	border-radius: 3px;
 	font-family: var(--font-stack-monospace);
 	font-size: 1em;
-	text-shadow: 0 1px 1px color-mod(var(--color-white) a(-25%));
+	text-shadow: 0 1px 1px color-mod(var(--color-white) alpha(-25%));
 	color: var(--color-black);
-	background-color: color-mod(var(--color-white) l(-25%));
+	background-color: color-mod(var(--color-white) lightness(-25%));
 }
 
 /* block code */
@@ -26,9 +26,9 @@ pre {
 	overflow: auto; /* contain overflow in all browsers */
 	font-family: var(--font-stack-monospace);
 	font-size: 1em;
-	text-shadow: 0 1px 1px color-mod(var(--color-white) a(-25%));
+	text-shadow: 0 1px 1px color-mod(var(--color-white) alpha(-25%));
 	color: var(--color-black);
-	background-color: color-mod(var(--color-white) l(-25%));
+	background-color: color-mod(var(--color-white) lightness(-25%));
 	tab-size: 4;
 	white-space: pre;
 	white-space: pre-wrap;

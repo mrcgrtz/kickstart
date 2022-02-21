@@ -28,9 +28,9 @@ button {
 button[disabled],
 button[disabled]:hover,
 button[disabled]:focus {
-	color: color-mod(var(--color-white) l(-25%));
+	color: color-mod(var(--color-white) lightness(-25%));
 	background: var(--color-white);
-	border: 2px solid color-mod(var(--color-white) l(-25%));
+	border: 2px solid color-mod(var(--color-white) lightness(-25%));
 	cursor: not-allowed;
 }
 

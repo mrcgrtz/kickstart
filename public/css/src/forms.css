@@ -60,7 +60,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /* disabled inputs */
 input[readonly],
 input[disabled] {
-	color: color-mod(var(--color-gray) l(+50%));
+	color: color-mod(var(--color-gray) lightness(+50%));
 	background-color: transparent;
 	cursor: default;
 }
@@ -77,7 +77,7 @@ textarea {
 /* disabled inputs */
 textarea[readonly],
 textarea[disabled] {
-	color: color-mod(var(--color-gray) l(+50%));
+	color: color-mod(var(--color-gray) lightness(+50%));
 	background-color: transparent;
 	cursor: default;
 }
