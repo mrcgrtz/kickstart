@@ -120,7 +120,7 @@ gulp.task('watch', () => gulp
 		'./public/css/src/*.css',
 		'./public/js/src/*.ts',
 		'./public/**/*.php',
-		'./gulpfile.js',
+		'./gulpfile.mjs',
 	], () => {
 		gulp.parallel('default');
 	}),

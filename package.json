@@ -23,7 +23,12 @@
   },
   "scripts": {
     "build": "gulp",
-    "test": "xo && stylelint ./public/css/src/**/*.css"
+    "lint": "npm run-script lint:js && npm run-script lint:ts && npm run-script lint:css",
+    "lint:js": "xo",
+    "lint:ts": "tsc --noEmit --strict",
+    "lint:css": "stylelint ./public/css/src/**/*.css",
+    "prepare": "husky install",
+    "watch": "gulp watch"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
