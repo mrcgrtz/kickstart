@@ -5,7 +5,7 @@
 # # TEAM                                                               #
 # ######################################################################
 
-Marc Görtz -- designer and developer -- @Dreamseer
+Marc Görtz -- designer and developer -- @mrcgrtz
 
 # ######################################################################
 # # TECHNOLOGY COLOPHON                                                #
