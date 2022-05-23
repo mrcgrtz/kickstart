@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [lts/*]
+        node-version: [lts/*, current]
 
     steps:
     - uses: actions/checkout@v3
