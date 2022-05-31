@@ -31,7 +31,7 @@
     "watch": "gulp watch"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.0",
+    "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
