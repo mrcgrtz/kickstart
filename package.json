@@ -9,7 +9,8 @@
     "php",
     "html",
     "css",
-    "javascript"
+    "javascript",
+    "template"
   ],
   "license": "MIT",
   "repository": "github:mrcgrtz/kickstart",
@@ -21,6 +22,7 @@
   "engines": {
     "node": ">=16"
   },
+  "type": "module",
   "scripts": {
     "build": "gulp",
     "lint": "npm run-script lint:js && npm run-script lint:ts && npm run-script lint:css",
@@ -53,11 +55,16 @@
     "stylelint": "^14.12.1",
     "stylelint-config-standard": "^28.0.0",
     "through2": "^4.0.2",
-    "tinyify": "^3.1.0",
     "tsify": "^5.0.4",
     "typescript": "^4.8.3",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "xo": "^0.52.3"
+  },
+  "overrides": {
+    "chokidar": "^3.0.0",
+    "glob-stream": "^7.0.0",
+    "glob-parent": "^6.0.0",
+    "micromatch": "^4.0.0"
   }
 }

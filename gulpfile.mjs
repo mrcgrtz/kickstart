@@ -2,7 +2,9 @@ import gulp from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
+import terser from 'gulp-terser';
 import browserify from 'browserify';
+import tsify from 'tsify';
 import buffer from 'vinyl-buffer';
 import source from 'vinyl-source-stream';
 import {globby} from 'globby';
@@ -42,7 +44,7 @@ gulp.task('css', () => gulp
 );
 
 // Transform JS modules
-gulp.task('js', async () => {
+gulp.task('js:build', async () => {
 	const bundledStream = through();
 	bundledStream
 		.pipe(source('feel.js'))
@@ -61,12 +63,11 @@ gulp.task('js', async () => {
 			packageCache: {},
 		});
 		b
-			.plugin('tsify')
+			.plugin(tsify)
 			.transform('babelify', {
 				presets: ['@babel/preset-env'],
 				extensions: ['.ts'],
 			})
-			.plugin('tinyify')
 			.bundle()
 			.pipe(bundledStream);
 	} catch (error) {
@@ -75,6 +76,29 @@ gulp.task('js', async () => {
 
 	return bundledStream;
 });
+
+// Minify JS modules
+gulp.task('js:minify', () => gulp
+	.src([
+		'./public/js/feel.js',
+	])
+	.pipe(sourcemaps.init({
+		loadMaps: true,
+	}))
+	.pipe(terser({
+		sourceMap: true,
+	}))
+	.pipe(sourcemaps.write('.'))
+	.pipe(gulp.dest('./public/js/')),
+);
+
+// Build and minify JS modules
+gulp.task('js', gulp
+	.series(
+		'js:build',
+		'js:minify',
+	),
+);
 
 // Watch stuff
 gulp.task('watch', () => gulp
