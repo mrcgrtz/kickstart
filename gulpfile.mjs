@@ -1,7 +1,3 @@
-import fs from 'node:fs';
-import path from 'node:path';
-
-// Gulp and its plugins
 import gulp from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
@@ -11,21 +7,9 @@ import buffer from 'vinyl-buffer';
 import source from 'vinyl-source-stream';
 import {globby} from 'globby';
 import through from 'through2';
-import hash from 'hash.js';
 
-// PostCSS modules
-import postcssAssets from 'postcss-assets';
-import postcssPresetEnv from 'postcss-preset-env';
-import postcssColorModFunction from 'postcss-color-mod-function';
-import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
-import cssnano from 'cssnano';
-
-// Get file with cache buster to become immutable
-const immutable = (realFilePath, resolvedFilePath) => {
-	const {mtime} = fs.statSync(realFilePath);
-	const fileHash = hash.sha384().update(String(mtime.getTime() / 1000)).digest('hex').slice(0, 8);
-	return `${path.dirname(resolvedFilePath)}/${path.basename(resolvedFilePath, path.extname(resolvedFilePath))}.v_${fileHash}${path.extname(resolvedFilePath)}`;
-};
+// PostCSS configuration
+import postcssConfig from './.postcssrc.cjs';
 
 // Concatenate CSS modules and transform them using PostCSS
 gulp.task('css', () => gulp
@@ -52,29 +36,7 @@ gulp.task('css', () => gulp
 	])
 	.pipe(sourcemaps.init())
 	.pipe(concat('look.css'))
-	.pipe(postcss([
-		postcssAssets({
-			basePath: './public',
-			loadPaths: ['fonts', 'img'],
-			cachebuster: (realFilePath, resolvedFilePath) => ({
-				pathname: immutable(realFilePath, resolvedFilePath),
-			}),
-		}),
-		postcssPresetEnv({
-			autoprefixer: {
-				grid: 'no-autoplace',
-			},
-		}),
-		postcssColorModFunction(),
-		postcssFlexbugsFixes(),
-		cssnano({
-			autoprefixer: true,
-			cssDeclarationSorter: false,
-			discardUnused: true,
-			mergeIdents: true,
-			zindex: true,
-		}),
-	]))
+	.pipe(postcss(postcssConfig.plugins))
 	.pipe(sourcemaps.write('.'))
 	.pipe(gulp.dest('./public/css/')),
 );
