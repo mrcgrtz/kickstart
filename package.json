@@ -60,10 +60,6 @@
     "vinyl-source-stream": "^2.0.0",
     "xo": "^0.52.3"
   },
-  "lint-staged": {
-    "*.?({c,m}){j,t}s?(x)": "xo --fix",
-    "*.css": "stylelint --fix"
-  },
   "xo": {
     "envs": [
       "browser"
