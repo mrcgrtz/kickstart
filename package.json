@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
-    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-env": "^7.20.2",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "cssnano": "^5.1.14",
