@@ -45,7 +45,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.1.0",
     "hash.js": "^1.1.7",
-    "husky": "^8.0.2",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "postcss": "^8.4.20",
     "postcss-assets": "^6.0.0",
