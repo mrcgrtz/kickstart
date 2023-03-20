@@ -25,6 +25,7 @@
   "type": "module",
   "scripts": {
     "build": "gulp",
+    "format": "prettier --write .",
     "lint": "npm run-script lint:js && npm run-script lint:ts && npm run-script lint:css",
     "lint:js": "xo",
     "lint:ts": "tsc --noEmit --strict",
@@ -52,6 +53,7 @@
     "postcss-color-mod-function": "^3.0.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.0.1",
+    "prettier": "^2.8.5",
     "stylelint": "^15.3.0",
     "stylelint-config-standard": "^31.0.0",
     "through2": "^4.0.2",

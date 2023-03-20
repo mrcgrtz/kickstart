@@ -12,8 +12,19 @@ const cssnano = require('cssnano');
 // Get file with cache buster to become immutable
 const immutable = (realFilePath, resolvedFilePath) => {
 	const {mtime} = fs.statSync(realFilePath);
-	const fileHash = hash.sha384().update(String(mtime.getTime() / 1000)).digest('hex').slice(0, 8);
-	return `${path.dirname(resolvedFilePath)}/${path.basename(resolvedFilePath, path.extname(resolvedFilePath))}.v_${fileHash}${path.extname(resolvedFilePath)}`;
+	const fileName = path.basename(
+		resolvedFilePath,
+		path.extname(resolvedFilePath),
+	);
+	const fileExtension = path.extname(resolvedFilePath);
+	const fileHash = hash
+		.sha384()
+		.update(String(Math.floor(mtime.getTime() / 1000)))
+		.digest('hex')
+		.slice(0, 8);
+	const version = `v_${fileHash}`;
+	const directory = path.dirname(resolvedFilePath);
+	return `${directory}/${fileName}.${version}${fileExtension}`;
 };
 
 /** @type import('postcss-load-config').Config */
@@ -38,17 +49,20 @@ const config = {
 		}),
 		postcssFlexbugsFixes(),
 		cssnano({
-			preset: ['default', {
-				autoprefixer: true,
-				cssDeclarationSorter: false,
-				discardComments: {
-					removeAll: true,
+			preset: [
+				'default',
+				{
+					autoprefixer: true,
+					cssDeclarationSorter: false,
+					discardComments: {
+						removeAll: true,
+					},
+					discardUnused: true,
+					mergeIdents: true,
+					reduceIdents: true,
+					zindex: true,
 				},
-				discardUnused: true,
-				mergeIdents: true,
-				reduceIdents: true,
-				zindex: true,
-			}],
+			],
 		}),
 	],
 };

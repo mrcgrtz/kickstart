@@ -4,7 +4,7 @@
  * @author  Marc Görtz <https://marcgoertz.de/>
  */
 
-@charset "utf-8";
+@charset 'utf-8';
 
 /* fieldset and legends */
 legend {
@@ -22,7 +22,7 @@ label {
 }
 
 /* to highlight form errors or required form fields */
-label[role="alert"] {
+label[role='alert'] {
 	color: var(--color-red);
 	background-color: transparent;
 }
@@ -36,14 +36,14 @@ input {
 }
 
 /* checkboxes and radio boxes */
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
 	padding: 0; /* removes excess padding in IE8/9/10 */
 	box-sizing: border-box; /* addresses box-sizing set to content-box in IE8/9/10 */
 }
 
-input[type="checkbox"] + label,
-input[type="radio"] + label {
+input[type='checkbox'] + label,
+input[type='radio'] + label {
 	display: inline-block; /* for labels next to checkboxes or radio boxes */
 }
 
@@ -52,8 +52,8 @@ Fix the cursor style for Chrome's increment/decrement buttons. For certain
 `font-size` values of the `input`, it causes the cursor style of the
 decrement button to change from `default` to `text`.
 */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
 	height: auto;
 }
 
@@ -117,8 +117,8 @@ optgroup {
 	padding: 0 0 0 20px;
 }
 
-.indented input[type="checkbox"],
-.indented input[type="radio"] {
+.indented input[type='checkbox'],
+.indented input[type='radio'] {
 	position: absolute;
 	top: 0.333em;
 	left: 0;

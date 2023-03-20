@@ -4,13 +4,13 @@
  * @author  Marc Görtz <https://marcgoertz.de/>
  */
 
-@charset "utf-8";
+@charset 'utf-8';
 
 /* typographic defaults */
 html {
 	font: 16px/1.375 var(--font-stack);
 	text-size-adjust: 100%; /* prevents text size adjust after orientation change */
-	quotes: "„" "“" "‚" "‘";
+	quotes: '„' '“' '‚' '‘';
 }
 
 /* paragraphs and addresses */

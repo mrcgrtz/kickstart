@@ -4,7 +4,7 @@
  * @author  Marc Görtz <https://marcgoertz.de/>
  */
 
-@charset "utf-8";
+@charset 'utf-8';
 
 /* links */
 a:link,
@@ -39,6 +39,6 @@ a:active {
 
 	a[href]::after {
 		font-size: 80%;
-		content: " (" attr(href) ") ";
+		content: ' (' attr(href) ') ';
 	}
 }

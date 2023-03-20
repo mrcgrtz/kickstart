@@ -1,36 +1,35 @@
 name: Test
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-  test:
+    test:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [lts/*, current]
 
-    strategy:
-      matrix:
-        node-version: [lts/*, current]
+        steps:
+            - uses: actions/checkout@v3
 
-    steps:
-    - uses: actions/checkout@v3
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3.6.0
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3.6.0
-      with:
-        node-version: ${{ matrix.node-version }}
+            - name: Install dependencies
+              run: npm ci
 
-    - name: Install dependencies
-      run: npm ci
+            - name: Analyze TypeScript files
+              run: npm run-script lint:js
 
-    - name: Analyze TypeScript files
-      run: npm run-script lint:js
+            - name: Check types
+              run: npm run-script lint:ts
 
-    - name: Check types
-      run: npm run-script lint:ts
-
-    - name: Analyze CSS files
-      run: npm run-script lint:css
+            - name: Analyze CSS files
+              run: npm run-script lint:css

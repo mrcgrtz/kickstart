@@ -9,18 +9,18 @@
 
 ## Features
 
-* build process using [Gulp](https://gulpjs.com/)
-* CSS optimizations using [PostCSS](https://postcss.org/)
-* TypeScript module transpiling with [Browserify](https://browserify.org/)
-* some inspirations from [HTML5 Boilerplate](https://html5boilerplate.com)
-* minimalistic [Normalize](https://necolas.github.io/normalize.css/) for good
-  default styling
-* some optimized PHP includes
-* basic search engine optimization
+-   build process using [Gulp](https://gulpjs.com/)
+-   CSS optimizations using [PostCSS](https://postcss.org/)
+-   TypeScript module transpiling with [Browserify](https://browserify.org/)
+-   some inspirations from [HTML5 Boilerplate](https://html5boilerplate.com)
+-   minimalistic [Normalize](https://necolas.github.io/normalize.css/) for good
+    default styling
+-   some optimized PHP includes
+-   basic search engine optimization
 
 ## Requirements
 
-* [gulp-cli](https://gulpjs.com/)
+-   [gulp-cli](https://gulpjs.com/)
 
 ## Installation
 
