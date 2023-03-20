@@ -16,8 +16,8 @@ html {
 body {
 	position: relative;
 	margin: 0 auto;
-	width: 60em;
-	max-width: 90%; /* respond on smaller screens */
+	inline-size: 60em;
+	max-inline-size: 90%; /* respond on smaller screens */
 	color: var(--color-gray);
 	background-color: transparent;
 }
@@ -38,8 +38,8 @@ main {
 
 	html,
 	body {
-		width: 100%;
-		max-width: none;
+		inline-size: 100%;
+		max-inline-size: none;
 		margin: 0;
 		padding: 0;
 		color: #000;

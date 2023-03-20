@@ -22,7 +22,7 @@ pre {
 	margin: 2em 0;
 	padding: 1em 2em;
 	border-radius: 3px;
-	max-height: 20em;
+	max-block-size: 20em;
 	overflow: auto; /* contain overflow in all browsers */
 	font-family: var(--font-stack-monospace);
 	font-size: 1em;

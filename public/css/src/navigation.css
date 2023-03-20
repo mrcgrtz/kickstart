@@ -15,7 +15,7 @@ nav ul {
 	display: table;
 	margin: 0;
 	padding: 0;
-	width: 100%;
+	inline-size: 100%;
 	text-align: center;
 	list-style: none;
 }

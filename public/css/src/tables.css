@@ -9,14 +9,14 @@
 /* table defaults */
 table {
 	margin: 0 0 1em;
-	width: 100%;
+	inline-size: 100%;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
 th {
 	padding: 0;
-	text-align: left;
+	text-align: start;
 	color: var(--color-gray);
 	background-color: color-mod(var(--color-white) lightness(-25%));
 }

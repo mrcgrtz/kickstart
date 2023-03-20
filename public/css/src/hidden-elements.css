@@ -22,8 +22,8 @@ template {
 	margin: -1px;
 	padding: 0;
 	border: 0;
-	width: 1px;
-	height: 1px;
+	inline-size: 1px;
+	block-size: 1px;
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 }
@@ -31,8 +31,8 @@ template {
 .invisible:is(:focus, :active) {
 	position: static;
 	margin: 0;
-	width: auto;
-	height: auto;
+	inline-size: auto;
+	block-size: auto;
 	overflow: visible;
 	clip: auto;
 }

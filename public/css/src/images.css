@@ -11,19 +11,19 @@ img {
 	color: var(--color-gray);
 	background-color: transparent;
 	vertical-align: bottom;
-	max-width: 100%;
-	height: auto;
+	max-inline-size: 100%;
+	block-size: auto;
 	border: 0; /* remove the border on images inside links in IE 10 */
 }
 
 /* images in Google Maps */
 .gm-style img {
-	max-width: none;
+	max-inline-size: none;
 }
 
 /* printed images */
 @media print {
 	img {
-		max-width: 100%; /* prevents images from being cut when they are larger than page width */
+		max-inline-size: 100%; /* prevents images from being cut when they are larger than page width */
 	}
 }

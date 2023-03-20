@@ -8,6 +8,6 @@
 
 abbr[title] {
 	text-decoration: none;
-	border-bottom: 0;
+	border-block-end: 0;
 	cursor: help;
 }

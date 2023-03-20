@@ -47,7 +47,7 @@ dl::after {
 
 dt {
 	float: left;
-	width: 12em;
+	inline-size: 12em;
 	font-weight: bold;
 }
 

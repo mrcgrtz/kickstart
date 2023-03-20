@@ -29,7 +29,7 @@ h4 {
 
 /* abbreviations in headlines */
 :is(h1, h2, h3, h4) abbr[title] {
-	border-bottom: 0;
+	border-block-end: 0;
 }
 
 /* page breaks */
