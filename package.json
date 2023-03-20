@@ -52,7 +52,7 @@
     "postcss-color-mod-function": "^3.0.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.0.1",
-    "stylelint": "^15.2.0",
+    "stylelint": "^15.3.0",
     "stylelint-config-standard": "^30.0.1",
     "through2": "^4.0.2",
     "tsify": "^5.0.4",
