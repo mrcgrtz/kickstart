@@ -28,8 +28,7 @@ template {
 	clip: rect(0, 0, 0, 0);
 }
 
-.invisible:focus,
-.invisible:active {
+.invisible:is(:focus, :active) {
 	position: static;
 	margin: 0;
 	width: auto;

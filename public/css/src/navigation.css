@@ -26,11 +26,7 @@ nav ul li {
 	padding: 0;
 }
 
-nav a:link,
-nav a:visited,
-nav a:hover,
-nav a:focus,
-nav a:active {
+nav a:is(:link, :visited, :hover, :focus, :active) {
 	display: block;
 	margin: 0 1em 0 0;
 }

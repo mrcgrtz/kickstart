@@ -28,10 +28,7 @@ h4 {
 }
 
 /* abbreviations in headlines */
-h1 abbr[title],
-h2 abbr[title],
-h3 abbr[title],
-h4 abbr[title] {
+:is(h1, h2, h3, h4) abbr[title] {
 	border-bottom: 0;
 }
 

@@ -7,24 +7,17 @@
 @charset 'utf-8';
 
 /* links */
-a:link,
-a:visited,
-a:hover,
-a:focus,
-a:active {
+a:is(:link, :visited, :hover, :focus, :active) {
 	-webkit-tap-highlight-color: color-mod(var(--color-magenta) alpha(15%));
 	text-decoration: underline;
 }
 
-a:link,
-a:visited {
+a:is(:link, :visited) {
 	color: var(--color-magenta);
 	background-color: transparent;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:is(:hover, :focus, :active) {
 	color: var(--color-blue);
 	background-color: transparent;
 }
