@@ -21,11 +21,9 @@ module.exports = {
 				except: ['empty'],
 			},
 		],
-		indentation: 'tab',
 		'media-feature-name-no-vendor-prefix': true,
 		'no-descending-specificity': null,
 		'selector-attribute-quotes': 'always',
 		'selector-no-vendor-prefix': true,
-		'string-quotes': 'double',
 	},
 };
