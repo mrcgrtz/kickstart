@@ -9,7 +9,6 @@ import buffer from 'vinyl-buffer';
 import source from 'vinyl-source-stream';
 import {globby} from 'globby';
 import through from 'through2';
-
 // PostCSS configuration
 import postcssConfig from './.postcssrc.cjs';
 

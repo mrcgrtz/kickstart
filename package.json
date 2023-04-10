@@ -61,7 +61,7 @@
     "typescript": "^5.0.4",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
-    "xo": "^0.53.1"
+    "xo": "^0.54.0"
   },
   "overrides": {
     "chokidar": "^3.0.0",
