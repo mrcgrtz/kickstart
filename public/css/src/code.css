@@ -30,7 +30,6 @@ pre {
 	color: var(--color-black);
 	background-color: color-mod(var(--color-white) lightness(-25%));
 	tab-size: 4;
-	white-space: pre;
 	white-space: pre-wrap;
 	word-wrap: break-word;
 }
