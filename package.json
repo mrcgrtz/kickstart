@@ -64,9 +64,7 @@
     "xo": "^0.54.1"
   },
   "overrides": {
-    "chokidar": "^3.0.0",
-    "glob-stream": "^7.0.0",
-    "glob-parent": "^6.0.0",
-    "micromatch": "^4.0.0"
+    "chokidar": "^3.5.3",
+    "glob-stream": "^8.0.0"
   }
 }
