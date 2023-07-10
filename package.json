@@ -54,7 +54,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.5.1",
     "prettier": "^2.8.8",
-    "stylelint": "^15.9.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^33.0.0",
     "through2": "^4.0.2",
     "tsify": "^5.0.4",
