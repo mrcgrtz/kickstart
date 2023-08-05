@@ -34,12 +34,12 @@
     "watch": "gulp watch"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.1",
+    "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.5",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "cssnano": "^6.0.1",
-    "globby": "^13.2.0",
+    "globby": "^13.2.2",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^9.0.1",
@@ -48,7 +48,7 @@
     "hash.js": "^1.1.7",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.27",
     "postcss-assets": "^6.0.0",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -58,7 +58,7 @@
     "stylelint-config-standard": "^33.0.0",
     "through2": "^4.0.2",
     "tsify": "^5.0.4",
-    "typescript": "^5.0.4",
+    "typescript": "^5.1.6",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "xo": "^0.54.2"
