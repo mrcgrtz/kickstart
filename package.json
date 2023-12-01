@@ -53,7 +53,7 @@
     "postcss-color-mod-function": "^3.0.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.3.0",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.0",
     "stylelint": "^15.11.0",
     "stylelint-config-standard": "^34.0.0",
     "through2": "^4.0.2",
