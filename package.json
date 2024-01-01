@@ -48,7 +48,7 @@
     "hash.js": "^1.1.7",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.32",
     "postcss-assets": "^6.0.0",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-flexbugs-fixes": "^5.0.2",
