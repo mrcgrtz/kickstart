@@ -30,7 +30,7 @@
     "lint:js": "xo",
     "lint:ts": "tsc --noEmit --strict",
     "lint:css": "stylelint ./public/css/src/**/*.css",
-    "prepare": "husky install",
+    "prepare": "husky",
     "watch": "gulp watch"
   },
   "devDependencies": {
