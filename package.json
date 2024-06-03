@@ -47,7 +47,7 @@
     "gulp-terser": "^2.1.0",
     "hash.js": "^1.1.7",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
+    "lint-staged": "^15.2.5",
     "postcss": "^8.4.32",
     "postcss-assets": "^6.0.0",
     "postcss-color-mod-function": "^3.0.3",
