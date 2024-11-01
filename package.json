@@ -52,7 +52,7 @@
     "postcss-assets": "^6.0.0",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^10.0.5",
+    "postcss-preset-env": "^10.0.8",
     "prettier": "^3.2.5",
     "stylelint": "^16.9.0",
     "stylelint-config-standard": "^36.0.0",
