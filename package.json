@@ -50,7 +50,7 @@
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "postcss-assets": "^6.0.0",
-    "postcss-color-mod-function": "^3.0.3",
+    "postcss-color-mod-function": "^4.1.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^10.0.5",
     "prettier": "^3.2.5",
