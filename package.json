@@ -63,7 +63,7 @@
     "stylelint-use-logical": "^2.1.2",
     "through2": "^4.0.2",
     "tsify": "^5.0.4",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "xo": "^0.60.0"
