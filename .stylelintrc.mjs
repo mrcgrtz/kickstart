@@ -1,5 +1,8 @@
-/** @type {import('stylelint').Config} */
-module.exports = {
+/**
+ * @see https://stylelint.io/user-guide/configure
+ * @type {import('stylelint').Config}
+ */
+const config = {
 	extends: 'stylelint-config-standard',
 	rules: {
 		'at-rule-no-vendor-prefix': true,
@@ -27,3 +30,5 @@ module.exports = {
 		'selector-no-vendor-prefix': true,
 	},
 };
+
+export default config;
