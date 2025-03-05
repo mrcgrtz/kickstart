@@ -3,31 +3,26 @@
  * @type {import('stylelint').Config}
  */
 const config = {
-	extends: 'stylelint-config-standard',
+	extends: ['stylelint-config-standard', 'stylelint-prettier/recommended'],
+	plugins: ['stylelint-use-logical'],
 	rules: {
-		'at-rule-no-vendor-prefix': true,
 		'color-named': 'never',
-		'font-family-name-quotes': 'always-where-recommended',
-		'function-no-unknown': [
+		'csstools/use-logical': ['always', {except: ['float']}],
+		'declaration-property-value-no-unknown': [
 			true,
 			{
-				ignoreFunctions: [
-					'/^resolve$|^inline$/',
-					'color-mod',
-					'/^red$|^green$|^blue$|^a(?:lpha)?$|^rgb$|^h(?:ue)?$|^s(?:aturation)?$|^l(?:ightness)?$|^w(?:hiteness)?$|^b(?:lackness)?$|^tint$|^shade$|^blenda?$|^contrast$/',
-				],
+				propertiesSyntax: {
+					'background-image':
+						'[ <bg-image> | <--custom-functions> ]#',
+				},
+				typesSyntax: {
+					'--custom-functions':
+						'resolve( <string> ) | inline( <string> )',
+				},
 			},
 		],
-		'function-url-quotes': [
-			'always',
-			{
-				except: ['empty'],
-			},
-		],
-		'media-feature-name-no-vendor-prefix': true,
+		'function-url-quotes': ['always', {except: ['empty']}],
 		'no-descending-specificity': null,
-		'selector-attribute-quotes': 'always',
-		'selector-no-vendor-prefix': true,
 	},
 };
 
