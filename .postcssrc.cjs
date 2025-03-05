@@ -3,9 +3,10 @@ const path = require('path');
 const hash = require('hash.js');
 
 // PostCSS plugins
+const postcssGlobalData = require('@csstools/postcss-global-data');
+const postcssCustomProperties = require('postcss-custom-properties');
 const postcssAssets = require('postcss-assets');
 const postcssPresetEnv = require('postcss-preset-env');
-const postcssColorModFunction = require('postcss-color-mod-function');
 const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const cssnano = require('cssnano');
 
@@ -30,6 +31,10 @@ const immutable = (realFilePath, resolvedFilePath) => {
 /** @type import('postcss-load-config').Config */
 const config = {
 	plugins: [
+		postcssGlobalData({
+			files: ['./public/css/src/variables.css'],
+		}),
+		postcssCustomProperties(),
 		postcssAssets({
 			basePath: './public',
 			loadPaths: ['fonts', 'img'],
@@ -42,27 +47,13 @@ const config = {
 			autoprefixer: {
 				grid: 'no-autoplace',
 			},
-		}),
-		postcssColorModFunction({
-			transformVars: true,
-			importFrom: './public/css/src/variables.css',
+			features: {
+				'focus-visible-pseudo-class': false,
+			},
 		}),
 		postcssFlexbugsFixes(),
 		cssnano({
-			preset: [
-				'default',
-				{
-					autoprefixer: true,
-					cssDeclarationSorter: false,
-					discardComments: {
-						removeAll: true,
-					},
-					discardUnused: true,
-					mergeIdents: true,
-					reduceIdents: true,
-					zindex: true,
-				},
-			],
+			preset: ['advanced', {reduceIdents: false}],
 		}),
 	],
 };
