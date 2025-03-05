@@ -21,12 +21,11 @@ button {
 	color: var(--color-magenta);
 	background: var(--color-white);
 	cursor: pointer; /* improve usability and consistency of cursor style between image-type `input` and others. */
-	appearance: button; /* corrects inability to style clickable `input` types in iOS */
 }
 
 /* disabled state */
-button[disabled],
-button[disabled]:is(:hover, :focus) {
+button:disabled,
+button:disabled:is(:hover, :focus) {
 	color: color-mod(var(--color-white) lightness(-25%));
 	background: var(--color-white);
 	border: 2px solid color-mod(var(--color-white) lightness(-25%));

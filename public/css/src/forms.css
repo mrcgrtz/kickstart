@@ -58,8 +58,8 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 /* disabled inputs */
-input[readonly],
-input[disabled] {
+input:read-only,
+input:disabled {
 	color: color-mod(var(--color-gray) lightness(+50%));
 	background-color: transparent;
 	cursor: default;
@@ -75,8 +75,8 @@ textarea {
 }
 
 /* disabled inputs */
-textarea[readonly],
-textarea[disabled] {
+textarea:read-only,
+textarea:disabled {
 	color: color-mod(var(--color-gray) lightness(+50%));
 	background-color: transparent;
 	cursor: default;
@@ -92,7 +92,7 @@ select {
 }
 
 /* disabled inputs */
-select[disabled] {
+select:disabled {
 	cursor: default;
 }
 
