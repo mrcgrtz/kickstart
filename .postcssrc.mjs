@@ -1,14 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const hash = require('hash.js');
+import fs from 'node:fs';
+import path from 'node:path';
+import hash from 'hash.js';
 
 // PostCSS plugins
-const postcssGlobalData = require('@csstools/postcss-global-data');
-const postcssCustomProperties = require('postcss-custom-properties');
-const postcssAssets = require('postcss-assets');
-const postcssPresetEnv = require('postcss-preset-env');
-const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
-const cssnano = require('cssnano');
+import postcssGlobalData from '@csstools/postcss-global-data';
+import postcssCustomProperties from 'postcss-custom-properties';
+import postcssAssets from 'postcss-assets';
+import postcssPresetEnv from 'postcss-preset-env';
+import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
+import cssnano from 'cssnano';
 
 // Get file with cache buster to become immutable
 const immutable = (realFilePath, resolvedFilePath) => {
@@ -28,7 +28,7 @@ const immutable = (realFilePath, resolvedFilePath) => {
 	return `${directory}/${fileName}.${version}${fileExtension}`;
 };
 
-/** @type import('postcss-load-config').Config */
+/** @type {import('postcss-load-config').Config} */
 const config = {
 	plugins: [
 		postcssGlobalData({
@@ -58,4 +58,4 @@ const config = {
 	],
 };
 
-module.exports = config;
+export default config;

@@ -10,7 +10,7 @@ import source from 'vinyl-source-stream';
 import {glob} from 'tinyglobby';
 import through from 'through2';
 // PostCSS configuration
-import postcssConfig from './.postcssrc.cjs';
+import postcssConfig from './.postcssrc.mjs';
 
 // Concatenate CSS modules and transform them using PostCSS
 gulp.task('css', () =>
