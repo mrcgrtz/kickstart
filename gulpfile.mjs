@@ -7,7 +7,7 @@ import browserify from 'browserify';
 import tsify from 'tsify';
 import buffer from 'vinyl-buffer';
 import source from 'vinyl-source-stream';
-import {globby} from 'globby';
+import {glob} from 'tinyglobby';
 import through from 'through2';
 // PostCSS configuration
 import postcssConfig from './.postcssrc.cjs';
@@ -54,7 +54,7 @@ gulp.task('js:build', async () => {
 		.pipe(gulp.dest('./public/js/'));
 
 	try {
-		const entries = await globby(['./public/js/src/**/*.ts']);
+		const entries = await glob(['./public/js/src/**/*.ts']);
 		const b = browserify({
 			entries,
 			basedir: '.',
