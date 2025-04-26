@@ -1,47 +1,47 @@
-# This file is for unifying the coding style for different editors
-# and IDEs. EditorConfig is awesome: https://EditorConfig.org
+# EditorConfig helps maintain consistent coding styles across editors and IDEs.
+# Learn more: https://EditorConfig.org
 
-# ##############################################################################
-# # TOP-MOST .EDITORCONFIG FILE                                                #
-# ##############################################################################
+# #############################################################################
+# # TOP-MOST .EDITORCONFIG FILE                                               #
+# #############################################################################
 root = true
 
-# ##############################################################################
-# # ALL FILES                                                                  #
-# ##############################################################################
+# #############################################################################
+# # ALL FILES                                                                 #
+# #############################################################################
 [*]
-# indent using tabs
+# Use tabs for indentation
 indent_style = tab
 indent_size = tab
 tab_width = 4
-# Unix-style newlines with a newline ending every file
+# Use Unix-style line endings with a newline at the end of the file
 end_of_line = lf
 insert_final_newline = true
-# use UTF-8 without BOM
+# Use UTF-8 encoding without BOM
 charset = utf-8
-# remove any trailing whitespace
+# Remove trailing whitespace
 trim_trailing_whitespace = true
 
-# ##############################################################################
-# # MARKDOWN FILES                                                             #
-# ##############################################################################
-[*.md]
-# do not remove trailing spaces for line-breaks
-trim_trailing_whitespace = false
-
-# ##############################################################################
-# # .HTACCESS FILES                                                            #
-# ##############################################################################
+# #############################################################################
+# # .HTACCESS FILES                                                           #
+# #############################################################################
 [.htaccess]
-# indent using 4 spaces
+# Use 4 spaces for indentation to match h5bp server config
 indent_style = space
 indent_size = 4
 
-# ##############################################################################
-# # PACKAGE FILES                                                              #
-# ##############################################################################
-[package.json]
-# The indent size used in the `package.json` file cannot be changed
+# #############################################################################
+# # PACKAGE FILES                                                             #
+# #############################################################################
+[{package,composer}.json]
+# The indent size used in the `package.json` file cannot be changed, see
 # https://github.com/npm/npm/pull/3180#issuecomment-16336516
 indent_style = space
 indent_size = 2
+
+# #############################################################################
+# # MARKDOWN FILES                                                            #
+# #############################################################################
+[*.md]
+# Preserve trailing spaces for explicit line breaks
+trim_trailing_whitespace = false
