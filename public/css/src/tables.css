@@ -28,6 +28,6 @@ td {
 /* page breaks */
 @media print {
 	tr {
-		page-break-inside: avoid;
+		break-inside: avoid;
 	}
 }
