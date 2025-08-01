@@ -64,7 +64,7 @@
     "through2": "^4.0.2",
     "tinyglobby": "^0.2.14",
     "tsify": "^5.0.4",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "xo": "^1.1.1"
