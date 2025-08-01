@@ -31,5 +31,5 @@ pre {
 	background-color: color-mod(var(--color-white) lightness(-25%));
 	tab-size: 4;
 	white-space: pre-wrap;
-	word-wrap: break-word;
+	overflow-wrap: break-word;
 }

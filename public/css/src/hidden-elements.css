@@ -17,7 +17,7 @@ template {
 }
 
 /* invisible elements */
-.invisible {
+.invisible:not(:focus, :focus-within) {
 	position: absolute;
 	margin: -1px;
 	padding: 0;
@@ -25,14 +25,5 @@ template {
 	inline-size: 1px;
 	block-size: 1px;
 	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-}
-
-.invisible:is(:focus, :active) {
-	position: static;
-	margin: 0;
-	inline-size: auto;
-	block-size: auto;
-	overflow: visible;
-	clip: auto;
+	clip-path: inset(0);
 }
