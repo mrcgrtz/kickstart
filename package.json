@@ -67,6 +67,6 @@
     "typescript": "^5.9.3",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
-    "xo": "^1.2.2"
+    "xo": "^1.2.3"
   }
 }
