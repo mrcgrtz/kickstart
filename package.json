@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.28.5",
-    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-env": "^7.28.5",
     "@csstools/postcss-global-data": "^3.0.0",
     "babelify": "^10.0.0",
     "browserify": "^17.0.1",
