@@ -5,22 +5,20 @@
 const config = {
 	extends: ['stylelint-config-standard', 'stylelint-prettier/recommended'],
 	plugins: ['stylelint-use-logical'],
+	languageOptions: {
+		syntax: {
+			properties: {
+				'background-image': '[ <bg-image> | <--custom-functions> ]#',
+			},
+			types: {
+				'--custom-functions':
+					'resolve( <string> ) | inline( <string> )',
+			},
+		},
+	},
 	rules: {
 		'color-named': 'never',
 		'csstools/use-logical': ['always', {except: ['float']}],
-		'declaration-property-value-no-unknown': [
-			true,
-			{
-				propertiesSyntax: {
-					'background-image':
-						'[ <bg-image> | <--custom-functions> ]#',
-				},
-				typesSyntax: {
-					'--custom-functions':
-						'resolve( <string> ) | inline( <string> )',
-				},
-			},
-		],
 		'function-url-quotes': ['always', {except: ['empty']}],
 		'no-descending-specificity': null,
 	},
