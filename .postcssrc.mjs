@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import hash from 'hash.js';
-
 // PostCSS plugins
 import postcssGlobalData from '@csstools/postcss-global-data';
 import postcssCustomProperties from 'postcss-custom-properties';
