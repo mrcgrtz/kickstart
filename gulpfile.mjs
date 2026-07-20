@@ -1,16 +1,15 @@
+import {glob} from 'node:fs/promises';
 import gulp from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
-import terser from 'gulp-terser';
-import browserify from 'browserify';
-import tsify from 'tsify';
-import buffer from 'vinyl-buffer';
-import source from 'vinyl-source-stream';
-import {glob} from 'tinyglobby';
-import through from 'through2';
+import esbuild from 'esbuild';
+import browserslistToEsbuild from 'browserslist-to-esbuild';
 // PostCSS configuration
 import postcssConfig from './.postcssrc.mjs';
+
+// Browsers to support, derived from the shared Browserslist config
+const target = browserslistToEsbuild();
 
 // Concatenate CSS modules and transform them using PostCSS
 gulp.task('css', () =>
@@ -43,59 +42,31 @@ gulp.task('css', () =>
 		.pipe(gulp.dest('./public/css/')),
 );
 
-// Transform JS modules
-gulp.task('js:build', async () => {
-	const bundledStream = through();
-	bundledStream
-		.pipe(source('feel.js'))
-		.pipe(buffer())
-		.pipe(sourcemaps.init({loadMaps: true}))
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('./public/js/'));
-
-	try {
-		const entries = await glob(['./public/js/src/**/*.ts']);
-		const b = browserify({
-			entries,
-			basedir: '.',
-			debug: true,
-			cache: {},
-			packageCache: {},
-		});
-		b.plugin(tsify)
-			.transform('babelify', {
-				presets: ['@babel/preset-env'],
-				extensions: ['.ts'],
-			})
-			.bundle()
-			.pipe(bundledStream);
-	} catch (error) {
-		bundledStream.emit('error', error);
-	}
-
-	return bundledStream;
+// Transform and bundle TypeScript modules into feel.js using esbuild.
+// esbuild emits one output per entry point, so to concatenate many modules
+// into one bundle (as Browserify did) we feed a virtual entry that imports
+// each module for its side effects.
+gulp.task('js', async () => {
+	const modules = await Array.fromAsync(glob('public/js/src/**/*.ts'));
+	await esbuild.build({
+		stdin: {
+			contents: modules
+				// Sort for a deterministic bundle order (glob() order is not guaranteed)
+				.toSorted((moduleA, moduleB) => moduleA.localeCompare(moduleB))
+				.map((module) => `import ${JSON.stringify(`./${module}`)};`)
+				.join('\n'),
+			resolveDir: import.meta.dirname,
+			loader: 'js',
+		},
+		bundle: true,
+		format: 'iife',
+		platform: 'browser',
+		target,
+		minify: true,
+		sourcemap: true,
+		outfile: './public/js/feel.js',
+	});
 });
-
-// Minify JS modules
-gulp.task('js:minify', () =>
-	gulp
-		.src(['./public/js/feel.js'])
-		.pipe(
-			sourcemaps.init({
-				loadMaps: true,
-			}),
-		)
-		.pipe(
-			terser({
-				sourceMap: true,
-			}),
-		)
-		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('./public/js/')),
-);
-
-// Build and minify JS modules
-gulp.task('js', gulp.series('js:build', 'js:minify'));
 
 // Watch stuff
 gulp.task('watch', () =>

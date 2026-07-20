@@ -11,7 +11,7 @@
 
 - build process using [Gulp](https://gulpjs.com/)
 - CSS optimizations using [PostCSS](https://postcss.org/)
-- TypeScript module transpiling with [Browserify](https://browserify.org/)
+- TypeScript module bundling with [esbuild](https://esbuild.github.io/)
 - some inspirations from [HTML5 Boilerplate](https://html5boilerplate.com)
 - minimalistic [Normalize](https://necolas.github.io/normalize.css/) for good
   default styling
@@ -35,7 +35,7 @@ Gulp’s default task afterwards.
 
 ### Build assets
 
-The default Gulp task using `gulp` builds CSS/JS files from their sources. CSS files get transformed using PostCSS while TypeScript files get compiled using Browserify.
+The default Gulp task using `gulp` builds CSS/JS files from their sources. CSS files get transformed using PostCSS while TypeScript files get compiled and bundled using esbuild.
 
 ```bash
 gulp
