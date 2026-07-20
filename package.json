@@ -44,7 +44,6 @@
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^10.0.0",
     "gulp-sourcemaps": "^3.0.0",
-    "hash.js": "^1.1.7",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
     "postcss": "^8.5.16",
