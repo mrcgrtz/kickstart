@@ -11,8 +11,7 @@ const config = {
 				'background-image': '[ <bg-image> | <--custom-functions> ]#',
 			},
 			types: {
-				'--custom-functions':
-					'resolve( <string> ) | inline( <string> )',
+				'--custom-functions': 'resolve( <string> ) | inline( <string> )',
 			},
 		},
 	},

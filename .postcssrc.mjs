@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import hash from 'hash.js';
+import crypto from 'node:crypto';
 // PostCSS plugins
 import postcssGlobalData from '@csstools/postcss-global-data';
 import postcssCustomProperties from 'postcss-custom-properties';
@@ -12,14 +12,16 @@ import cssnano from 'cssnano';
 // Get file with cache buster to become immutable
 const immutable = (realFilePath, resolvedFilePath) => {
 	const {mtime} = fs.statSync(realFilePath);
+	const timestamp = mtime.getTime();
+	const unixTimestamp = Math.floor(timestamp / 1000);
 	const fileName = path.basename(
 		resolvedFilePath,
 		path.extname(resolvedFilePath),
 	);
 	const fileExtension = path.extname(resolvedFilePath);
-	const fileHash = hash
-		.sha384()
-		.update(String(Math.floor(mtime.getTime() / 1000)))
+	const fileHash = crypto
+		.createHash('sha384')
+		.update(String(unixTimestamp))
 		.digest('hex')
 		.slice(0, 8);
 	const version = `v_${fileHash}`;

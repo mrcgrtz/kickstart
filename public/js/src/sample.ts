@@ -1,7 +1,7 @@
 /**
  * Sample Module
- * @class  Kickstart.Sample
- * @author Marc Görtz <https://marcgoertz.de/>
+ * @namespace Kickstart.Sample
+ * @author    Marc Görtz <https://marcgoertz.de/>
  */
 
 document.addEventListener('pointerdown', (event: PointerEvent) => {
