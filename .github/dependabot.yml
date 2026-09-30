@@ -20,6 +20,11 @@ updates:
       cooldown:
           default-days: 5
           semver-major-days: 14
+      ignore:
+          # TypeScript 7.0 is not supported by our tooling yet.
+          - dependency-name: 'typescript'
+            versions:
+                - '7.0.x'
       groups:
           # Families that must move in lockstep, majors included.
           cssnano:
