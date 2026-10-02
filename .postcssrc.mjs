@@ -29,7 +29,9 @@ const immutable = (realFilePath, resolvedFilePath) => {
 	return `${directory}/${fileName}.${version}${fileExtension}`;
 };
 
-/** @type {import('postcss-load-config').Config} */
+/**
+ * @type {import('postcss-load-config').Config}
+ */
 const config = {
 	plugins: [
 		postcssGlobalData({
