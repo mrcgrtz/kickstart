@@ -46,7 +46,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.5.1",
-    "postcss": "^8.5.28",
+    "postcss": "^8.5.32",
     "postcss-assets": "^6.0.0",
     "postcss-custom-properties": "^15.0.2",
     "postcss-flexbugs-fixes": "^5.0.2",
