@@ -11,7 +11,9 @@ const config = {
 				'background-image': '[ <bg-image> | <--custom-functions> ]#',
 			},
 			types: {
-				'--custom-functions': 'resolve( <string> ) | inline( <string> )',
+				// eslint-disable-next-line prettier/prettier
+				'--custom-functions':
+					'resolve( <string> ) | inline( <string> )',
 			},
 		},
 	},
