@@ -6,7 +6,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import esbuild from 'esbuild';
 import browserslistToEsbuild from 'browserslist-to-esbuild';
 // PostCSS configuration
-import postcssConfig from './.postcssrc.mjs';
+import postcssConfig from './.postcssrc.js';
 
 // Browsers to support, derived from the shared Browserslist config
 const target = browserslistToEsbuild();
@@ -75,7 +75,7 @@ gulp.task('watch', () =>
 			'./public/css/src/*.css',
 			'./public/js/src/*.ts',
 			'./public/**/*.php',
-			'./gulpfile.mjs',
+			'./gulpfile.js',
 		],
 		() => {
 			gulp.parallel('default');
