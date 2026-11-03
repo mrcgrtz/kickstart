@@ -13,6 +13,12 @@ const config = [
 			'jsdoc/require-asterisk-prefix': ['error', 'always'],
 		},
 	},
+	{
+		files: '**/*.css',
+		rules: {
+			'css/no-invalid-at-rule-placement': 'off',
+		},
+	},
 ];
 
 export default config;
