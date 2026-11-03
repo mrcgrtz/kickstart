@@ -7,6 +7,7 @@ import postcssCustomProperties from 'postcss-custom-properties';
 import postcssAssets from 'postcss-assets';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
+import postcssSvgo from 'postcss-svgo';
 import cssnano from 'cssnano';
 
 // Get file with cache buster to become immutable
@@ -55,6 +56,8 @@ const config = {
 			},
 		}),
 		postcssFlexbugsFixes(),
+		// Since 9.9, cssnano's presets no longer minify inline SVG themselves.
+		postcssSvgo(),
 		cssnano({
 			preset: ['advanced', {reduceIdents: false}],
 		}),
